@@ -20,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelMixBtn;
 @property (nonatomic, strong) NSArray *userProducts;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (nonatomic, strong) NSArray *selectedProduct;
+@property (nonatomic, assign) NSInteger *selectedProduct;
 
 
 @end
@@ -32,6 +32,7 @@
     
     NavigationController *navigation = self.navigationController;
     [navigation showMenu];
+    [navigation resetColorMenu];
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer *btnMix = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMix:)];
@@ -219,7 +220,7 @@
 
 - (void)goToProduct:(UITapGestureRecognizer *) recognizer {
     UIView *selectedView = (UIView *)recognizer.view;
-    self.selectedProduct = [self.userProducts objectAtIndex: selectedView.tag];
+    self.selectedProduct = (NSInteger *)selectedView.tag;
     [self performSegueWithIdentifier:@"goToProduct" sender:recognizer];
 }
 

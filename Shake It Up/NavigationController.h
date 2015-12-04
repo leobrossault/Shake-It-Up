@@ -20,5 +20,7 @@
 
 - (void) hideMenu;
 - (void) showMenu;
+- (void)whiteMenu;
+- (void)resetColorMenu;
 
 @end

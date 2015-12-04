@@ -24,7 +24,7 @@
     [self.view addSubview: self.menuView];
     
     self.icoMenu = [[UIView alloc] init];
-    [self.icoMenu setFrame:CGRectMake(270, 30, 30, 20)];
+    [self.icoMenu setFrame:CGRectMake(270, 40, 30, 20)];
     [self.view addSubview: self.icoMenu];
     
     UITapGestureRecognizer *menuAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCloseMenu:)];
@@ -80,7 +80,7 @@
     if (menuOpen == 0) {
         [UIView animateWithDuration: 0.5f animations:^{
             CGRect frameMenu = self.menuView.frame;
-            frameMenu.origin.x = 114;
+            frameMenu.origin.x = 115;
             self.menuView.frame = frameMenu;
         } completion:^(BOOL finished) {
             menuOpen = 1;
@@ -129,4 +129,17 @@
 - (void)showMenu {
     self.icoMenu.hidden = false;
 }
+
+- (void)whiteMenu {
+    self.lineTopMenu.strokeColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0].CGColor;
+    self.lineCenterMenu.strokeColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0].CGColor;
+    self.lineBotMenu.strokeColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1.0].CGColor;
+}
+
+- (void)resetColorMenu {
+    self.lineTopMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
+    self.lineCenterMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
+    self.lineBotMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
+}
+
 @end

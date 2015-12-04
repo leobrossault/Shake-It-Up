@@ -10,6 +10,6 @@
 
 @interface ProductViewController : UIViewController
 
-@property (nonatomic, strong) NSArray *product;
+@property (nonatomic, assign) NSInteger *product;
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <SpriteKit/SpriteKit.h>
 #import "Environment.h"
 
 @interface App_ViewController : UIViewController

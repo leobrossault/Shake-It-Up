@@ -16,7 +16,7 @@
 #import "MixCenter_ContentViewController.h"
 #import "HomeViewController.h"
 
-@interface App_ViewController () <MixCenterDelegate, ActionShakerDelegate, FormSignUpDelegate, VideoInteractionDelegate, Home_DefaultDelegate>
+@interface App_ViewController () <ActionShakerDelegate, FormSignUpDelegate, VideoInteractionDelegate, Home_DefaultDelegate>
 
 @end
 
@@ -99,10 +99,6 @@
 }
 
 #pragma mark - MixCenterDelegate
-
-- (void) mixCenterDidFinish {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 
 - (void) videoDidFinish {

@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CBF45A4A09DCFD3FFC86D4D1598D71062915509D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "135670503F899053A0744AD90D049E31E09F813C" : 0,
+    "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : 0,
+    "CBF45A4A09DCFD3FFC86D4D1598D71062915509D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "34ED574B-F858-4B4F-9B94-07E6F302D534",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "135670503F899053A0744AD90D049E31E09F813C" : "app\/Shake%20It%20Up\/vendors\/BAFluidView\/",
+    "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : "app\/Shake%20It%20Up\/vendors\/pop\/",
+    "CBF45A4A09DCFD3FFC86D4D1598D71062915509D" : "app\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Shake It Up",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Shake It Up.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/antiguab\/BAFluidView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "135670503F899053A0744AD90D049E31E09F813C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/projetsisley\/app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CBF45A4A09DCFD3FFC86D4D1598D71062915509D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/facebook\/pop.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3"
+    }
+  ]
+}

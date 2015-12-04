@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Products Discover View Controller-->
+        <scene sceneID="tex-vx-85c">
+            <objects>
+                <viewController storyboardIdentifier="productsDiscover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cmT-np-2qD" customClass="Products_Discover_ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M8y-7T-0CU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Riu-b5-qJ8"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LK7-Mz-0ZD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2025" y="625"/>
+        </scene>
+        <!--Detail Discover View Controller-->
+        <scene sceneID="oeu-QA-tIg">
+            <objects>
+                <viewController storyboardIdentifier="detailDiscover" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xsc-C7-UAw" customClass="Detail_Discover_ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kpJ-uG-Zpl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WuG-u9-OEM" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2565" y="625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4HL-T5-ad0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QZa-3l-W54" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fzc-a4-prr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cmT-np-2qD" kind="relationship" relationship="rootViewController" id="akc-cJ-1Xs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0I-oi-iXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="625"/>
+        </scene>
+    </scenes>
+</document>

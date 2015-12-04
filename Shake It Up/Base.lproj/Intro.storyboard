@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vbc-JH-tqL">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Bariol.ttf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--First Text Intro Page Detail View Controller-->
+        <scene sceneID="16d-Fr-1Am">
+            <objects>
+                <viewController storyboardIdentifier="page1" modalTransitionStyle="flipHorizontal" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pub-xK-LeG" customClass="First_Text_Intro_Page_DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZR1-fo-mE9"/>
+                        <viewControllerLayoutGuide type="bottom" id="LP4-0z-5d1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZWG-L4-XvF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fd-9z-YVC">
+                                <rect key="frame" x="0.0" y="51" width="320" height="286"/>
+                                <animations/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="firstAnimContainer" destination="3fd-9z-YVC" id="1Nz-uM-Y5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbg-qi-WLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-18" y="2343"/>
+        </scene>
+        <!--Text Intro Content View Controller-->
+        <scene sceneID="3SB-2i-fhq">
+            <objects>
+                <viewController storyboardIdentifier="home_intro" modalTransitionStyle="flipHorizontal" id="vbc-JH-tqL" customClass="Text_Intro_ContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aZp-eI-0HK"/>
+                        <viewControllerLayoutGuide type="bottom" id="tTg-Fs-dra"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DTY-DL-XBs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7V-li-sqc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="mr1-tE-ACM" kind="embed" id="uli-BB-MWZ"/>
+                                </connections>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_text" translatesAutoresizingMaskIntoConstraints="NO" id="V2a-zc-pVC">
+                                <rect key="frame" x="0.0" y="388" width="320" height="180"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KcG-k3-tz6">
+                                <rect key="frame" x="258" y="26" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <state key="normal" title="passer">
+                                    <color key="titleColor" red="0.98039215690000003" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="goMixCenter:" destination="vbc-JH-tqL" eventType="touchUpInside" id="siV-UX-WWV"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Wq4-We-0nE">
+                                <rect key="frame" x="245" y="521" width="39" height="37"/>
+                                <animations/>
+                                <color key="pageIndicatorTintColor" red="0.16862745098039217" green="0.047058823529411764" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.98039215686274506" green="0.078431372549019607" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="touchPageControl:" destination="vbc-JH-tqL" eventType="valueChanged" id="qcw-mz-24s"/>
+                                </connections>
+                            </pageControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5sG-5t-5GU">
+                                <rect key="frame" x="0.0" y="369" width="320" height="21"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CJS-1c-mcx">
+                                <rect key="frame" x="32" y="400" width="256" height="115"/>
+                                <animations/>
+                                <string key="text">Sisley est une marque de 
+cosmétique française qui 
+propose des produits naturels</string>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KcG-k3-tz6" firstAttribute="top" secondItem="aZp-eI-0HK" secondAttribute="bottom" constant="6" id="8iA-30-HkP"/>
+                            <constraint firstItem="tTg-Fs-dra" firstAttribute="top" secondItem="e7V-li-sqc" secondAttribute="bottom" id="DYz-qH-97k"/>
+                            <constraint firstAttribute="trailing" secondItem="Wq4-We-0nE" secondAttribute="trailing" constant="36" id="dyE-Mu-SEo"/>
+                            <constraint firstAttribute="trailing" secondItem="e7V-li-sqc" secondAttribute="trailing" id="iLp-wN-9S0"/>
+                            <constraint firstItem="e7V-li-sqc" firstAttribute="leading" secondItem="DTY-DL-XBs" secondAttribute="leading" id="mZe-kT-dyD"/>
+                            <constraint firstItem="tTg-Fs-dra" firstAttribute="top" secondItem="Wq4-We-0nE" secondAttribute="bottom" constant="10" id="mx1-hb-JAZ"/>
+                            <constraint firstItem="e7V-li-sqc" firstAttribute="top" secondItem="DTY-DL-XBs" secondAttribute="top" id="sbS-Kc-AFy"/>
+                            <constraint firstAttribute="trailing" secondItem="KcG-k3-tz6" secondAttribute="trailing" constant="16" id="sqc-rn-cFg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LWa-3a-VaU"/>
+                    <connections>
+                        <outlet property="btnStart" destination="KcG-k3-tz6" id="cRP-QO-efR"/>
+                        <outlet property="pageControl" destination="Wq4-We-0nE" id="UP5-7S-Epj"/>
+                        <outlet property="textContainer" destination="CJS-1c-mcx" id="SGM-6A-J4B"/>
+                        <outlet property="waveContainer" destination="5sG-5t-5GU" id="4UJ-cj-85V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sNh-Ed-TLI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="484" y="1349"/>
+        </scene>
+        <!--Text Intro Page View Controller-->
+        <scene sceneID="chg-1C-lNm">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="mr1-tE-ACM" customClass="Text_Intro_PageViewController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJa-Ld-e8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046" y="1350"/>
+        </scene>
+        <!--Video Intro View Controller-->
+        <scene sceneID="hbf-eT-Hgl">
+            <objects>
+                <viewController storyboardIdentifier="video_intro" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aXN-Tt-nPk" customClass="Video_Intro_ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MP4-CX-MTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="i9P-Lb-M9m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jh3-wA-s7g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ffn-Zm-B2B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="400.99999999999994"/>
+        </scene>
+        <!--Second Text Intro Page Detail View Controller-->
+        <scene sceneID="cY5-9b-qBB">
+            <objects>
+                <viewController storyboardIdentifier="page2" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1GG-2J-6bW" customClass="Second_Text_Intro_Page_DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tDo-ny-2Hy"/>
+                        <viewControllerLayoutGuide type="bottom" id="g3Z-n8-uu5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PpL-5B-Nyu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f3z-4j-VO4">
+                                <rect key="frame" x="0.0" y="53" width="320" height="286"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="secondAnimContainer" destination="f3z-4j-VO4" id="WxV-VE-wPI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ifx-M2-nJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="485" y="2343"/>
+        </scene>
+        <!--Third Text Intro Page Detail View Controller-->
+        <scene sceneID="h6y-ja-jTs">
+            <objects>
+                <viewController storyboardIdentifier="page3" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Q3-1R-8zP" customClass="Third_Text_Intro_Page_DetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bSh-CF-8xk"/>
+                        <viewControllerLayoutGuide type="bottom" id="NlY-X9-y1K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gzV-FS-Dvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QyV-mj-qQ2">
+                                <rect key="frame" x="0.0" y="53" width="320" height="286"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="thirdAnimContainer" destination="QyV-mj-qQ2" id="kd9-JF-vlf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ot3-At-2J4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="965" y="2343"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_text" width="640" height="336"/>
+    </resources>
+</document>

@@ -33,7 +33,7 @@
 
 - (void) loadData {
     self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://172.18.33.46:8000/api/discoverAll/565f0a0f9cab747efb1748f3"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.67:8000/api/discoverAll/565f0a0f9cab747efb1748f3"]];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         

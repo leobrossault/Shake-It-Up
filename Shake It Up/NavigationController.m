@@ -11,6 +11,10 @@
 
 @interface NavigationController ()
 
+@property (nonatomic, strong) NSArray *titleSections;
+@property (nonatomic, strong) NSArray *icoSections;
+@property (nonatomic, assign) NSInteger *selectedSection;
+
 @end
 
 @implementation NavigationController
@@ -19,8 +23,8 @@
     [super viewDidLoad];
     
     self.menuView = [[UIView alloc] init];
-    [self.menuView setFrame:CGRectMake(320, 0, 205, 568)];
-    self.menuView.backgroundColor = [UIColor grayColor];
+    [self.menuView setFrame:CGRectMake(320, 0, 270, 568)];
+    self.menuView.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
     [self.view addSubview: self.menuView];
     
     self.icoMenu = [[UIView alloc] init];
@@ -30,6 +34,8 @@
     UITapGestureRecognizer *menuAction = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openCloseMenu:)];
     [self.icoMenu addGestureRecognizer:menuAction];
     
+    
+    // Lines Ico menu
     self.lineTopMenu = [CAShapeLayer layer];
     UIBezierPath *linePathTop=[UIBezierPath bezierPath];
     [linePathTop moveToPoint: CGPointMake(0, 0)];
@@ -69,6 +75,64 @@
     
     self.lineBotMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
     [self.icoMenu.layer addSublayer:self.lineBotMenu];
+    
+    // Init Content Menu
+    self.titleSections = [NSArray arrayWithObjects:@"Créer une nouvelle recette", @"Mes recettes", @"Mon profil", @"Mes boutiques", @"Paramètres", @"Quitter l'application", nil];
+    self.icoSections = [NSArray arrayWithObjects:@"ico_default_menu", @"ico_default_menu", @"ico_default_menu", @"ico_default_menu", @"ico_default_menu", @"ico_default_menu", nil];
+    // Title Menu
+    UILabel *titleMenu = [[UILabel alloc] init];
+    [titleMenu setFrame:CGRectMake(25, 35, 200, 30)];
+    titleMenu.text = @"Shake it up";
+    titleMenu.textColor = [UIColor whiteColor];
+    titleMenu.font = [UIFont fontWithName:@"Bariol-Bold" size:28];
+    
+    // Border menu
+    CAShapeLayer *borderTitleMenu = [CAShapeLayer layer];
+    UIBezierPath *borderTitleMenuPath = [UIBezierPath bezierPath];
+    [borderTitleMenuPath moveToPoint: CGPointMake(0, 0)];
+    [borderTitleMenuPath addLineToPoint: CGPointMake(30, 0)];
+    borderTitleMenu.path = borderTitleMenuPath.CGPath;
+    borderTitleMenu.fillColor = nil;
+    borderTitleMenu.lineWidth = 1;
+    [borderTitleMenu setFrame:CGRectMake(25, 85, 30, 1)];
+    borderTitleMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
+    
+    CAShapeLayer *borderBottomMenu = [CAShapeLayer layer];
+    UIBezierPath *borderBottomMenuPath = [UIBezierPath bezierPath];
+    [borderBottomMenuPath moveToPoint: CGPointMake(0, 0)];
+    [borderBottomMenuPath addLineToPoint: CGPointMake(30, 0)];
+    borderBottomMenu.path = borderBottomMenuPath.CGPath;
+    borderBottomMenu.fillColor = nil;
+    borderBottomMenu.lineWidth = 1;
+    [borderBottomMenu setFrame:CGRectMake(25, 518, 30, 1)];
+    borderBottomMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
+    
+    // Sections menu
+    for (int j = 0; j < [self.titleSections count]; j ++) {
+        float yTitleSection = 120 + 70 * j;
+        
+        UILabel *titleSection = [[UILabel alloc] init];
+        [titleSection setFrame:CGRectMake(65, yTitleSection, 200, 20)];
+        titleSection.text = [self.titleSections objectAtIndex: j];
+        titleSection.textColor = [UIColor whiteColor];
+        titleSection.font = [UIFont fontWithName:@"Bariol-Bold" size:18];
+        titleSection.tag = j;
+        
+        UIImageView *imgSection = [[UIImageView alloc] init];
+        [imgSection setFrame:CGRectMake(25, yTitleSection - 6, 30, 30)];
+        [imgSection setImage:[UIImage imageNamed: [self.icoSections objectAtIndex: j]]];
+        
+        UITapGestureRecognizer *tapSection = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goTo:)];
+        [titleSection addGestureRecognizer:tapSection];
+        
+        [self.menuView addSubview: titleSection];
+        [self.menuView addSubview: imgSection];
+    }
+    
+    // Add menu components
+    [self.menuView addSubview: titleMenu];
+    [self.menuView.layer addSublayer:borderTitleMenu];
+    [self.menuView.layer addSublayer:borderBottomMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -80,7 +144,7 @@
     if (menuOpen == 0) {
         [UIView animateWithDuration: 0.5f animations:^{
             CGRect frameMenu = self.menuView.frame;
-            frameMenu.origin.x = 115;
+            frameMenu.origin.x = 50;
             self.menuView.frame = frameMenu;
         } completion:^(BOOL finished) {
             menuOpen = 1;
@@ -140,6 +204,36 @@
     self.lineTopMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
     self.lineCenterMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
     self.lineBotMenu.strokeColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0].CGColor;
+}
+
+- (void)goTo:(UITapGestureRecognizer *)recognizer {
+    UIView *selectedView = (UIView *)recognizer.view;
+    self.selectedSection = (NSInteger *)selectedView.tag;
+    NSLog(@"%d", (int)self.selectedSection);
+    
+    switch ((int)self.selectedSection) {
+        case 0:
+            NSLog(@"Créer une nouvelle recette");
+            break;
+        case 1:
+            NSLog(@"Mes recettes");
+            break;
+        case 2:
+            NSLog(@"Mon profil");
+            break;
+        case 3:
+            NSLog(@"Mes boutiques");
+            break;
+        case 4:
+            NSLog(@"Paramètres");
+            break;
+        case 5:
+            exit(0);
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

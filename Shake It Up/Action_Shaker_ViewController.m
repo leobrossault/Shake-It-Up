@@ -233,7 +233,7 @@
     // Loop animation
     NSTimer *timerStart = [NSTimer timerWithTimeInterval: animDuration target:self selector:@selector(moveLoopAnimation:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timerStart forMode:NSDefaultRunLoopMode];
-    
+ 
     NSTimer *timer = [NSTimer timerWithTimeInterval: gravityLoopDuration target:self selector:@selector(moveLoopGravity:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
@@ -288,15 +288,15 @@
 #pragma move Gravity Loop
 
 - (void) moveLoopGravity:(NSTimer *) timer {
-//    if (loopGravity == 1 && shakeValidation <= nbShakeRequired && isShake == 0) {
-//        float coefAmp = 0.1;
-//
-//        float x = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
-//        float y = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
-//    
-//        CGVector direction = CGVectorMake(x, y);
-//        self.gravityBehavior.gravityDirection = direction;
-//    }
+    if (loopGravity == 1 && shakeValidation <= nbShakeRequired && isShake == 0) {
+        float coefAmp = 0.1;
+
+        float x = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
+        float y = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
+        NSLog(@"%f / %f", x, y);
+        CGVector direction = CGVectorMake(x, y);
+        self.gravityBehavior.gravityDirection = direction;
+    }
 }
 
 #pragma move Shake
@@ -306,8 +306,6 @@
     if (isShake == 1) {
         shakeValidation ++;
     }
-    
-    NSLog(@"xAverage : %f, yAverage : %f", xAverage, yAverage);
     
     if (shakeValidation >= nbShakeRequired) {
         isShake = 0;
@@ -325,8 +323,7 @@
             [self.collision addItem:[self.shakeObjects objectAtIndex: (NSInteger) k]];
         }
 
-        if (xAverage != 0 && yAverage != 0) {
-//            CGVector direction = CGVectorMake(xAverage, yAverage);
+        if (xAverage != 0) {
             CGVector direction = CGVectorMake(xAverage, 0);
             self.gravityBehavior.gravityDirection = direction;
         }
@@ -363,13 +360,11 @@
                 self.overlay.alpha = 1;
             }];
             overlayActive = 1;
+            loopGravity = 1;
         }
         
-        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2);
-        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
-            CGVector direction = CGVectorMake(0, 0);
-            self.gravityBehavior.gravityDirection = direction;
-        });
+        CGVector direction = CGVectorMake(0, 0);
+        self.gravityBehavior.gravityDirection = direction;
     }
 }
 

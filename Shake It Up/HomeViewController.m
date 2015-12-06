@@ -126,8 +126,14 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)myCollectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     UICollectionViewCell *cell=[myCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    if (nbCell > countCell) {
+    
+    // Avoid bug cells
+    for (UIView *v in [cell subviews]) {
+        [v removeFromSuperview];
+    }
+    
     UIView *productView = [[UIView alloc] init];
     UIImageView *productImageView;
     UIImage *productImage = [[UIImage alloc] init];
@@ -197,8 +203,6 @@
     [productView addSubview: productType];
     [cell addSubview:productView];
     countCell ++;
-    }
-    
     return cell;
 }
 

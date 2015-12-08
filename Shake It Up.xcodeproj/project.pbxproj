@@ -21,6 +21,7 @@
 		0D4DC4C71C10A26C00DA1FDD /* pigeon.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4C51C10A26C00DA1FDD /* pigeon.mp4 */; };
 		0D4DC4C81C10A26C00DA1FDD /* tropicale.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4C61C10A26C00DA1FDD /* tropicale.mp4 */; };
 		0D4DC4CE1C11D28E00DA1FDD /* MixCenter_ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4CD1C11D28E00DA1FDD /* MixCenter_ContentViewController.m */; };
+		0D4DC4D11C175F4800DA1FDD /* Discover_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */; };
 		0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D53B8CA1BE80CA600917C9A /* Home.storyboard */; };
 		0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */; };
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
@@ -98,6 +99,8 @@
 		0D4DC4C61C10A26C00DA1FDD /* tropicale.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tropicale.mp4; sourceTree = "<group>"; };
 		0D4DC4CC1C11D28E00DA1FDD /* MixCenter_ContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixCenter_ContentViewController.h; sourceTree = "<group>"; };
 		0D4DC4CD1C11D28E00DA1FDD /* MixCenter_ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixCenter_ContentViewController.m; sourceTree = "<group>"; };
+		0D4DC4CF1C175F4800DA1FDD /* Discover_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover_ViewController.h; sourceTree = "<group>"; };
+		0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Discover_ViewController.m; sourceTree = "<group>"; };
 		0D53B8CB1BE80CA600917C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		0D53B8D01BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = First_Text_Intro_Page_DetailViewController.h; sourceTree = "<group>"; };
 		0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = First_Text_Intro_Page_DetailViewController.m; sourceTree = "<group>"; };
@@ -381,6 +384,10 @@
 			children = (
 				A45CF7DB1BE779E0003D793A /* Interaction_Video_ViewController.h */,
 				A45CF7DC1BE779E0003D793A /* Interaction_Video_ViewController.m */,
+				0D4DC4CF1C175F4800DA1FDD /* Discover_ViewController.h */,
+				0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */,
+				A45CF7E41BE77A56003D793A /* Form_SignUp_ViewController.h */,
+				A45CF7E51BE77A56003D793A /* Form_SignUp_ViewController.m */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -401,8 +408,6 @@
 		A45CF7CB1BE777BC003D793A /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
-				A45CF7E41BE77A56003D793A /* Form_SignUp_ViewController.h */,
-				A45CF7E51BE77A56003D793A /* Form_SignUp_ViewController.m */,
 			);
 			name = "Sign Up";
 			sourceTree = "<group>";
@@ -690,6 +695,7 @@
 				A45CF7D11BE778FF003D793A /* Text_Intro_PageViewController.m in Sources */,
 				A45CF7DD1BE779E0003D793A /* Interaction_Video_ViewController.m in Sources */,
 				A458E69D1BE8B1A600687DC0 /* NavigationController.m in Sources */,
+				0D4DC4D11C175F4800DA1FDD /* Discover_ViewController.m in Sources */,
 				A45CF79E1BE7752A003D793A /* Shake_It_Up.xcdatamodeld in Sources */,
 				A45CF7E01BE77A0A003D793A /* Products_Discover_ViewController.m in Sources */,
 				0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */,

@@ -8,14 +8,14 @@
 
 #import "Form_SignUp_ViewController.h"
 
-@interface Form_SignUp_ViewController () <UITextFieldDelegate>
+@interface Form_SignUp_ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameForm;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameForm;
 @property (weak, nonatomic) IBOutlet UITextField *adressForm;
 @property (weak, nonatomic) IBOutlet UITextField *mailForm;
-@property (strong, nonatomic) UIDatePicker *datePicker;
 @property (weak, nonatomic) IBOutlet UILabel *indicForm;
+@property (strong, nonatomic) UIDatePicker *datePicker;
 
 @end
 

@@ -58,15 +58,6 @@
                                     <action selector="goToShaker:" destination="hAf-De-QkC" eventType="touchUpInside" id="cyk-jg-0GI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="eYq-zO-JBI">
-                                <rect key="frame" x="133" y="316" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="goToSignUp:" destination="hAf-De-QkC" eventType="touchUpInside" id="q2z-Wo-gHx"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="j3x-j1-SDU">
                                 <rect key="frame" x="140" y="254" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,7 +68,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="UFH-4y-aKz">
-                                <rect key="frame" x="130" y="367" width="60" height="30"/>
+                                <rect key="frame" x="130" y="311" width="60" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <state key="normal" title="Go App !"/>

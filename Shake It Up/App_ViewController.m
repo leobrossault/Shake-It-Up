@@ -12,11 +12,10 @@
 #import "Text_Intro_PageViewController.h"
 #import "Action_Shaker_ViewController.h"
 #import "Interaction_Video_ViewController.h"
-#import "Form_SignUp_ViewController.h"
 #import "MixCenter_ContentViewController.h"
 #import "HomeViewController.h"
 
-@interface App_ViewController () <MixCenterDelegate, ActionShakerDelegate, FormSignUpDelegate, VideoInteractionDelegate, Home_DefaultDelegate>
+@interface App_ViewController () <ActionShakerDelegate, VideoInteractionDelegate, Home_DefaultDelegate>
 
 @end
 
@@ -66,13 +65,6 @@
     [self.navigationController pushViewController:video animated:YES];
 }
 
-- (IBAction)goToSignUp:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"signUp" bundle:nil];
-    Form_SignUp_ViewController *shaker = [sb instantiateInitialViewController];
-    shaker.delegate = self;
-    [self.navigationController pushViewController:shaker animated:YES];
-}
-
 - (IBAction)launchApp:(id)sender {
     if ([self isFirstRunning] == YES) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Intro" bundle:nil];
@@ -99,10 +91,6 @@
 }
 
 #pragma mark - MixCenterDelegate
-
-- (void) mixCenterDidFinish {
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 
 - (void) videoDidFinish {

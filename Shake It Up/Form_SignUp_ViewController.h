@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol FormSignUpDelegate <NSObject>
-
-@end
-
 @interface Form_SignUp_ViewController : UIViewController
-
-@property (nonatomic, weak) id <FormSignUpDelegate> delegate;
 
 @end

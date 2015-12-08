@@ -32,6 +32,8 @@
 // Overlay
 @property (weak, nonatomic) IBOutlet UIView *overlay;
 @property (weak, nonatomic) IBOutlet UILabel *labelOverlay;
+@property (weak, nonatomic) IBOutlet UILabel *botLabelOverlay;
+@property (weak, nonatomic) IBOutlet UIImageView *icoOverlay;
 
 @end
 
@@ -49,11 +51,12 @@
     screenBound = [[UIScreen mainScreen] bounds];
     
     self.fluid = [[BAFluidView alloc] initWithFrame:CGRectMake(0, 0, screenBound.size.width, self.waterView.frame.size.height) startElevation:@0.5];
-    self.fluid.fillColor = [UIColor colorWithRed:0.22 green:0.455 blue:0.941 alpha:1];
-    self.fluid.strokeColor = [UIColor colorWithRed:0.22 green:0.455 blue:0.941 alpha:1];
+    // Set color
+    self.fluid.fillColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
+    self.fluid.strokeColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
     [self.waterView addSubview: self.fluid];
     [self.fluid startAnimation];
-    self.bottomWaterView.backgroundColor = [UIColor colorWithRed:0.22 green:0.455 blue:0.941 alpha:1];
+    self.bottomWaterView.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
     [self.bottomWaterView setFrame:CGRectMake(0, screenBound.size.height - 12, screenBound.size.width, screenBound.size.height)];
 
 #pragma settings
@@ -66,10 +69,25 @@
     nbDrops = 150;
     
 #pragma init overlay
-    self.overlay.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+    self.overlay.backgroundColor = [UIColor colorWithRed:0.06 green:0.01 blue:0.26 alpha:0.9];
     
     UITapGestureRecognizer *tapOverlay = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(overlayAction:)];
     [self.overlay addGestureRecognizer:tapOverlay];
+    
+    POPSpringAnimation *animIco = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+    animIco.springSpeed = 10;
+    animIco.springBounciness = 20.f;
+    animIco.repeatForever = YES;
+    animIco.toValue = @(155);
+    [self.icoOverlay pop_addAnimation:animIco forKey:@"bounce"];
+    
+    animIco.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+        POPSpringAnimation *animIcoBack = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+        animIcoBack.springSpeed = 10;
+        animIcoBack.springBounciness = 20.f;
+        animIcoBack.toValue = @(160);
+        [self.icoOverlay pop_addAnimation:animIcoBack forKey:@"bounceBack"];
+    };
     
 #pragma Init Shaker
 
@@ -131,7 +149,7 @@
             
             UIView *dropSquare = [[UIView alloc] initWithFrame: CGRectMake(randomX, randomY
                                                                            , randomRadius, randomRadius)];
-            dropSquare.backgroundColor = [UIColor colorWithRed:0.22 green:0.455 blue:0.941 alpha:1];
+            dropSquare.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
             [dropSquare.layer setCornerRadius: randomRadius/2];
 
             [self.view addSubview: dropSquare];
@@ -227,13 +245,15 @@
                 loopAnim = 1;
                 [self moveLoopAnimation: nil];
             }
+            overlayActive = 1;
+            self.overlay.alpha = 1;
         };
     }
     
     // Loop animation
     NSTimer *timerStart = [NSTimer timerWithTimeInterval: animDuration target:self selector:@selector(moveLoopAnimation:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timerStart forMode:NSDefaultRunLoopMode];
-    
+ 
     NSTimer *timer = [NSTimer timerWithTimeInterval: gravityLoopDuration target:self selector:@selector(moveLoopGravity:) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
 }
@@ -288,15 +308,14 @@
 #pragma move Gravity Loop
 
 - (void) moveLoopGravity:(NSTimer *) timer {
-//    if (loopGravity == 1 && shakeValidation <= nbShakeRequired && isShake == 0) {
-//        float coefAmp = 0.1;
-//
-//        float x = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
-//        float y = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
-//    
-//        CGVector direction = CGVectorMake(x, y);
-//        self.gravityBehavior.gravityDirection = direction;
-//    }
+    if (loopGravity == 1 && shakeValidation <= nbShakeRequired && isShake == 0) {
+        float coefAmp = 0.1;
+
+        float x = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
+        float y = -coefAmp + ((float)arc4random() / UINT32_MAX) * (coefAmp + coefAmp);
+        CGVector direction = CGVectorMake(x, y);
+        self.gravityBehavior.gravityDirection = direction;
+    }
 }
 
 #pragma move Shake
@@ -306,8 +325,6 @@
     if (isShake == 1) {
         shakeValidation ++;
     }
-    
-    NSLog(@"xAverage : %f, yAverage : %f", xAverage, yAverage);
     
     if (shakeValidation >= nbShakeRequired) {
         isShake = 0;
@@ -325,8 +342,7 @@
             [self.collision addItem:[self.shakeObjects objectAtIndex: (NSInteger) k]];
         }
 
-        if (xAverage != 0 && yAverage != 0) {
-//            CGVector direction = CGVectorMake(xAverage, yAverage);
+        if (xAverage != 0) {
             CGVector direction = CGVectorMake(xAverage, 0);
             self.gravityBehavior.gravityDirection = direction;
         }
@@ -363,13 +379,14 @@
                 self.overlay.alpha = 1;
             }];
             overlayActive = 1;
+            loopGravity = 1;
+            
+            self.labelOverlay.text = @"Tu n’as pas assez de force ?";
+            self.botLabelOverlay.text = @"Secoue ton mobile !";
         }
         
-        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2);
-        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
-            CGVector direction = CGVectorMake(0, 0);
-            self.gravityBehavior.gravityDirection = direction;
-        });
+        CGVector direction = CGVectorMake(0, 0);
+        self.gravityBehavior.gravityDirection = direction;
     }
 }
 

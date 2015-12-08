@@ -313,25 +313,13 @@
     if ((self.progressTimer.progress >= 1 ) && timer) {
         self.progressTimer.progress = 0;
         [self stopTimer];
-        [self performSegueWithIdentifier:@"goToNext" sender:self];
+        [self.delegate mixCenterDidFinish];
     }
     
     if (self.progressTimer.progress < 0 && timer) {
         self.progressTimer.progress = 0;
         [self stopTimer];
     }
-}
-
-#pragma mark - Navigation
-
-- (IBAction)backButtonAction:(id)sender {
-    
-    [self.delegate mixCenterDidFinish];
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    NSLog(@"%@", [segue.destinationViewController class]);
 }
 
 @end

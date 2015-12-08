@@ -35,13 +35,16 @@
 - (void) loadData {
     
     self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://172.18.33.46:8000/api/environment/5"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/api/environment/5"]];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
             NSLog(@"%@", error.localizedDescription);
             NSLog(@"%@", error);
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"please make sure you are connected to a working network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
             
         } else {
             

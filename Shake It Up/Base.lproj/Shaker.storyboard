@@ -3,6 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Bariol-Bold.otf">
+            <string>Bariol-Bold</string>
+        </mutableArray>
+        <mutableArray key="Bariol.ttf">
+            <string>Bariol-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Action Shaker View Controller-->
         <scene sceneID="wCk-wJ-ih7">
@@ -29,12 +37,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Zea-Fk-hpN">
-                                <rect key="frame" x="6" y="0.0" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <state key="normal" title="Back"/>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ble" id="tAs-rQ-mf5">
                                 <rect key="frame" x="171" y="-50" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -60,14 +62,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plus fort !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hex-SS-Vow">
-                                        <rect key="frame" x="25" y="273" width="271" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secoue ton mobile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hex-SS-Vow">
+                                        <rect key="frame" x="25" y="88" width="271" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="18"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pour mélanger ta recette !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0pM-wN-G0w">
+                                        <rect key="frame" x="25" y="107" width="271" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="device_rotation" id="7R8-lu-ti2">
+                                        <rect key="frame" x="117" y="228" width="85" height="112"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,9 +95,11 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="botLabelOverlay" destination="0pM-wN-G0w" id="8CJ-3K-DUO"/>
                         <outlet property="bottomWaterView" destination="0Md-hQ-jM5" id="Y9u-Gw-6rE"/>
                         <outlet property="collisionView" destination="3Th-3s-ReQ" id="TrD-IY-sQP"/>
                         <outlet property="colorObject" destination="Khv-nZ-02O" id="vXc-HN-jiR"/>
+                        <outlet property="icoOverlay" destination="7R8-lu-ti2" id="VXi-EB-JCY"/>
                         <outlet property="ingredientObject" destination="tAs-rQ-mf5" id="6DK-lu-AoM"/>
                         <outlet property="labelOverlay" destination="Hex-SS-Vow" id="G2c-nu-H6G"/>
                         <outlet property="overlay" destination="jaF-cd-5Bz" id="xjD-hP-rej"/>
@@ -98,6 +115,7 @@
     </scenes>
     <resources>
         <image name="ble" width="256" height="256"/>
+        <image name="device_rotation" width="171" height="225"/>
         <image name="sound" width="684" height="641"/>
         <image name="texture" width="1600" height="1200"/>
     </resources>

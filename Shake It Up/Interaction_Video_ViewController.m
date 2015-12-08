@@ -17,6 +17,7 @@
 @property (assign, nonatomic) UITouch *globalTouch;
 @property (weak, nonatomic) IBOutlet UILabel *indicStart;
 @property (weak, nonatomic) IBOutlet UIButton *btnDiscoverProduct;
+@property (weak, nonatomic) IBOutlet UIImageView *icoBtnDiscover;
 
 // Video Attributes
 @property (strong, nonatomic) NSString *pathVideo;
@@ -25,6 +26,9 @@
 @property (strong, nonatomic) AVPlayerItem *playerItem;
 @property (strong, nonatomic) AVPlayer *avPlayer;
 @property (strong, nonatomic) AVPlayerLayer *avPlayerLayer;
+
+//Overlay
+@property (weak, nonatomic) IBOutlet UIView *overlay;
 
 @end
 
@@ -40,6 +44,7 @@
     firstTouch = 0;
     videoEnded = 0;
     self.btnDiscoverProduct.hidden = true;
+    self.icoBtnDiscover.hidden = true;
     
     // Get video and play
     self.pathVideo = [[NSBundle mainBundle] pathForResource:@"pigeon" ofType:@"mp4"];
@@ -55,6 +60,27 @@
     self.avPlayerLayer.frame = self.view.bounds;
     [self.videoView.layer addSublayer: self.avPlayerLayer];
     [self.avPlayer play];
+    
+    #pragma init overlay
+    self.overlay.backgroundColor = [UIColor colorWithRed:0.06 green:0.01 blue:0.26 alpha:0.9];
+    
+    UITapGestureRecognizer *tapOverlay = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(overlayAction:)];
+    [self.overlay addGestureRecognizer:tapOverlay];
+    
+    // Line bottom btn
+    CAShapeLayer *line = [CAShapeLayer layer];
+    UIBezierPath *linePath=[UIBezierPath bezierPath];
+    [linePath moveToPoint: CGPointMake(0, 0)];
+    [linePath addLineToPoint: CGPointMake(25, 0)];
+    line.path = linePath.CGPath;
+    line.fillColor = nil;
+    line.lineWidth = 2.5;
+    line.strokeStart = 0;
+    line.strokeEnd = 1;
+    line.lineCap = kCALineCapRound;
+    line.strokeColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
+    [line setFrame:CGRectMake(146, 30, 25, 2.5)];
+    [self.btnDiscoverProduct.layer addSublayer:line];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -65,9 +91,14 @@
 -(void)videoDidFinishPlaying:(NSNotification *) notification {
     if (videoEnded == 0) {
         self.imgEndVideo.hidden = false;
-        self.indicStart.hidden = false;
+//        self.indicStart.hidden = false;
+        self.icoBtnDiscover.hidden = false;
         self.btnDiscoverProduct.hidden = false;
         videoEnded = 1;
+        
+        [UIView animateWithDuration: 1.0 animations:^(void) {
+            self.overlay.alpha = 1;
+        }];
     }
 
     self.pathVideo = [[NSBundle mainBundle] pathForResource:@"tropicale" ofType:@"mp4"];
@@ -128,8 +159,21 @@
     lastPoint = currentPoint;
 }
 
+- (void) overlayAction:(UITapGestureRecognizer *)recognizer {
+    [UIView animateWithDuration: 1.0 animations:^(void) {
+        self.overlay.alpha = 0;
+    }];
+}
+
 - (IBAction)discoverProduct:(id)sender {
-    [self.delegate videoDidFinish];
+//    [self.delegate videoDidFinish];
+    [self performSegueWithIdentifier:@"discoverProduct" sender:sender];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"discoverProduct"]) {
+        //Send data
+    }
 }
 
 /*

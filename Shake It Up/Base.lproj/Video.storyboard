@@ -10,8 +10,16 @@
             <string>Bariol-Bold</string>
             <string>Bariol-Bold</string>
             <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
         </mutableArray>
         <mutableArray key="Bariol.ttf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
@@ -71,7 +79,8 @@
                                         <rect key="frame" x="25" y="88" width="254" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <animations/>
-                                        <string key="text">Applique le produit </string>
+                                        <string key="text">Applique le produit 
+</string>
                                         <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -239,6 +248,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                         <outlet property="sloganProduct" destination="fLm-Oa-Tv0" id="qnB-qb-pBH"/>
                         <outlet property="testProduct" destination="db1-HA-Wzr" id="HgW-Ys-cwD"/>
                         <outlet property="waveContainer" destination="eS0-QL-sWS" id="RBZ-nv-HL8"/>
+                        <segue destination="Ogm-oh-TK1" kind="push" identifier="goForm" id="UyH-bz-5yR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgd-Ab-uTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -253,71 +263,142 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ton prénom" textAlignment="natural" minimumFontSize="17" id="Flj-hZ-HsE">
-                                <rect key="frame" x="31" y="101" width="258" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton adresse" minimumFontSize="17" id="gZH-S9-7YK">
+                                <rect key="frame" x="36" y="322" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ton adresse" minimumFontSize="17" id="gZH-S9-7YK">
-                                <rect key="frame" x="31" y="205" width="258" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton mail" textAlignment="natural" minimumFontSize="17" id="cK7-Tc-QX7">
+                                <rect key="frame" x="36" y="379" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ton mail" textAlignment="natural" minimumFontSize="17" id="cK7-Tc-QX7">
-                                <rect key="frame" x="31" y="256" width="258" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kL7-HI-bDI">
-                                <rect key="frame" x="259" y="326" width="30" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton nom" textAlignment="natural" minimumFontSize="17" id="rYd-5o-Rze">
+                                <rect key="frame" x="36" y="266" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <state key="normal" title="OK"/>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ton nom" textAlignment="natural" minimumFontSize="17" id="rYd-5o-Rze">
-                                <rect key="frame" x="31" y="153" width="258" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remplis tous les champs pour continuer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cCA-BY-JHS">
-                                <rect key="frame" x="20" y="395" width="280" height="60"/>
+                                <rect key="frame" x="36" y="417" width="241" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.17619987910000001" blue="0.23597976570000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="13"/>
+                                <color key="textColor" red="0.98039215690000003" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UG1-lQ-5aa">
+                                <rect key="frame" x="36" y="89" width="178" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <string key="text">Pour recevoir un échantillon,</string>
+                                <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="0.9137254901960784" green="0.0" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inscrit-toi ci-dessous !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x85-Eu-kgI">
+                                <rect key="frame" x="36" y="142" width="172" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="0.11764705882352941" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="TSh-3i-M8f">
+                                <rect key="frame" x="0.0" y="498" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="nuD-P8-pnV">
+                                        <rect key="frame" x="258" y="30" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valider" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9WS-Hn-QZn">
+                                        <rect key="frame" x="202" y="24" width="59" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V0M-F9-Prh">
+                                <rect key="frame" x="16" y="39" width="10" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" image="back_purple"/>
+                                <connections>
+                                    <segue destination="eO4-Hj-ODf" kind="push" id="lII-Dk-lfv"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton prénom" textAlignment="natural" minimumFontSize="17" id="Flj-hZ-HsE">
+                                <rect key="frame" x="36" y="207" width="241" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="whb-dz-q5M"/>
                     <connections>
                         <outlet property="adressForm" destination="gZH-S9-7YK" id="vDK-5p-DCx"/>
                         <outlet property="firstNameForm" destination="Flj-hZ-HsE" id="ZQ0-lr-MnI"/>
+                        <outlet property="icoValidate" destination="nuD-P8-pnV" id="auv-6O-FDd"/>
                         <outlet property="indicForm" destination="cCA-BY-JHS" id="T4w-vf-Atu"/>
+                        <outlet property="labelValidate" destination="9WS-Hn-QZn" id="FGM-UL-Y3G"/>
                         <outlet property="lastNameForm" destination="rYd-5o-Rze" id="1DJ-BZ-V7h"/>
                         <outlet property="mailForm" destination="cK7-Tc-QX7" id="W8W-zX-Jc2"/>
+                        <outlet property="validateBtn" destination="TSh-3i-M8f" id="UOi-c6-awd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JJj-82-RgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1594" y="1012"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ZRV-xf-MGE">
+            <objects>
+                <viewController id="Vyf-uV-WDE" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lZH-rT-IbL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0f-Oe-fvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="1012"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="back_purple" width="17" height="30"/>
         <image name="eau_tropicale_main_img" width="640" height="751"/>
         <image name="ico_default_all" width="60" height="60"/>
         <image name="ico_draw" width="268" height="552"/>
         <image name="similar_product" width="489" height="529"/>
         <image name="video_eau_tropicale" width="744" height="1321"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lII-Dk-lfv"/>
+    </inferredMetricsTieBreakers>
 </document>

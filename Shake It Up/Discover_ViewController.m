@@ -24,8 +24,6 @@
 @property (weak, nonatomic) IBOutlet UIView *testProduct;
 @property (weak, nonatomic) IBOutlet UIView *similarProduct;
 
-
-
 @property (nonatomic, strong) CAShapeLayer *line;
 @property (nonatomic, strong) CALayer *point;
 @property (nonatomic, strong) CAShapeLayer *lineMore;
@@ -94,6 +92,10 @@
     
     [self.testProduct.layer addSublayer: self.point];
     
+    UITapGestureRecognizer *tapTest = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goForm:)];
+    [tapTest setNumberOfTapsRequired: 1];
+    [self.testProduct addGestureRecognizer:tapTest];
+    
     // More
     self.lineMore = [CAShapeLayer layer];
     UIBezierPath *linePathMore=[UIBezierPath bezierPath];
@@ -135,6 +137,18 @@
         [self.navigation resetColorMenu];
     }
 }
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"goForm"]) {
+        //send data
+    }
+}
+
+- (void)goForm:(UITapGestureRecognizer *) recognizer {
+    [self performSegueWithIdentifier:@"goForm" sender:recognizer];
+}
+
 
 
 @end

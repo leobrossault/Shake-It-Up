@@ -35,6 +35,8 @@
     [navigation resetColorMenu];
     // Do any additional setup after loading the view.
     
+    [navigation resetColorMenu];
+    
     UITapGestureRecognizer *btnMix = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMix:)];
     [self.goMixBtn addGestureRecognizer:btnMix];
     

@@ -207,6 +207,7 @@
 }
 
 - (void)goTo:(UITapGestureRecognizer *)recognizer {
+    NSLog(@"tap");
     UIView *selectedView = (UIView *)recognizer.view;
     self.selectedSection = (NSInteger *)selectedView.tag;
     NSLog(@"%d", (int)self.selectedSection);

@@ -173,6 +173,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"discoverProduct"]) {
         //Send data
+        [self.avPlayer pause];
     }
 }
 

@@ -8,8 +8,10 @@
 
 #import "NavigationController.h"
 #import <pop/POP.h>
+#import "Store_Home_ViewController.h"
+#import "HomeViewController.h"
 
-@interface NavigationController ()
+@interface NavigationController ()<Home_DefaultDelegate, StoreDefaultDelegate>
 
 @property (nonatomic, strong) NSArray *titleSections;
 @property (nonatomic, strong) NSArray *icoSections;
@@ -111,22 +113,27 @@
     for (int j = 0; j < [self.titleSections count]; j ++) {
         float yTitleSection = 120 + 70 * j;
         
+        UIView *viewSection = [[UIView alloc] init];
+        [viewSection setFrame:CGRectMake(25, yTitleSection - 6, 200, 30)];
+        viewSection.tag = j;
+        
         UILabel *titleSection = [[UILabel alloc] init];
-        [titleSection setFrame:CGRectMake(65, yTitleSection, 200, 20)];
+        [titleSection setFrame:CGRectMake(40, 6, 200, 20)];
         titleSection.text = [self.titleSections objectAtIndex: j];
         titleSection.textColor = [UIColor whiteColor];
         titleSection.font = [UIFont fontWithName:@"Bariol-Bold" size:18];
-        titleSection.tag = j;
         
         UIImageView *imgSection = [[UIImageView alloc] init];
-        [imgSection setFrame:CGRectMake(25, yTitleSection - 6, 30, 30)];
+        [imgSection setFrame:CGRectMake(0, 0, 30, 30)];
         [imgSection setImage:[UIImage imageNamed: [self.icoSections objectAtIndex: j]]];
         
-        UITapGestureRecognizer *tapSection = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goTo:)];
-        [titleSection addGestureRecognizer:tapSection];
         
-        [self.menuView addSubview: titleSection];
-        [self.menuView addSubview: imgSection];
+        [viewSection addSubview: titleSection];
+        [viewSection addSubview: imgSection];
+        [self.menuView addSubview: viewSection];
+        
+        UITapGestureRecognizer *tapSection = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goTo:)];
+        [viewSection addGestureRecognizer:tapSection];
     }
     
     // Add menu components
@@ -209,31 +216,26 @@
 - (void)goTo:(UITapGestureRecognizer *)recognizer {
     UIView *selectedView = (UIView *)recognizer.view;
     self.selectedSection = (NSInteger *)selectedView.tag;
-    NSLog(@"%d", (int)self.selectedSection);
     
-    switch ((int)self.selectedSection) {
-        case 0:
-            NSLog(@"Créer une nouvelle recette");
-            break;
-        case 1:
-            NSLog(@"Mes recettes");
-            break;
-        case 2:
-            NSLog(@"Mon profil");
-            break;
-        case 3:
-            NSLog(@"Mes boutiques");
-            break;
-        case 4:
-            NSLog(@"Paramètres");
-            break;
-        case 5:
-            exit(0);
-            break;
-            
-        default:
-            break;
+    if ((int)self.selectedSection == 0) {
+        NSLog(@"Créer une nouvelle recette");
+    } else if ((int)self.selectedSection == 1) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        HomeViewController *home = [sb instantiateInitialViewController];
+        [self pushViewController:home animated:YES];
+    } else if ((int)self.selectedSection == 2) {
+        NSLog(@"Mon profil");
+    } else if ((int)self.selectedSection == 3) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Store" bundle:nil];
+        Store_Home_ViewController *store = [sb instantiateInitialViewController];
+        [self pushViewController:store animated:YES];
+    } else if ((int)self.selectedSection == 4) {
+        NSLog(@"Paramètres");
+    } else if ((int)self.selectedSection == 5) {
+        exit(0);
     }
+    
+    [self openCloseMenu: nil];
 }
 
 @end

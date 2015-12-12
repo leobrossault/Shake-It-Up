@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Tkf-5G-Nhm">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Bariol-Bold.otf">
+            <string>Bariol-Bold</string>
+        </mutableArray>
+        <mutableArray key="Bariol.ttf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Store Home View Controller-->
+        <scene sceneID="rhM-ok-Cb3">
+            <objects>
+                <viewController id="Tkf-5G-Nhm" customClass="Store_Home_ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="B3f-UN-gKX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="riz-xW-Knc">
+                                <rect key="frame" x="96" y="133" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Boutiques proches"/>
+                                <connections>
+                                    <action selector="nearStoresAction:" destination="Tkf-5G-Nhm" eventType="touchUpInside" id="WI4-kf-1Ks"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Au8-2F-vle">
+                                <rect key="frame" x="94" y="195" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Boutiques favorites"/>
+                                <connections>
+                                    <action selector="favoriteStoresAction:" destination="Tkf-5G-Nhm" eventType="touchUpInside" id="LF2-lX-ne3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W2r-ls-Me3"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="favoriteStores" destination="Au8-2F-vle" id="WEQ-gP-Oaz"/>
+                        <outlet property="nearStores" destination="riz-xW-Knc" id="lgZ-uk-Q6d"/>
+                        <segue destination="aT2-OT-Zhx" kind="push" identifier="goToSearch" id="nxl-Qg-QPj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FKR-td-e0S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="1310"/>
+        </scene>
+        <!--Store Search View Controller-->
+        <scene sceneID="Nrs-34-DCp">
+            <objects>
+                <viewController id="aT2-OT-Zhx" customClass="Store_Search_ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RK9-41-wmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boutique proches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wNR-Db-KvY">
+                                <rect key="frame" x="36" y="89" width="248" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="0.98039215690000003" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Où récupérer mon échantillon ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FfJ-7e-Asc">
+                                <rect key="frame" x="36" y="109" width="248" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="adresse, ville, code postal,..." textAlignment="natural" minimumFontSize="17" id="gSK-Ut-e7Q">
+                                <rect key="frame" x="20" y="157" width="280" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" id="hxd-tu-kNb">
+                                <rect key="frame" x="49" y="166" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6RN-vV-q12">
+                                <rect key="frame" x="16" y="39" width="10" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" image="back_purple"/>
+                                <connections>
+                                    <segue destination="Tkf-5G-Nhm" kind="push" id="9Gt-zo-o6b"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gKn-zH-eXY">
+                                <rect key="frame" x="0.0" y="231" width="320" height="337"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KeJ-xq-fTn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="icoSearch" destination="hxd-tu-kNb" id="3xK-rz-2xP"/>
+                        <outlet property="inputSearch" destination="gSK-Ut-e7Q" id="OlS-Yi-zrZ"/>
+                        <outlet property="scrollView" destination="gKn-zH-eXY" id="Rxi-S3-8G6"/>
+                        <outlet property="searchField" destination="gSK-Ut-e7Q" id="xER-m2-Ns8"/>
+                        <outlet property="titleView" destination="wNR-Db-KvY" id="8PA-pW-G5t"/>
+                        <segue destination="pbh-E8-ZnR" kind="push" identifier="goToDetailStore" id="dNd-0b-KsK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5z-4X-CPG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="547" y="1310"/>
+        </scene>
+        <!--Store Detail View Controller-->
+        <scene sceneID="ejT-vy-Qn3">
+            <objects>
+                <viewController id="pbh-E8-ZnR" customClass="Store_Detail_ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bG9-AR-cSO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cEa-Na-lk1">
+                                <rect key="frame" x="16" y="39" width="10" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" image="back_purple"/>
+                                <connections>
+                                    <segue destination="aT2-OT-Zhx" kind="push" identifier="returnAllStore" id="q4u-uw-0Bx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TKk-9i-LEz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tao-0n-gEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="978" y="1310"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_purple" width="17" height="30"/>
+        <image name="search" width="44" height="44"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="q4u-uw-0Bx"/>
+    </inferredMetricsTieBreakers>
+</document>

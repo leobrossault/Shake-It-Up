@@ -22,6 +22,12 @@
 		0D4DC4C81C10A26C00DA1FDD /* tropicale.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4C61C10A26C00DA1FDD /* tropicale.mp4 */; };
 		0D4DC4CE1C11D28E00DA1FDD /* MixCenter_ContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4CD1C11D28E00DA1FDD /* MixCenter_ContentViewController.m */; };
 		0D4DC4D11C175F4800DA1FDD /* Discover_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */; };
+		0D4DC4D41C18A51500DA1FDD /* Form_Validate_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4D31C18A51500DA1FDD /* Form_Validate_ViewController.m */; };
+		0D4DC4D61C18CBEB00DA1FDD /* Store.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4D51C18CBEB00DA1FDD /* Store.storyboard */; };
+		0D4DC4DA1C18CD8200DA1FDD /* Store_Home_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4D91C18CD8200DA1FDD /* Store_Home_ViewController.m */; };
+		0D4DC4DD1C18CDA300DA1FDD /* Store_Search_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4DC1C18CDA300DA1FDD /* Store_Search_ViewController.m */; };
+		0D4DC4E01C18CDAF00DA1FDD /* Store_Detail_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4DF1C18CDAF00DA1FDD /* Store_Detail_ViewController.m */; };
+		0D4DC4E21C1ADDFC00DA1FDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */; };
 		0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D53B8CA1BE80CA600917C9A /* Home.storyboard */; };
 		0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */; };
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
@@ -101,6 +107,17 @@
 		0D4DC4CD1C11D28E00DA1FDD /* MixCenter_ContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixCenter_ContentViewController.m; sourceTree = "<group>"; };
 		0D4DC4CF1C175F4800DA1FDD /* Discover_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Discover_ViewController.h; sourceTree = "<group>"; };
 		0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Discover_ViewController.m; sourceTree = "<group>"; };
+		0D4DC4D21C18A51500DA1FDD /* Form_Validate_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Form_Validate_ViewController.h; sourceTree = "<group>"; };
+		0D4DC4D31C18A51500DA1FDD /* Form_Validate_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Form_Validate_ViewController.m; sourceTree = "<group>"; };
+		0D4DC4D51C18CBEB00DA1FDD /* Store.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Store.storyboard; sourceTree = "<group>"; };
+		0D4DC4D81C18CD8200DA1FDD /* Store_Home_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store_Home_ViewController.h; sourceTree = "<group>"; };
+		0D4DC4D91C18CD8200DA1FDD /* Store_Home_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store_Home_ViewController.m; sourceTree = "<group>"; };
+		0D4DC4DB1C18CDA300DA1FDD /* Store_Search_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store_Search_ViewController.h; sourceTree = "<group>"; };
+		0D4DC4DC1C18CDA300DA1FDD /* Store_Search_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store_Search_ViewController.m; sourceTree = "<group>"; };
+		0D4DC4DE1C18CDAF00DA1FDD /* Store_Detail_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store_Detail_ViewController.h; sourceTree = "<group>"; };
+		0D4DC4DF1C18CDAF00DA1FDD /* Store_Detail_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store_Detail_ViewController.m; sourceTree = "<group>"; };
+		0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0D4DC4E31C1B00F800DA1FDD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D53B8CB1BE80CA600917C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		0D53B8D01BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = First_Text_Intro_Page_DetailViewController.h; sourceTree = "<group>"; };
 		0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = First_Text_Intro_Page_DetailViewController.m; sourceTree = "<group>"; };
@@ -176,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4DC4E21C1ADDFC00DA1FDD /* CoreLocation.framework in Frameworks */,
 				A4F1C5371BF4CE6E00A507F0 /* SpriteKit.framework in Frameworks */,
 				A4B5E5E11BEA63B900D8ED8E /* AudioToolbox.framework in Frameworks */,
 				42E3D033FE1D7666E1E86F6E /* libPods-Shake It Up.a in Frameworks */,
@@ -231,6 +249,19 @@
 				0D4DC4C31C109A1C00DA1FDD /* ProductViewController.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		0D4DC4D71C18CD5E00DA1FDD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				0D4DC4D81C18CD8200DA1FDD /* Store_Home_ViewController.h */,
+				0D4DC4D91C18CD8200DA1FDD /* Store_Home_ViewController.m */,
+				0D4DC4DB1C18CDA300DA1FDD /* Store_Search_ViewController.h */,
+				0D4DC4DC1C18CDA300DA1FDD /* Store_Search_ViewController.m */,
+				0D4DC4DE1C18CDAF00DA1FDD /* Store_Detail_ViewController.h */,
+				0D4DC4DF1C18CDAF00DA1FDD /* Store_Detail_ViewController.m */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 		6A35CC86F532DE106184F621 /* Pods */ = {
@@ -297,6 +328,7 @@
 				A45CF7CB1BE777BC003D793A /* Sign Up */,
 				A45CF7CC1BE777C5003D793A /* Share */,
 				A45CF7CE1BE7781C003D793A /* Profile */,
+				0D4DC4D71C18CD5E00DA1FDD /* Store */,
 				A45CF7F41BE77B3E003D793A /* Vendors */,
 				A45CF7991BE7752A003D793A /* Main.storyboard */,
 				0D53B8CA1BE80CA600917C9A /* Home.storyboard */,
@@ -308,6 +340,7 @@
 				0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */,
 				A45CF7FB1BE7C089003D793A /* MixCenters.storyboard */,
 				A45CF7F51BE7B78C003D793A /* Intro.storyboard */,
+				0D4DC4D51C18CBEB00DA1FDD /* Store.storyboard */,
 				A45CF79F1BE7752A003D793A /* Assets.xcassets */,
 				A45CF7A41BE7752A003D793A /* Info.plist */,
 				A45CF79C1BE7752A003D793A /* Shake_It_Up.xcdatamodeld */,
@@ -388,6 +421,8 @@
 				0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */,
 				A45CF7E41BE77A56003D793A /* Form_SignUp_ViewController.h */,
 				A45CF7E51BE77A56003D793A /* Form_SignUp_ViewController.m */,
+				0D4DC4D21C18A51500DA1FDD /* Form_Validate_ViewController.h */,
+				0D4DC4D31C18A51500DA1FDD /* Form_Validate_ViewController.m */,
 			);
 			name = Video;
 			sourceTree = "<group>";
@@ -488,6 +523,8 @@
 		BD6283BB0D8DE6F03E894719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D4DC4E31C1B00F800DA1FDD /* Foundation.framework */,
+				0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */,
 				A4F1C53E1BF4D5D100A507F0 /* libBAFluidView.a */,
 				A4F1C53F1BF4D5D100A507F0 /* libpop.a */,
 				E26A379924EE521487A8A320 /* libPods-Shake It Up.a */,
@@ -616,6 +653,7 @@
 				A45CF8031BE7C3EC003D793A /* Video.storyboard in Resources */,
 				A45CF7FD1BE7C089003D793A /* MixCenters.storyboard in Resources */,
 				A45CF7F71BE7B78C003D793A /* Intro.storyboard in Resources */,
+				0D4DC4D61C18CBEB00DA1FDD /* Store.storyboard in Resources */,
 				0D4DC4C11C108D9700DA1FDD /* Bariol-Bold.otf in Resources */,
 				0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */,
 				0D4DC4C71C10A26C00DA1FDD /* pigeon.mp4 in Resources */,
@@ -699,10 +737,13 @@
 				A45CF79E1BE7752A003D793A /* Shake_It_Up.xcdatamodeld in Sources */,
 				A45CF7E01BE77A0A003D793A /* Products_Discover_ViewController.m in Sources */,
 				0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */,
+				0D4DC4DA1C18CD8200DA1FDD /* Store_Home_ViewController.m in Sources */,
 				0D4DC4B51C0CD3D600DA1FDD /* Second_Text_Intro_Page_DetailViewController.m in Sources */,
+				0D4DC4D41C18A51500DA1FDD /* Form_Validate_ViewController.m in Sources */,
 				0D4DC4B81C0CD48100DA1FDD /* Third_Text_Intro_Page_DetailViewController.m in Sources */,
 				A45CF7EC1BE77AC9003D793A /* Share_ViewController.m in Sources */,
 				0D4DC4BF1C1054A900DA1FDD /* User.m in Sources */,
+				0D4DC4E01C18CDAF00DA1FDD /* Store_Detail_ViewController.m in Sources */,
 				A45CF7DA1BE779A8003D793A /* Action_Shaker_ViewController.m in Sources */,
 				A45CF7E61BE77A56003D793A /* Form_SignUp_ViewController.m in Sources */,
 				A45CF7951BE7752A003D793A /* AppDelegate.m in Sources */,
@@ -714,6 +755,7 @@
 				A45CF7E31BE77A1D003D793A /* Detail_Discover_ViewController.m in Sources */,
 				A4FC89A01BECA1E100771A71 /* Environment.m in Sources */,
 				0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */,
+				0D4DC4DD1C18CDA300DA1FDD /* Store_Search_ViewController.m in Sources */,
 				0D4DC4CE1C11D28E00DA1FDD /* MixCenter_ContentViewController.m in Sources */,
 				0D4DC4BC1C0EF81E00DA1FDD /* HomeViewController.m in Sources */,
 				A45CF7FA1BE7BA5C003D793A /* App_ViewController.m in Sources */,

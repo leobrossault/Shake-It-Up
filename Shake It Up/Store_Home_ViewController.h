@@ -12,7 +12,9 @@
 
 @end
 
-@interface Store_Home_ViewController : UIViewController
+@interface Store_Home_ViewController : UIViewController {
+    BOOL storeChoice;
+}
 
 @property (nonatomic, weak) id <StoreDefaultDelegate> delegate;
 

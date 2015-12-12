@@ -10,7 +10,7 @@
 #import <pop/POP.h>
 #import "HomeViewController.h"
 
-@interface Form_Validate_ViewController ()<Home_DefaultDelegate>
+@interface Form_Validate_ViewController ()<Home_DefaultDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *goHomeBtn;
 

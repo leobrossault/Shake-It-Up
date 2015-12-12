@@ -8,8 +8,11 @@
 
 #import "Store_Home_ViewController.h"
 #import "NavigationController.h"
+#import "Store_Search_ViewController.h"
 
 @interface Store_Home_ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *nearStores;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteStores;
 
 @end
 
@@ -27,14 +30,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"goToSearch"]) {
+        Store_Search_ViewController *controller = (Store_Search_ViewController *)segue.destinationViewController;
+        controller.favorites = storeChoice;
+    }
 }
-*/
+
+- (IBAction)nearStoresAction:(id)sender {
+    storeChoice = 0;
+    [self performSegueWithIdentifier:@"goToSearch" sender:sender];
+}
+
+- (IBAction)favoriteStoresAction:(id)sender {
+    storeChoice = 1;
+    [self performSegueWithIdentifier:@"goToSearch" sender:sender];
+}
 
 @end

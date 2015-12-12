@@ -27,6 +27,7 @@
 		0D4DC4DA1C18CD8200DA1FDD /* Store_Home_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4D91C18CD8200DA1FDD /* Store_Home_ViewController.m */; };
 		0D4DC4DD1C18CDA300DA1FDD /* Store_Search_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4DC1C18CDA300DA1FDD /* Store_Search_ViewController.m */; };
 		0D4DC4E01C18CDAF00DA1FDD /* Store_Detail_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4DC4DF1C18CDAF00DA1FDD /* Store_Detail_ViewController.m */; };
+		0D4DC4E21C1ADDFC00DA1FDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */; };
 		0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D53B8CA1BE80CA600917C9A /* Home.storyboard */; };
 		0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */; };
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
@@ -115,6 +116,8 @@
 		0D4DC4DC1C18CDA300DA1FDD /* Store_Search_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store_Search_ViewController.m; sourceTree = "<group>"; };
 		0D4DC4DE1C18CDAF00DA1FDD /* Store_Detail_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store_Detail_ViewController.h; sourceTree = "<group>"; };
 		0D4DC4DF1C18CDAF00DA1FDD /* Store_Detail_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store_Detail_ViewController.m; sourceTree = "<group>"; };
+		0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0D4DC4E31C1B00F800DA1FDD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D53B8CB1BE80CA600917C9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		0D53B8D01BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = First_Text_Intro_Page_DetailViewController.h; sourceTree = "<group>"; };
 		0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = First_Text_Intro_Page_DetailViewController.m; sourceTree = "<group>"; };
@@ -190,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D4DC4E21C1ADDFC00DA1FDD /* CoreLocation.framework in Frameworks */,
 				A4F1C5371BF4CE6E00A507F0 /* SpriteKit.framework in Frameworks */,
 				A4B5E5E11BEA63B900D8ED8E /* AudioToolbox.framework in Frameworks */,
 				42E3D033FE1D7666E1E86F6E /* libPods-Shake It Up.a in Frameworks */,
@@ -519,6 +523,8 @@
 		BD6283BB0D8DE6F03E894719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D4DC4E31C1B00F800DA1FDD /* Foundation.framework */,
+				0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */,
 				A4F1C53E1BF4D5D100A507F0 /* libBAFluidView.a */,
 				A4F1C53F1BF4D5D100A507F0 /* libpop.a */,
 				E26A379924EE521487A8A320 /* libPods-Shake It Up.a */,

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface Store_Search_ViewController : UIViewController
+@interface Store_Search_ViewController : UIViewController <CLLocationManagerDelegate> {
+    UICollectionView *collectionView;
+    int nbCell;
+    CLLocationManager *locationManager;
+}
+
+@property (nonatomic, assign) BOOL favorites;
 
 @end

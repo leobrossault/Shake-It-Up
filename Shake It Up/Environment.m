@@ -35,19 +35,23 @@
 - (void) loadData {
     
     self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/api/environment/5"]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://37.187.118.146:8000/api/environment/debug"]];
+    NSLog(@"okokokokokoko");
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSLog(@"okokokokokoko");
         
         if (error) {
             NSLog(@"%@", error.localizedDescription);
             NSLog(@"%@", error);
+            NSLog(@"errrrrrrrrooooooooooooor");
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"please make sure you are connected to a working network" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
             [alert show];
             
         } else {
-            
+            NSLog(@"okokokokokoko");
             // Data to Object
             NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
             self.label = [[JSON objectAtIndex: 0] objectForKey:@"label"];
@@ -60,6 +64,8 @@
             self.textures = [[JSON objectAtIndex: 0] objectForKey:@"textures"];
             self.sounds = [[JSON objectAtIndex: 0] objectForKey:@"sounds"];
             self.emotions = [[JSON objectAtIndex: 0] objectForKey:@"emotions"];
+            
+            NSLog(@"%@", JSON);
         }
     }] resume];
     

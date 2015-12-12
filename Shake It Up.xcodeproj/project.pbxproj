@@ -30,6 +30,8 @@
 		0D4DC4E21C1ADDFC00DA1FDD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */; };
 		0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D53B8CA1BE80CA600917C9A /* Home.storyboard */; };
 		0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */; };
+		0DBFFDEC1C1C76E300D8A1FB /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFFDEB1C1C76E300D8A1FB /* Store.m */; };
+		0DBFFDEE1C1CA25700D8A1FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBFFDED1C1CA25700D8A1FB /* MapKit.framework */; };
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
 		2C5E9B961BEA587500929157 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E9B951BEA587500929157 /* DropView.m */; };
 		2CDBFBAC1C0D9F6C000BB973 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDBFBAB1C0D9F6C000BB973 /* AppSettings.m */; };
@@ -122,6 +124,9 @@
 		0D53B8D01BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = First_Text_Intro_Page_DetailViewController.h; sourceTree = "<group>"; };
 		0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = First_Text_Intro_Page_DetailViewController.m; sourceTree = "<group>"; };
 		0D53B8DD1BECF56E00917C9A /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		0DBFFDEA1C1C76E300D8A1FB /* Store.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Store.h; sourceTree = "<group>"; };
+		0DBFFDEB1C1C76E300D8A1FB /* Store.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Store.m; sourceTree = "<group>"; };
+		0DBFFDED1C1CA25700D8A1FB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0F4693CE1C0E465200B231E8 /* SoundMixCenter_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMixCenter_ViewController.h; sourceTree = "<group>"; };
 		0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMixCenter_ViewController.m; sourceTree = "<group>"; };
 		2C5E9B941BEA587500929157 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
@@ -193,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DBFFDEE1C1CA25700D8A1FB /* MapKit.framework in Frameworks */,
 				0D4DC4E21C1ADDFC00DA1FDD /* CoreLocation.framework in Frameworks */,
 				A4F1C5371BF4CE6E00A507F0 /* SpriteKit.framework in Frameworks */,
 				A4B5E5E11BEA63B900D8ED8E /* AudioToolbox.framework in Frameworks */,
@@ -516,6 +522,8 @@
 				2CDBFBAB1C0D9F6C000BB973 /* AppSettings.m */,
 				0D4DC4BD1C1054A900DA1FDD /* User.h */,
 				0D4DC4BE1C1054A900DA1FDD /* User.m */,
+				0DBFFDEA1C1C76E300D8A1FB /* Store.h */,
+				0DBFFDEB1C1C76E300D8A1FB /* Store.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -523,6 +531,7 @@
 		BD6283BB0D8DE6F03E894719 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0DBFFDED1C1CA25700D8A1FB /* MapKit.framework */,
 				0D4DC4E31C1B00F800DA1FDD /* Foundation.framework */,
 				0D4DC4E11C1ADDFC00DA1FDD /* CoreLocation.framework */,
 				A4F1C53E1BF4D5D100A507F0 /* libBAFluidView.a */,
@@ -737,6 +746,7 @@
 				A45CF79E1BE7752A003D793A /* Shake_It_Up.xcdatamodeld in Sources */,
 				A45CF7E01BE77A0A003D793A /* Products_Discover_ViewController.m in Sources */,
 				0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */,
+				0DBFFDEC1C1C76E300D8A1FB /* Store.m in Sources */,
 				0D4DC4DA1C18CD8200DA1FDD /* Store_Home_ViewController.m in Sources */,
 				0D4DC4B51C0CD3D600DA1FDD /* Second_Text_Intro_Page_DetailViewController.m in Sources */,
 				0D4DC4D41C18A51500DA1FDD /* Form_Validate_ViewController.m in Sources */,

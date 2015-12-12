@@ -6,8 +6,13 @@
     <customFonts key="customFonts">
         <mutableArray key="Bariol-Bold.otf">
             <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
         </mutableArray>
         <mutableArray key="Bariol.ttf">
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
         </mutableArray>
@@ -87,6 +92,9 @@
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="aT2-OT-Zhx" id="HqO-el-3gr"/>
+                                </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" id="hxd-tu-kNb">
                                 <rect key="frame" x="49" y="166" width="22" height="22"/>
@@ -107,6 +115,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                             </scrollView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aucun magasin ne correspond à votre recherche" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aaS-R3-Xhm">
+                                <rect key="frame" x="36" y="220" width="248" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -115,6 +131,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="icoSearch" destination="hxd-tu-kNb" id="3xK-rz-2xP"/>
+                        <outlet property="indicSearch" destination="aaS-R3-Xhm" id="vDk-jh-vUc"/>
                         <outlet property="inputSearch" destination="gSK-Ut-e7Q" id="OlS-Yi-zrZ"/>
                         <outlet property="scrollView" destination="gKn-zH-eXY" id="Rxi-S3-8G6"/>
                         <outlet property="searchField" destination="gSK-Ut-e7Q" id="xER-m2-Ns8"/>
@@ -129,6 +146,7 @@
         <!--Store Detail View Controller-->
         <scene sceneID="ejT-vy-Qn3">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tao-0n-gEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="pbh-E8-ZnR" customClass="Store_Detail_ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bG9-AR-cSO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -143,20 +161,91 @@
                                     <segue destination="aT2-OT-Zhx" kind="push" identifier="returnAllStore" id="q4u-uw-0Bx"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" id="2nQ-vv-0wg">
+                                <rect key="frame" x="0.0" y="87" width="320" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" id="mya-aI-NiR">
+                                        <rect key="frame" x="229" y="0.0" width="91" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_star" id="vQ4-Eu-oPf">
+                                                <rect key="frame" x="35" y="18" width="21" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="favoris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UXa-j8-Rqg">
+                                                <rect key="frame" x="24" y="51" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_store" id="1x9-5s-20v">
+                                        <rect key="frame" x="20" y="25" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZED-IX-GNN">
+                                        <rect key="frame" x="70" y="12" width="151" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g9A-kM-aAc">
+                                        <rect key="frame" x="70" y="38" width="151" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nnJ-tc-ysd">
+                                        <rect key="frame" x="70" y="53" width="151" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.0" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="CU0-HY-355">
+                                <rect key="frame" x="0.0" y="172" width="320" height="396"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </mapView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="TKk-9i-LEz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cityDetail" destination="nnJ-tc-ysd" id="feI-T9-Eln"/>
+                        <outlet property="containerDetail" destination="2nQ-vv-0wg" id="FTz-pw-0gR"/>
+                        <outlet property="mapView" destination="CU0-HY-355" id="tFQ-st-fGo"/>
+                        <outlet property="streetDetail" destination="g9A-kM-aAc" id="5X1-og-1fk"/>
+                        <outlet property="titleDetail" destination="ZED-IX-GNN" id="hoL-Cz-UeU"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tao-0n-gEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="978" y="1310"/>
         </scene>
     </scenes>
     <resources>
         <image name="back_purple" width="17" height="30"/>
+        <image name="ico_star" width="42" height="40"/>
+        <image name="ico_store" width="70" height="70"/>
         <image name="search" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>

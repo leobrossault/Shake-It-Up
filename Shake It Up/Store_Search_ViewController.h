@@ -13,6 +13,7 @@
     UICollectionView *collectionView;
     int nbCell;
     CLLocationManager *locationManager;
+    BOOL getDist;
 }
 
 @property (nonatomic, assign) BOOL favorites;

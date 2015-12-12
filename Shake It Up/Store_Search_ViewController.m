@@ -8,6 +8,8 @@
 
 #import "Store_Search_ViewController.h"
 #import "NavigationController.h"
+#import "Store.h"
+#import "Store_Detail_ViewController.h"
 
 @interface Store_Search_ViewController ()<UITextFieldDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -18,8 +20,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (assign, nonatomic) NSArray *selectedStore;
 
 @property (strong, nonatomic) NSArray *stores;
+@property (strong, nonatomic) NSMutableArray *searchStores;
+@property (weak, nonatomic) IBOutlet UILabel *indicSearch;
+@property (assign, nonatomic) NSInteger *posSelectedStore;
 
 @end
 
@@ -31,9 +37,17 @@
     NavigationController *navigation = self.navigationController;
     [navigation showMenu];
     
-    nbCell = 3;
-    
     self.searchField.layer.sublayerTransform = CATransform3DMakeTranslation(60, 0, 0);
+    getDist = 0;
+
+    if (self.favorites == 0) {
+        self.stores = [Store sharedStore].store;
+        self.searchStores = [[NSMutableArray alloc] initWithArray: self.stores];
+        nbCell = [self.searchStores count];
+        [self nearStores];
+    } else {
+        [self favoriteStores];
+    }
     
     // Collection
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
@@ -53,12 +67,6 @@
     collectionView.frame = collectionFrame;
     
     [self.scrollView addSubview:collectionView];
-
-    if (self.favorites == 0) {
-        [self nearStores];
-    } else {
-        [self favoriteStores];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,7 +75,6 @@
 }
 
 - (void) nearStores {
-    NSLog(@"Get Location");
     // Get location
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -75,22 +82,6 @@
         [locationManager requestAlwaysAuthorization];
     }
     [locationManager startUpdatingLocation];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/api/store/all"]];
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            NSLog(@"%@", error);
-            
-        } else {
-            // Data to Object
-            NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
-            self.stores = JSON;
-            NSLog(@"%@", self.stores);
-        }
-    }] resume];
 }
 
 - (void) favoriteStores {
@@ -104,13 +95,15 @@
     self.scrollView.frame = scrollFrame;
 }
 
+- (void) buildCollection {
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return nbCell;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)myCollectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell=[myCollectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
     // Avoid bug cells
     for (UIView *v in [cell subviews]) {
         [v removeFromSuperview];
@@ -133,9 +126,34 @@
     [icoArrow setImage:[UIImage imageNamed:@"arrow_store"]];
     
     UILabel *titleStore = [[UILabel alloc] init];
+    [titleStore setFrame:CGRectMake(70, 12, 180, 20)];
+    titleStore.text = [[[self.searchStores objectAtIndex: indexPath.row] objectForKey:@"title"] uppercaseString];
+    titleStore.textColor = [UIColor whiteColor];
+    titleStore.font = [UIFont fontWithName:@"Bariol-Bold" size:19];
+    
+    UILabel *street = [[UILabel alloc] init];
+    [street setFrame:CGRectMake(70, 38, 180, 20)];
+    street.text = [[self.searchStores objectAtIndex: indexPath.row] objectForKey:@"street"];
+    street.textColor = [UIColor whiteColor];
+    street.font = [UIFont fontWithName:@"Bariol-Regular" size:14];
+    
+    UILabel *city = [[UILabel alloc] init];
+    [city setFrame:CGRectMake(70, 53, 180, 20)];
+    city.text = [NSString stringWithFormat:@"%@ %@",[[self.searchStores objectAtIndex: indexPath.row] objectForKey:@"postalCode"], [[self.searchStores objectAtIndex: indexPath.row] objectForKey:@"city"]];
+    city.textColor = [UIColor whiteColor];
+    city.font = [UIFont fontWithName:@"Bariol-Regular" size:14];
+    
+    cell.tag = indexPath.row;
+    
+    UITapGestureRecognizer *goToStore = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToStore:)];
+    [goToStore setNumberOfTapsRequired: 1];
+    [cell addGestureRecognizer:goToStore];
     
     [cell addSubview: icoStore];
     [cell addSubview: icoArrow];
+    [cell addSubview: titleStore];
+    [cell addSubview: street];
+    [cell addSubview: city];
     return cell;
 }
 
@@ -149,7 +167,28 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
-    NSLog(@"%@", [locations lastObject]);
+    float lat1 = locationManager.location.coordinate.latitude;
+    float long1 = locationManager.location.coordinate.longitude;
+    
+    CLLocation *locA = [[CLLocation alloc] initWithLatitude:lat1 longitude:long1];
+    
+    if (getDist == 0) {
+        for (int p = 0; p < [self.stores count]; p ++) {
+            float lat2 = [[[self.stores objectAtIndex: p] objectForKey:@"latitude"] floatValue];
+            float long2 = [[[self.stores objectAtIndex: p] objectForKey:@"longitude"] floatValue];
+        
+            CLLocation *locB = [[CLLocation alloc] initWithLatitude:lat2 longitude:long2];
+            CLLocationDistance distance = [locA distanceFromLocation:locB];
+        
+            // Sort store in array
+//            [[self.searchStores objectAtIndex: p] objectForKey:@"distance"] = distance;
+            NSLog(@"%f", distance);
+            
+            if (p >= [self.stores count] -1) {
+                getDist = 1;
+            }
+        }
+    }
 }
 
 - (void)requestAlwaysAuthorization {
@@ -182,6 +221,93 @@
         NSURL *settingsURL = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
         [[UIApplication sharedApplication] openURL:settingsURL];
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"goToDetailStore"]) {
+        Store_Detail_ViewController *controller = (Store_Detail_ViewController *)segue.destinationViewController;
+        controller.selectedStore = self.selectedStore;
+        controller.posSelectedStore = self.posSelectedStore;
+    }
+}
+
+- (void)goToStore:(UITapGestureRecognizer *) recognizer {
+    UIView *selectedView = (UIView *)recognizer.view;
+//    self.selectedStore = [self.searchStores objectAtIndex: selectedView.tag];
+    self.selectedStore = self.searchStores;
+    self.posSelectedStore = (NSInteger *)selectedView.tag;
+    [self performSegueWithIdentifier:@"goToDetailStore" sender:recognizer];
+}
+
+// Search Store
+- (void)searchStore: (NSString *) param {
+    [self.searchStores removeAllObjects];
+    
+    if (![param isEqualToString:@""]) {
+        for (int j = 0; j < [self.stores count]; j ++) {
+            NSArray *titleWords = [[[self.stores objectAtIndex: j] objectForKey:@"title"] componentsSeparatedByString: @" "];
+            NSArray *streetWords = [[[self.stores objectAtIndex: j] objectForKey:@"street"] componentsSeparatedByString: @" "];
+            NSString *cityWords = [[self.stores objectAtIndex: j] objectForKey:@"city"];
+            NSString *postalCode = [[self.stores objectAtIndex: j] objectForKey:@"postalCode"];
+        
+            int countWords = [titleWords count] + [streetWords count] + 2;
+            BOOL match = false;
+        
+            NSMutableArray *mutableWords = [NSMutableArray arrayWithCapacity: countWords];
+        
+            [mutableWords addObjectsFromArray:titleWords];
+            [mutableWords addObjectsFromArray:streetWords];
+            [mutableWords addObject:cityWords];
+            [mutableWords addObject:postalCode];
+        
+            for (int k = 0; k < [mutableWords count]; k ++) {
+                if ([[param lowercaseString] isEqualToString: [[mutableWords objectAtIndex: k]lowercaseString]]) {
+                    match = true;
+                }
+            
+                if (match == true && k >= [mutableWords count] - 1) {
+                    [self.searchStores addObject: [self.stores objectAtIndex: j]];
+                    nbCell = [self.searchStores count];
+                    [collectionView reloadData];
+                    self.indicSearch.hidden = true;
+                }
+            }
+        
+            if (j >= [self.stores count] - 1 && [self.searchStores count] == 0) {
+                nbCell = 0;
+                [collectionView reloadData];
+                self.indicSearch.hidden = false;
+            }
+        }
+    } else {
+        for (int m = 0; m < [self.stores count]; m ++) {
+            [self.searchStores addObject: [self.stores objectAtIndex: m]];
+            
+            if (m >= [self.stores count] - 1) {
+                nbCell = [self.searchStores count];
+                [collectionView reloadData];
+                self.indicSearch.hidden = true;
+            }
+        }
+    }
+}
+
+#pragma Hide Keyboard
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    [self searchStore: textField.text];
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        [self searchStore: textView.text];
+        return NO;
+    }
+    
+    return YES;
 }
 
 @end

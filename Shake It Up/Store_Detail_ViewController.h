@@ -10,4 +10,7 @@
 
 @interface Store_Detail_ViewController : UIViewController
 
+@property (strong, nonatomic) NSArray *selectedStore;
+@property (assign, nonatomic) NSInteger *posSelectedStore;
+
 @end

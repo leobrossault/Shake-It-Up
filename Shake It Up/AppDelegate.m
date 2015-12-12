@@ -20,6 +20,8 @@
     [Environment sharedEnvironment];
     [AppSettings sharedAppSettings];
     [User sharedUser];
+    [Store sharedStore];
+    
     return YES;
 }
 

@@ -143,6 +143,7 @@
     UILabel *productType = [[UILabel alloc] init];
     
     if (nbProduct > indexPath.row) {
+        NSLog(@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]);
         productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
     } else {
         productImage = [UIImage imageNamed:@"default_product.png"];

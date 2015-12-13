@@ -9,6 +9,7 @@
 #import "Form_Validate_ViewController.h"
 #import <pop/POP.h>
 #import "HomeViewController.h"
+#import "User.h"
 
 @interface Form_Validate_ViewController ()<Home_DefaultDelegate, UITextFieldDelegate>
 
@@ -20,6 +21,9 @@
 @property (nonatomic, strong) CAShapeLayer *line;
 @property (nonatomic, strong) CALayer *point;
 
+@property (nonatomic, strong) NSDictionary *user;
+@property (nonatomic, strong) User *userObject;
+
 @end
 
 @implementation Form_Validate_ViewController
@@ -27,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     // Bottom Btn
     self.line = [CAShapeLayer layer];
     UIBezierPath *linePath=[UIBezierPath bezierPath];
@@ -57,6 +61,20 @@
     self.goHomeBtn.layer.borderWidth = 1.0f;
     self.goHomeBtn.layer.borderColor = [UIColor colorWithRed:0.89 green:0.83 blue:0.98 alpha:1.0].CGColor;
     [self.goHomeBtn.layer setCornerRadius:5.0f];
+    
+    // Add product to new user
+    self.user = [User sharedUser].user;
+    NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], [self.product objectForKey: @"_id"]];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    session.configuration.timeoutIntervalForResource = 30;
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error);
+        }
+    }] resume];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

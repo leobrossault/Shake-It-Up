@@ -10,4 +10,6 @@
 
 @interface Form_Validate_ViewController : UIViewController
 
+@property (strong, nonatomic) NSDictionary *product;
+
 @end

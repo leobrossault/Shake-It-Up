@@ -14,8 +14,11 @@
 @property (nonatomic, strong) NSDictionary *user;
 @property (nonatomic, strong) NSMutableData *responseDataUser;
 @property (nonatomic, strong) NSMutableData *responseDataProduct;
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 + (instancetype) sharedUser;
 - (void) loadDataUser;
+- (void) loadDataProduct;
+- (BOOL) isAnonymous;
 
 @end

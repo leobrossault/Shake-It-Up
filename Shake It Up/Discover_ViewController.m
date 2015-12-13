@@ -9,6 +9,7 @@
 #import "Discover_ViewController.h"
 #import "User.h"
 #import "NavigationController.h"
+#import "Form_SignUp_ViewController.h"
 
 @interface Discover_ViewController ()<UIScrollViewDelegate>
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *waveContainer;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+@property (strong, nonatomic) NSDictionary *product;
 @property (weak, nonatomic) IBOutlet UILabel *sloganProduct;
 @property (weak, nonatomic) IBOutlet UILabel *descrProduct;
 @property (weak, nonatomic) IBOutlet UIButton *retryExp;
@@ -28,6 +30,9 @@
 @property (nonatomic, strong) CALayer *point;
 @property (nonatomic, strong) CAShapeLayer *lineMore;
 @property (nonatomic, strong) CALayer *pointMore;
+
+@property (nonatomic, strong) NSMutableArray *anonymousProduct;
+@property (nonatomic, strong) NSDictionary *user;
 
 @property (nonatomic, strong) NavigationController *navigation;
 
@@ -41,8 +46,58 @@
     self.navigation = self.navigationController;
     [self.navigation showMenu];
     [self.navigation whiteMenu];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     // Do any additional setup after loading the view.
-    self.userProducts = [User sharedUser].userProducts;
+//    self.userProducts = [User sharedUser].userProducts;
+    
+    // Get Product from Database
+    // Fake request
+    NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/product/discover/1/Chou/maTexture/sound1"];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    session.configuration.timeoutIntervalForResource = 30;
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error);
+        }
+        
+        NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
+        self.product = JSON;
+        
+        if (![defaults objectForKey: @"products"]) {
+            self.anonymousProduct = [[NSMutableArray alloc] init];
+        } else {
+            self.anonymousProduct = [[NSMutableArray alloc] initWithArray: [defaults objectForKey:@"products"]];
+        }
+        
+        [self.anonymousProduct addObject: self.product];
+        [defaults setObject: self.anonymousProduct forKey:@"products"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }] resume];
+    
+    
+    
+    if ([defaults objectForKey: @"isRegister"]) {
+        self.user = [User sharedUser].user;
+        NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/addProduct/%@/%@", [self.user objectForKey:@"_id"], [self.product objectForKey: @"_id"]];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+        NSURLSession *session = [NSURLSession sharedSession];
+        session.configuration.timeoutIntervalForResource = 30;
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                NSLog(@"%@", error);
+            }
+        }] resume];
+    } else {
+        // Save data for anonymous user
+        [defaults setObject: self.anonymousProduct forKey:@"products"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     
     // Inject Data
 //    self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
@@ -142,6 +197,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"goForm"]) {
         //send data
+        Form_SignUp_ViewController *controller = (Form_SignUp_ViewController *)segue.destinationViewController;
+        controller.product = self.product;
     }
 }
 

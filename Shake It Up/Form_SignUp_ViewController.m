@@ -9,6 +9,8 @@
 #import "Form_SignUp_ViewController.h"
 #import "NavigationController.h"
 #import <pop/POP.h>
+#import "User.h"
+#import "Form_Validate_ViewController.h"
 
 @interface Form_SignUp_ViewController ()<UITextFieldDelegate>
 
@@ -28,6 +30,7 @@
 
 
 @property (nonatomic, strong) NavigationController *navigation;
+@property (nonatomic, strong) User *userObject;
 
 @end
 
@@ -42,6 +45,8 @@
     
     self.datePicker = [[UIDatePicker alloc]init];
     [self.datePicker setDatePickerMode:UIDatePickerModeDate];
+    
+    self.userObject = [User sharedUser];
     
     // Textfields
     CGRect firstNameFrame = self.firstNameForm.frame;
@@ -148,13 +153,19 @@
         NSString *mail = self.mailForm.text;
         NSString *adress = self.adressForm.text;
         
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.mailForm.text forKey:@"isRegister"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         if ([self validateEmailWithString: self.mailForm.text] == TRUE) {
             NSLog(@"%@/%@/%@", firstName, lastName, mail);
     
-            NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/subscribe/%@/%@/%@/%@/%@/%@", firstName, lastName, @"homme", @"passwd", mail, adress];
-            NSLog(@"%@", url);
+            NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/subscribe/%@/%@/%@/%@/%@/%@", firstName, lastName, @"homme", @"passwd", mail, adress];
+            
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
-            [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            NSURLSession *session = [NSURLSession sharedSession];
+            session.configuration.timeoutIntervalForResource = 30;
+            [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if (error) {
                     NSLog(@"%@", error.localizedDescription);
                     NSLog(@"%@", error);
@@ -164,7 +175,9 @@
                     
                     self.indicForm.text = @"La connexion avec le serveur a echouée, essaie plus tard ...";
                 } else {
-                    [self performSegueWithIdentifier:@"validateForm" sender:sender];
+                    self.userObject = [User sharedUser];
+                    [self.userObject loadDataUser];
+                    [self.userObject loadDataProduct];
                 }
             }] resume];
             
@@ -173,6 +186,8 @@
             }];
             
             self.indicForm.text = @"Connexion en cours ...";
+            
+            [self performSegueWithIdentifier:@"validateForm" sender:sender];
 
         } else {
             [UIView animateWithDuration: 0.3f animations:^{
@@ -258,7 +273,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"validateForm"]) {
-        //send data
+        Form_Validate_ViewController *controller = (Form_Validate_ViewController *)segue.destinationViewController;
+        controller.product = self.product;
     }
 }
 

@@ -26,6 +26,8 @@
     // Do any additional setup after loading the view.
     NavigationController *navigation = self.navigationController;
     [navigation hideMenu];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 }
 
 - (void)didReceiveMemoryWarning {

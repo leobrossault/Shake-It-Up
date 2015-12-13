@@ -9,6 +9,7 @@
 #import "Store_Home_ViewController.h"
 #import "NavigationController.h"
 #import "Store_Search_ViewController.h"
+#import "HomeViewController.h"
 
 @interface Store_Home_ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *nearStores;
@@ -23,6 +24,13 @@
     // Do any additional setup after loading the view.
     NavigationController *navigation = self.navigationController;
     [navigation showMenu];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:@"isRegister"]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        HomeViewController *home = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:home animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

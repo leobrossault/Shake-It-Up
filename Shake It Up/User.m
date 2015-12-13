@@ -10,6 +10,7 @@
 
 @implementation User
 
+
 + (instancetype) sharedUser {
     static User *sharedInstance;
     static dispatch_once_t onceToken;
@@ -31,41 +32,57 @@
 #pragma mark - GetDataUser
 
 - (void) loadDataUser {
-    self.responseDataUser = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.79:8000/api/connection/brossault.leo@gmail.com"]];
-    NSURLSession *session = [NSURLSession sharedSession];
-    session.configuration.timeoutIntervalForResource = 30;
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"isRegister"]) {
+        NSLog(@"get user");
+        self.responseDataUser = [NSMutableData data];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.94:8000/api/connection/%@", [defaults objectForKey:@"isRegister"]]]];
+        NSURLSession *session = [NSURLSession sharedSession];
+        session.configuration.timeoutIntervalForResource = 30;
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            NSLog(@"%@", error);
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                NSLog(@"%@", error);
             
-        } else {
+            } else {
             // Data to Object
-            NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
-            self.user = JSON;
-        }
-    }] resume];
+                NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
+                self.user = JSON;
+            }
+        }] resume];
+    }
 }
 
 - (void) loadDataProduct {
-    self.responseDataProduct = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.79:8000/api/discoverAll/565f0a0f9cab747efb1748f3"]];
-    NSURLSession *session = [NSURLSession sharedSession];
-    session.configuration.timeoutIntervalForResource = 30;
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults objectForKey:@"isRegister"]) {
+        self.responseDataProduct = [NSMutableData data];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.94:8000/api/discoverAll/%@", [defaults objectForKey:@"isRegister"]]]];
+        NSURLSession *session = [NSURLSession sharedSession];
+        session.configuration.timeoutIntervalForResource = 30;
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            NSLog(@"%@", error);
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                NSLog(@"%@", error);
             
-        } else {
+            } else {
             // Data to Object
-            NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
-            self.userProducts = JSON;
+                NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
+                self.userProducts = JSON;
+            }
+        }] resume];
+    } else {
+        if ([defaults objectForKey:@"products"]) {
+            self.userProducts = [defaults objectForKey:@"products"];
         }
-    }] resume];
+    }
+}
+
+-(BOOL) isAnonymous {
+    return YES;
 }
 
 

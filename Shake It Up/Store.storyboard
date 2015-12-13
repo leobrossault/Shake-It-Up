@@ -146,7 +146,6 @@
         <!--Store Detail View Controller-->
         <scene sceneID="ejT-vy-Qn3">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tao-0n-gEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="pbh-E8-ZnR" customClass="Store_Detail_ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bG9-AR-cSO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -182,6 +181,11 @@
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_star_full" id="z6o-AK-iMd">
+                                                <rect key="frame" x="35" y="18" width="21" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <animations/>
+                                            </imageView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -223,6 +227,9 @@
                                 <rect key="frame" x="0.0" y="172" width="320" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="pbh-E8-ZnR" id="8Pf-Cy-vk1"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -233,11 +240,15 @@
                     <connections>
                         <outlet property="cityDetail" destination="nnJ-tc-ysd" id="feI-T9-Eln"/>
                         <outlet property="containerDetail" destination="2nQ-vv-0wg" id="FTz-pw-0gR"/>
+                        <outlet property="favoriteView" destination="mya-aI-NiR" id="MK0-I5-OPn"/>
+                        <outlet property="ico_star_empty" destination="vQ4-Eu-oPf" id="VbW-72-izF"/>
+                        <outlet property="ico_star_full" destination="z6o-AK-iMd" id="fwx-QW-2bG"/>
                         <outlet property="mapView" destination="CU0-HY-355" id="tFQ-st-fGo"/>
                         <outlet property="streetDetail" destination="g9A-kM-aAc" id="5X1-og-1fk"/>
                         <outlet property="titleDetail" destination="ZED-IX-GNN" id="hoL-Cz-UeU"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tao-0n-gEf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="978" y="1310"/>
         </scene>
@@ -245,6 +256,7 @@
     <resources>
         <image name="back_purple" width="17" height="30"/>
         <image name="ico_star" width="42" height="40"/>
+        <image name="ico_star_full" width="42" height="40"/>
         <image name="ico_store" width="70" height="70"/>
         <image name="search" width="44" height="44"/>
     </resources>

@@ -10,6 +10,8 @@
 #import "NavigationController.h"
 #import "Store.h"
 #import "Store_Detail_ViewController.h"
+#import "User.h"
+
 
 @interface Store_Search_ViewController ()<UITextFieldDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -27,6 +29,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *indicSearch;
 @property (assign, nonatomic) NSInteger *posSelectedStore;
 
+@property (strong, nonatomic) NSDictionary *user;
+
 @end
 
 @implementation Store_Search_ViewController
@@ -39,13 +43,26 @@
     
     self.searchField.layer.sublayerTransform = CATransform3DMakeTranslation(60, 0, 0);
     getDist = 0;
-
+    
+    self.stores = [Store sharedStore].store;
+    
     if (self.favorites == 0) {
-        self.stores = [Store sharedStore].store;
         self.searchStores = [[NSMutableArray alloc] initWithArray: self.stores];
         nbCell = [self.searchStores count];
         [self nearStores];
     } else {
+        self.user = [User sharedUser].user;
+        self.searchStores = [[NSMutableArray alloc] init];
+        
+        for (int h = 0; h < [self.stores count]; h ++) {
+            for (int k = 0; k < [[self.user objectForKey:@"stores"] count]; k ++) {
+                if ([[[self.stores objectAtIndex: h] objectForKey:@"_id"] isEqualToString: [[[self.user objectForKey:@"stores"] objectAtIndex:k] objectForKey:@"_id"]]) {
+                    [self.searchStores addObject: [self.stores objectAtIndex: h]];
+                    nbCell = [self.searchStores count];
+                }
+            }
+        }
+        
         [self favoriteStores];
     }
     
@@ -228,6 +245,7 @@
         Store_Detail_ViewController *controller = (Store_Detail_ViewController *)segue.destinationViewController;
         controller.selectedStore = self.selectedStore;
         controller.posSelectedStore = self.posSelectedStore;
+        controller.myFav = self.favorites;
     }
 }
 

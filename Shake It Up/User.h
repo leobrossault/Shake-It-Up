@@ -11,8 +11,11 @@
 @interface User : NSObject
 
 @property (nonatomic, strong) NSArray *userProducts;
-@property (nonatomic, strong) NSMutableData *responseData;
+@property (nonatomic, strong) NSDictionary *user;
+@property (nonatomic, strong) NSMutableData *responseDataUser;
+@property (nonatomic, strong) NSMutableData *responseDataProduct;
 
 + (instancetype) sharedUser;
+- (void) loadDataUser;
 
 @end

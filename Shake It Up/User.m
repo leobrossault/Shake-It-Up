@@ -22,20 +22,39 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
-        [self performSelector:@selector(loadData) withObject:nil afterDelay:0.2];
-        
+        [self performSelector:@selector(loadDataUser) withObject:nil afterDelay:0.2];
+        [self performSelector:@selector(loadDataProduct) withObject:nil afterDelay:0.2];
     }
     return self;
 }
 
 #pragma mark - GetDataUser
 
-- (void) loadData {
-    self.responseData = [NSMutableData data];
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://localhost:8000/api/discoverAll/565f0a0f9cab747efb1748f3"]];
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+- (void) loadDataUser {
+    self.responseDataUser = [NSMutableData data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.79:8000/api/connection/brossault.leo@gmail.com"]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    session.configuration.timeoutIntervalForResource = 30;
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error);
+            
+        } else {
+            // Data to Object
+            NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
+            self.user = JSON;
+        }
+    }] resume];
+}
+
+- (void) loadDataProduct {
+    self.responseDataProduct = [NSMutableData data];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://192.168.1.79:8000/api/discoverAll/565f0a0f9cab747efb1748f3"]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    session.configuration.timeoutIntervalForResource = 30;
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
         if (error) {
             NSLog(@"%@", error.localizedDescription);
@@ -45,9 +64,9 @@
             // Data to Object
             NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
             self.userProducts = JSON;
-//            NSLog(@"%@", [self.userProducts objectAtIndex:1]);
         }
     }] resume];
 }
+
 
 @end

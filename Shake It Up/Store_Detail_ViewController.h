@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Store_Detail_ViewController : UIViewController
+@interface Store_Detail_ViewController : UIViewController {
+    BOOL alreadyFav;
+}
 
 @property (strong, nonatomic) NSArray *selectedStore;
 @property (assign, nonatomic) NSInteger *posSelectedStore;
+@property (assign, nonatomic) BOOL myFav;
 
 @end

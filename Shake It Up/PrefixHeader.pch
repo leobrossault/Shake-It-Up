@@ -16,6 +16,7 @@
 #import "Environment.h"
 #import "AppSettings.h"
 #import "User.h"
+#import "MixtureData.h"
 
 
 #endif /* PrefixHeader_pch */

@@ -22,6 +22,8 @@
         self.nbImages = nb;
         self.path = path;
         self.backgroundColor = color;
+        self.colorValue = color;
+        self.imageValue = path;
         
         [self buildSprite];
        

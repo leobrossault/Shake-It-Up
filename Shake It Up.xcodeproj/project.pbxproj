@@ -31,6 +31,7 @@
 		0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D53B8CA1BE80CA600917C9A /* Home.storyboard */; };
 		0D53B8D21BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D53B8D11BECE26600917C9A /* First_Text_Intro_Page_DetailViewController.m */; };
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
+		0F50EE511C1F5FE700139A53 /* MixtureData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F50EE501C1F5FE700139A53 /* MixtureData.m */; };
 		2C5E9B961BEA587500929157 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E9B951BEA587500929157 /* DropView.m */; };
 		2CDBFBAC1C0D9F6C000BB973 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDBFBAB1C0D9F6C000BB973 /* AppSettings.m */; };
 		2CF195021BF1EB7E0008CE28 /* CircularLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF195011BF1EB7E0008CE28 /* CircularLoaderView.m */; };
@@ -124,6 +125,8 @@
 		0D53B8DD1BECF56E00917C9A /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		0F4693CE1C0E465200B231E8 /* SoundMixCenter_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMixCenter_ViewController.h; sourceTree = "<group>"; };
 		0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMixCenter_ViewController.m; sourceTree = "<group>"; };
+		0F50EE4F1C1F5FE700139A53 /* MixtureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixtureData.h; sourceTree = "<group>"; };
+		0F50EE501C1F5FE700139A53 /* MixtureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixtureData.m; sourceTree = "<group>"; };
 		2C5E9B941BEA587500929157 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
 		2C5E9B951BEA587500929157 /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
 		2C6C80561BF4E79D004ECA68 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -516,6 +519,8 @@
 				2CDBFBAB1C0D9F6C000BB973 /* AppSettings.m */,
 				0D4DC4BD1C1054A900DA1FDD /* User.h */,
 				0D4DC4BE1C1054A900DA1FDD /* User.m */,
+				0F50EE4F1C1F5FE700139A53 /* MixtureData.h */,
+				0F50EE501C1F5FE700139A53 /* MixtureData.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -750,6 +755,7 @@
 				A45CF7921BE7752A003D793A /* main.m in Sources */,
 				0D4DC4C41C109A1C00DA1FDD /* ProductViewController.m in Sources */,
 				2CF195021BF1EB7E0008CE28 /* CircularLoaderView.m in Sources */,
+				0F50EE511C1F5FE700139A53 /* MixtureData.m in Sources */,
 				A45CF7D71BE77983003D793A /* MixCenter_ViewController.m in Sources */,
 				2C5E9B961BEA587500929157 /* DropView.m in Sources */,
 				A45CF7E31BE77A1D003D793A /* Detail_Discover_ViewController.m in Sources */,

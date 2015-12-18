@@ -36,7 +36,24 @@
 #pragma mark - Interface
 
 - (void) buildInterface {
-
+    self.descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(37.0, 113.0, 245.0, 37.5)];
+    self.descriptionLabel.font = self.app.font37;
+    self.descriptionLabel.textAlignment = NSTextAlignmentRight;
+    [self.descriptionLabel setAlpha:0.0];
+    [self.view addSubview:self.descriptionLabel];
+    
+    self.emotionLabel.font = self.app.font18;
+    self.emotionLabel.textColor = self.app.purple;
+    
+    self.ingredientLabel.font = self.app.font18;
+    self.ingredientLabel.textColor = self.app.purple;
+    
+    self.textureLabel.font = self.app.font18;
+    self.textureLabel.textColor = self.app.purple;
+    
+    self.soundLabel.font = self.app.font18;
+    self.soundLabel.textColor = self.app.purple;
+    
     [self drawDragViews];
     [self drawDropZone];
     [self drawProgressTimer];   
@@ -52,24 +69,27 @@
     //DragView 1
     self.topLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[0] objectForKey:@"path"] andColor:color1];
     self.topLeftItem.tag = 1;
+    self.topLeftItem.value = [self.ingredients[0] objectForKey:@"label"];
     [self.view addSubview:self.topLeftItem];
     
     //DragView 2
     self.topRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[1] objectForKey:@"path"] andColor:color2];
     self.topRightItem.tag = 2;
+    self.topRightItem.value = [self.ingredients[1] objectForKey:@"label"];
     [self.view addSubview:self.topRightItem];
     
     //DragView 3
     self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[2] objectForKey:@"path"] andColor:color3];
     self.bottomRightItem.tag = 3;
+    self.bottomRightItem.value = [self.ingredients[2] objectForKey:@"label"];
     [self.view addSubview:self.bottomRightItem];
     
     //DragView 4
     self.bottomLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[3] objectForKey:@"path"] andColor:color4];
     self.bottomLeftItem.tag = 4;
+    self.bottomLeftItem.value = [self.ingredients[3] objectForKey:@"label"];
     [self.view addSubview:self.bottomLeftItem];
 }
-
 - (void) drawDropZone {
     
     self.dropZone = [[DropView alloc] initWithFrame:CGRectMake(72.5, 258.0, 175.0, 175.0)];
@@ -98,6 +118,10 @@
     //if object is a dragView and if there is only one touch
     if ([self.draggedItem isMemberOfClass:[DragView class]] && [touches count] == 1) {
         dragging = YES;
+        self.descriptionLabel.text = self.draggedItem.value;
+        self.descriptionLabel.textColor = self.draggedItem.colorValue;
+        [self.descriptionLabel setAlpha:1.0];
+        
     } else {
         dragging = NO;
     }
@@ -215,6 +239,8 @@
     UITouch *touch = [touches anyObject];
     if (dragging) {
         
+        [self.descriptionLabel setAlpha:0.0];
+        
         //if moved out of drop zone
         if (![self.dropZone pointInside:[touch locationInView:self.dropZone] withEvent:nil]) {
             
@@ -313,6 +339,9 @@
     if ((self.progressTimer.progress >= 1 ) && timer) {
         self.progressTimer.progress = 0;
         [self stopTimer];
+        self.selectedIngredient = self.droppedItem.value;
+        self.selectedIngredientColor = self.droppedItem.colorValue;
+        self.selectedIngredientImageName = self.droppedItem.imageValue;
         [self.delegate mixCenterDidFinish];
     }
     

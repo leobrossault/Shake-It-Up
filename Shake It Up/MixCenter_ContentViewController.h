@@ -19,6 +19,9 @@
 @property (nonatomic) SoundMixCenter_ViewController *soundMixCenter;
 @property (nonatomic, assign) NSInteger currentMixCenterIndex;
 @property (nonatomic, assign) NSInteger nextMixCenterIndex;
-@property (nonatomic) NSTimer *timer;
+
+@property (nonatomic) AppSettings *app;
+
+@property (nonatomic) MixtureData *mData;
 
 @end

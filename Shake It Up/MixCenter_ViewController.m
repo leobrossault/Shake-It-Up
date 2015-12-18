@@ -230,6 +230,7 @@
                 }
             };
             [self.draggedItem pop_addAnimation:unscaleAnimation forKey:@"unscaleOnItemDraggedOutOfDropZone"];
+            
         }
     }
 }

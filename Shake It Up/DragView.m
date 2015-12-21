@@ -22,9 +22,11 @@
         self.nbImages = nb;
         self.path = path;
         self.backgroundColor = color;
+        self.colorValue = color;
+        self.imageValue = path;
         
         [self buildSprite];
-       
+        
     }
     return self;
 }
@@ -33,7 +35,7 @@
     //sprites
     NSMutableArray* imgArray = [[NSMutableArray alloc] initWithCapacity: self.nbImages];
     for(int i = 0; i < self.nbImages; i++) {
-
+        
         UIImage* image = [UIImage imageNamed:[NSString stringWithFormat: self.path, i]];
         [imgArray addObject:image];
     }

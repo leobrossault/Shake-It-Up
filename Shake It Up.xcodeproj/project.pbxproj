@@ -33,6 +33,8 @@
 		0DBFFDEC1C1C76E300D8A1FB /* Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DBFFDEB1C1C76E300D8A1FB /* Store.m */; };
 		0DBFFDEE1C1CA25700D8A1FB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DBFFDED1C1CA25700D8A1FB /* MapKit.framework */; };
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
+		0FE18C0A1C28219400F5E7BB /* MixtureData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE18C091C28219400F5E7BB /* MixtureData.m */; };
+		0FE18C0D1C28267D00F5E7BB /* MixCenters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE18C0B1C28267D00F5E7BB /* MixCenters.storyboard */; };
 		2C5E9B961BEA587500929157 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E9B951BEA587500929157 /* DropView.m */; };
 		2CDBFBAC1C0D9F6C000BB973 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDBFBAB1C0D9F6C000BB973 /* AppSettings.m */; };
 		2CF195021BF1EB7E0008CE28 /* CircularLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF195011BF1EB7E0008CE28 /* CircularLoaderView.m */; };
@@ -58,7 +60,7 @@
 		A45CF7EC1BE77AC9003D793A /* Share_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45CF7EB1BE77AC9003D793A /* Share_ViewController.m */; };
 		A45CF7F71BE7B78C003D793A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7F51BE7B78C003D793A /* Intro.storyboard */; };
 		A45CF7FA1BE7BA5C003D793A /* App_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45CF7F91BE7BA5C003D793A /* App_ViewController.m */; };
-		A45CF7FD1BE7C089003D793A /* MixCenters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7FB1BE7C089003D793A /* MixCenters.storyboard */; };
+		A45CF7FD1BE7C089003D793A /* m.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7FB1BE7C089003D793A /* m.storyboard */; };
 		A45CF8001BE7C1C6003D793A /* Shaker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7FE1BE7C1C6003D793A /* Shaker.storyboard */; };
 		A45CF8031BE7C3EC003D793A /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF8011BE7C3EC003D793A /* Video.storyboard */; };
 		A45CF8061BE7C51B003D793A /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF8041BE7C51B003D793A /* Discover.storyboard */; };
@@ -129,6 +131,9 @@
 		0DBFFDED1C1CA25700D8A1FB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		0F4693CE1C0E465200B231E8 /* SoundMixCenter_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundMixCenter_ViewController.h; sourceTree = "<group>"; };
 		0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundMixCenter_ViewController.m; sourceTree = "<group>"; };
+		0FE18C081C28219400F5E7BB /* MixtureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixtureData.h; sourceTree = "<group>"; };
+		0FE18C091C28219400F5E7BB /* MixtureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixtureData.m; sourceTree = "<group>"; };
+		0FE18C0C1C28267D00F5E7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Shake It Up/Base.lproj/MixCenters.storyboard"; sourceTree = "<group>"; };
 		2C5E9B941BEA587500929157 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
 		2C5E9B951BEA587500929157 /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
 		2C6C80561BF4E79D004ECA68 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -177,7 +182,7 @@
 		A45CF7F61BE7B78C003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
 		A45CF7F81BE7BA5C003D793A /* App_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App_ViewController.h; sourceTree = "<group>"; };
 		A45CF7F91BE7BA5C003D793A /* App_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App_ViewController.m; sourceTree = "<group>"; };
-		A45CF7FC1BE7C089003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MixCenters.storyboard; sourceTree = "<group>"; };
+		A45CF7FC1BE7C089003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/m.storyboard; sourceTree = "<group>"; };
 		A45CF7FF1BE7C1C6003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shaker.storyboard; sourceTree = "<group>"; };
 		A45CF8021BE7C3EC003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Video.storyboard; sourceTree = "<group>"; };
 		A45CF8051BE7C51B003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Discover.storyboard; sourceTree = "<group>"; };
@@ -344,7 +349,8 @@
 				A45CF8011BE7C3EC003D793A /* Video.storyboard */,
 				A45CF7FE1BE7C1C6003D793A /* Shaker.storyboard */,
 				0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */,
-				A45CF7FB1BE7C089003D793A /* MixCenters.storyboard */,
+				0FE18C0B1C28267D00F5E7BB /* MixCenters.storyboard */,
+				A45CF7FB1BE7C089003D793A /* m.storyboard */,
 				A45CF7F51BE7B78C003D793A /* Intro.storyboard */,
 				0D4DC4D51C18CBEB00DA1FDD /* Store.storyboard */,
 				A45CF79F1BE7752A003D793A /* Assets.xcassets */,
@@ -524,6 +530,8 @@
 				0D4DC4BE1C1054A900DA1FDD /* User.m */,
 				0DBFFDEA1C1C76E300D8A1FB /* Store.h */,
 				0DBFFDEB1C1C76E300D8A1FB /* Store.m */,
+				0FE18C081C28219400F5E7BB /* MixtureData.h */,
+				0FE18C091C28219400F5E7BB /* MixtureData.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -648,6 +656,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FE18C0D1C28267D00F5E7BB /* MixCenters.storyboard in Resources */,
 				A45CF8091BE7C658003D793A /* signUp.storyboard in Resources */,
 				0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */,
 				A45CF8001BE7C1C6003D793A /* Shaker.storyboard in Resources */,
@@ -660,7 +669,7 @@
 				0D4DC4A51C0CB15400DA1FDD /* LaunchScreen.storyboard in Resources */,
 				A45CF80C1BE7C6B5003D793A /* Share.storyboard in Resources */,
 				A45CF8031BE7C3EC003D793A /* Video.storyboard in Resources */,
-				A45CF7FD1BE7C089003D793A /* MixCenters.storyboard in Resources */,
+				A45CF7FD1BE7C089003D793A /* m.storyboard in Resources */,
 				A45CF7F71BE7B78C003D793A /* Intro.storyboard in Resources */,
 				0D4DC4D61C18CBEB00DA1FDD /* Store.storyboard in Resources */,
 				0D4DC4C11C108D9700DA1FDD /* Bariol-Bold.otf in Resources */,
@@ -762,6 +771,7 @@
 				2CF195021BF1EB7E0008CE28 /* CircularLoaderView.m in Sources */,
 				A45CF7D71BE77983003D793A /* MixCenter_ViewController.m in Sources */,
 				2C5E9B961BEA587500929157 /* DropView.m in Sources */,
+				0FE18C0A1C28219400F5E7BB /* MixtureData.m in Sources */,
 				A45CF7E31BE77A1D003D793A /* Detail_Discover_ViewController.m in Sources */,
 				A4FC89A01BECA1E100771A71 /* Environment.m in Sources */,
 				0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */,
@@ -816,6 +826,15 @@
 			name = Home.storyboard;
 			sourceTree = "<group>";
 		};
+		0FE18C0B1C28267D00F5E7BB /* MixCenters.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FE18C0C1C28267D00F5E7BB /* Base */,
+			);
+			name = MixCenters.storyboard;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		A45CF7991BE7752A003D793A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -832,12 +851,12 @@
 			name = Intro.storyboard;
 			sourceTree = "<group>";
 		};
-		A45CF7FB1BE7C089003D793A /* MixCenters.storyboard */ = {
+		A45CF7FB1BE7C089003D793A /* m.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A45CF7FC1BE7C089003D793A /* Base */,
 			);
-			name = MixCenters.storyboard;
+			name = m.storyboard;
 			sourceTree = "<group>";
 		};
 		A45CF7FE1BE7C1C6003D793A /* Shaker.storyboard */ = {

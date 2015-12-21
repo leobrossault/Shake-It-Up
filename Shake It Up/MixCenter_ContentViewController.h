@@ -20,4 +20,8 @@
 @property (nonatomic, assign) NSInteger currentMixCenterIndex;
 @property (nonatomic, assign) NSInteger nextMixCenterIndex;
 
+@property (nonatomic) AppSettings *app;
+
+@property (nonatomic) MixtureData *mData;
+
 @end

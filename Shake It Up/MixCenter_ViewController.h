@@ -43,6 +43,18 @@
 @property (nonatomic) NSArray *ingredients;
 @property (nonatomic) NSString *mixCenterType;
 
+@property (weak, nonatomic) IBOutlet UILabel *emotionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientLabel;
+@property (weak, nonatomic) IBOutlet UILabel *textureLabel;
+@property (weak, nonatomic) IBOutlet UILabel *soundLabel;
+
+@property (nonatomic, strong) UILabel *descriptionLabel;
+
+@property (nonatomic, strong) NSString *selectedIngredient;
+@property (nonatomic, strong) NSString *selectedIngredientImageName;
+@property (nonatomic, strong) NSString *selectedIngredientName;
+@property (nonatomic, strong) UIColor *selectedIngredientColor;
+
 - (void) buildInterface;
 
 @end

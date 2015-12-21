@@ -12,6 +12,8 @@
 
 //fonts
 @property (nonatomic, strong) UIFont *font12;
+@property (nonatomic, strong) UIFont *font18;
+@property (nonatomic, strong) UIFont *font37;
 
 //colors
 @property (nonatomic, strong) UIColor *purple;

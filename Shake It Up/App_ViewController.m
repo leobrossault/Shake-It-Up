@@ -13,6 +13,8 @@
 #import "Action_Shaker_ViewController.h"
 #import "Interaction_Video_ViewController.h"
 #import "MixCenter_ContentViewController.h"
+#import "GenderMixCenter_ViewController.h"
+#import "BodyMixCenter_ViewController.h"
 #import "HomeViewController.h"
 
 @interface App_ViewController () <ActionShakerDelegate, VideoInteractionDelegate, Home_DefaultDelegate>
@@ -51,6 +53,22 @@
     MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
     
     [self.navigationController pushViewController:mixCenter animated:YES];
+}
+
+- (IBAction)goToGenderMixCenter:(id)sender {
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"GenderMixCenter" bundle:nil];
+    GenderMixCenter_ViewController *gendeMixCenter = [sb instantiateInitialViewController];
+    
+    [self.navigationController pushViewController:gendeMixCenter animated:YES];
+}
+
+- (IBAction)goToBodyMixCenter:(id)sender {
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BodyPartMixCenter" bundle:nil];
+    BodyMixCenter_ViewController *bodyMixCenter = [sb instantiateInitialViewController];
+    
+    [self.navigationController pushViewController:bodyMixCenter animated:YES];
 }
 
 - (IBAction)goToShaker:(id)sender {

@@ -35,6 +35,10 @@
 		0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */; };
 		0FE18C0A1C28219400F5E7BB /* MixtureData.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE18C091C28219400F5E7BB /* MixtureData.m */; };
 		0FE18C0D1C28267D00F5E7BB /* MixCenters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE18C0B1C28267D00F5E7BB /* MixCenters.storyboard */; };
+		0FE18C0F1C2845E700F5E7BB /* GenderMixCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE18C0E1C2845E700F5E7BB /* GenderMixCenter.storyboard */; };
+		0FE18C121C28471800F5E7BB /* GenderMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE18C111C28471800F5E7BB /* GenderMixCenter_ViewController.m */; };
+		0FE18C151C286B3500F5E7BB /* BodyMixCenter_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FE18C141C286B3500F5E7BB /* BodyMixCenter_ViewController.m */; };
+		0FE18C171C286C3600F5E7BB /* BodyPartMixCenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FE18C161C286C3600F5E7BB /* BodyPartMixCenter.storyboard */; };
 		2C5E9B961BEA587500929157 /* DropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5E9B951BEA587500929157 /* DropView.m */; };
 		2CDBFBAC1C0D9F6C000BB973 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CDBFBAB1C0D9F6C000BB973 /* AppSettings.m */; };
 		2CF195021BF1EB7E0008CE28 /* CircularLoaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CF195011BF1EB7E0008CE28 /* CircularLoaderView.m */; };
@@ -134,6 +138,12 @@
 		0FE18C081C28219400F5E7BB /* MixtureData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MixtureData.h; sourceTree = "<group>"; };
 		0FE18C091C28219400F5E7BB /* MixtureData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MixtureData.m; sourceTree = "<group>"; };
 		0FE18C0C1C28267D00F5E7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Shake It Up/Base.lproj/MixCenters.storyboard"; sourceTree = "<group>"; };
+		0FE18C0E1C2845E700F5E7BB /* GenderMixCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = GenderMixCenter.storyboard; path = ../GenderMixCenter.storyboard; sourceTree = "<group>"; };
+		0FE18C101C28471800F5E7BB /* GenderMixCenter_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenderMixCenter_ViewController.h; sourceTree = "<group>"; };
+		0FE18C111C28471800F5E7BB /* GenderMixCenter_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenderMixCenter_ViewController.m; sourceTree = "<group>"; };
+		0FE18C131C286B3500F5E7BB /* BodyMixCenter_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BodyMixCenter_ViewController.h; sourceTree = "<group>"; };
+		0FE18C141C286B3500F5E7BB /* BodyMixCenter_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BodyMixCenter_ViewController.m; sourceTree = "<group>"; };
+		0FE18C161C286C3600F5E7BB /* BodyPartMixCenter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BodyPartMixCenter.storyboard; sourceTree = "<group>"; };
 		2C5E9B941BEA587500929157 /* DropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropView.h; sourceTree = "<group>"; };
 		2C5E9B951BEA587500929157 /* DropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropView.m; sourceTree = "<group>"; };
 		2C6C80561BF4E79D004ECA68 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -350,6 +360,8 @@
 				A45CF7FE1BE7C1C6003D793A /* Shaker.storyboard */,
 				0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */,
 				0FE18C0B1C28267D00F5E7BB /* MixCenters.storyboard */,
+				0FE18C0E1C2845E700F5E7BB /* GenderMixCenter.storyboard */,
+				0FE18C161C286C3600F5E7BB /* BodyPartMixCenter.storyboard */,
 				A45CF7FB1BE7C089003D793A /* m.storyboard */,
 				A45CF7F51BE7B78C003D793A /* Intro.storyboard */,
 				0D4DC4D51C18CBEB00DA1FDD /* Store.storyboard */,
@@ -411,6 +423,10 @@
 				0F4693CF1C0E465200B231E8 /* SoundMixCenter_ViewController.m */,
 				0D4DC4CC1C11D28E00DA1FDD /* MixCenter_ContentViewController.h */,
 				0D4DC4CD1C11D28E00DA1FDD /* MixCenter_ContentViewController.m */,
+				0FE18C101C28471800F5E7BB /* GenderMixCenter_ViewController.h */,
+				0FE18C111C28471800F5E7BB /* GenderMixCenter_ViewController.m */,
+				0FE18C131C286B3500F5E7BB /* BodyMixCenter_ViewController.h */,
+				0FE18C141C286B3500F5E7BB /* BodyMixCenter_ViewController.m */,
 			);
 			name = MixCenter;
 			sourceTree = "<group>";
@@ -659,6 +675,7 @@
 				0FE18C0D1C28267D00F5E7BB /* MixCenters.storyboard in Resources */,
 				A45CF8091BE7C658003D793A /* signUp.storyboard in Resources */,
 				0D53B8CC1BE80CA600917C9A /* Home.storyboard in Resources */,
+				0FE18C0F1C2845E700F5E7BB /* GenderMixCenter.storyboard in Resources */,
 				A45CF8001BE7C1C6003D793A /* Shaker.storyboard in Resources */,
 				0D4DC4AC1C0CB37C00DA1FDD /* intro1.mp4 in Resources */,
 				A45CF8061BE7C51B003D793A /* Discover.storyboard in Resources */,
@@ -676,6 +693,7 @@
 				0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */,
 				0D4DC4C71C10A26C00DA1FDD /* pigeon.mp4 in Resources */,
 				0D4DC4C81C10A26C00DA1FDD /* tropicale.mp4 in Resources */,
+				0FE18C171C286C3600F5E7BB /* BodyPartMixCenter.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -770,12 +788,14 @@
 				0D4DC4C41C109A1C00DA1FDD /* ProductViewController.m in Sources */,
 				2CF195021BF1EB7E0008CE28 /* CircularLoaderView.m in Sources */,
 				A45CF7D71BE77983003D793A /* MixCenter_ViewController.m in Sources */,
+				0FE18C121C28471800F5E7BB /* GenderMixCenter_ViewController.m in Sources */,
 				2C5E9B961BEA587500929157 /* DropView.m in Sources */,
 				0FE18C0A1C28219400F5E7BB /* MixtureData.m in Sources */,
 				A45CF7E31BE77A1D003D793A /* Detail_Discover_ViewController.m in Sources */,
 				A4FC89A01BECA1E100771A71 /* Environment.m in Sources */,
 				0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */,
 				0D4DC4DD1C18CDA300DA1FDD /* Store_Search_ViewController.m in Sources */,
+				0FE18C151C286B3500F5E7BB /* BodyMixCenter_ViewController.m in Sources */,
 				0D4DC4CE1C11D28E00DA1FDD /* MixCenter_ContentViewController.m in Sources */,
 				0D4DC4BC1C0EF81E00DA1FDD /* HomeViewController.m in Sources */,
 				A45CF7FA1BE7BA5C003D793A /* App_ViewController.m in Sources */,

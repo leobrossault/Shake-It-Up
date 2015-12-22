@@ -217,6 +217,8 @@
     UIView *selectedView = (UIView *)recognizer.view;
     self.selectedSection = (NSInteger *)selectedView.tag;
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
     if ((int)self.selectedSection == 0) {
         NSLog(@"Créer une nouvelle recette");
     } else if ((int)self.selectedSection == 1) {
@@ -224,7 +226,11 @@
         HomeViewController *home = [sb instantiateInitialViewController];
         [self pushViewController:home animated:YES];
     } else if ((int)self.selectedSection == 2) {
-        NSLog(@"Mon profil");
+        if ([defaults objectForKey:@"isRegister"]) {
+            NSLog(@"Mon profil");
+        } else {
+            NSLog(@"Créer mon compte");
+        }
     } else if ((int)self.selectedSection == 3) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Store" bundle:nil];
         Store_Home_ViewController *store = [sb instantiateInitialViewController];

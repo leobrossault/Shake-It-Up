@@ -11,6 +11,10 @@
 #import "MixCenter_ViewController.h"
 #import "SoundMixCenter_ViewController.h"
 
+@protocol MixCenterDelegate <NSObject>
+
+@end
+
 @interface MixCenter_ContentViewController : UIViewController
 
 @property (nonatomic) MixCenter_ViewController *emotionMixCenter;
@@ -19,6 +23,7 @@
 @property (nonatomic) SoundMixCenter_ViewController *soundMixCenter;
 @property (nonatomic, assign) NSInteger currentMixCenterIndex;
 @property (nonatomic, assign) NSInteger nextMixCenterIndex;
+@property (nonatomic, weak) id <MixCenterDelegate> delegate;
 
 @property (nonatomic) AppSettings *app;
 

@@ -7,6 +7,7 @@
 //
 
 #import "MixCenter_ContentViewController.h"
+#import "Action_Shaker_ViewController.h"
 
 @interface MixCenter_ContentViewController () <MixCenterDelegate>
 
@@ -118,6 +119,10 @@
             self.mData.sound = self.soundMixCenter.selectedIngredient;
             self.mData.soundColor = self.soundMixCenter.selectedIngredientColor;
             self.mData.soundImageName = self.soundMixCenter.selectedIngredientImageName;
+            
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
+            Action_Shaker_ViewController *shaker = [sb instantiateInitialViewController];
+            [self.navigationController pushViewController:shaker animated:YES];
         }
         
         [self transitionFromViewController:self.childViewControllers[self.currentMixCenterIndex] toViewController:self.childViewControllers[self.nextMixCenterIndex] duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {

@@ -9,8 +9,9 @@
 #import "Text_Intro_ContentViewController.h"
 #import "Text_Intro_PageViewController.h"
 #import "NavigationController.h"
+#import "GenderMixCenter_ViewController.h"
 
-@interface Text_Intro_ContentViewController ()
+@interface Text_Intro_ContentViewController ()<MixCenterDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *btnStart;
 @property (weak, nonatomic) IBOutlet UIImageView *waveContainer;
 @property (weak, nonatomic) IBOutlet UILabel *textContainer;
@@ -106,7 +107,9 @@
 }
 
 - (IBAction)goMixCenter:(id)sender {
-    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"GenderMixCenter" bundle:nil];
+    GenderMixCenter_ViewController *mixCenter = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:mixCenter animated:YES];
 }
 
 @end

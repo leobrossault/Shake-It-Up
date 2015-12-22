@@ -7,8 +7,9 @@
 //
 
 #import "GenderMixCenter_ViewController.h"
+#import "MixCenter_ContentViewController.h"
 
-@interface GenderMixCenter_ViewController ()
+@interface GenderMixCenter_ViewController ()<MixCenterDelegate>
 {
     BOOL dragging;
     BOOL dropZoneFull;
@@ -311,7 +312,10 @@
         self.progressTimer.progress = 0;
         [self stopTimer];
         self.selectedGender = self.droppedItem.value;
-        [self.delegate mixCenterDidFinish];
+//        [self.delegate mixCenterDidFinish];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
+        MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:mixCenter animated:YES];
     }
     
     if (self.progressTimer.progress < 0 && timer) {

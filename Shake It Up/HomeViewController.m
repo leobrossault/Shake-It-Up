@@ -11,6 +11,7 @@
 #import "User.h"
 #import "ProductViewController.h"
 #import "NavigationController.h"
+#import "MixCenter_ContentViewController.h"
 
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet UIView *goMixBtn;
@@ -232,7 +233,9 @@
 }
 
 - (void)goToMix:(UITapGestureRecognizer *) recognizer {
-    NSLog(@"Go mix center");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
+    MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:mixCenter animated:YES];
 }
 
 @end

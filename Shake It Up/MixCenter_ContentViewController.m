@@ -92,42 +92,47 @@
 
 - (void) mixCenterDidFinish {
     
-    if(self.nextMixCenterIndex < 4) {
-        
-        NSLog(@"%ld", (long)self.currentMixCenterIndex);
+    NSLog(@" nextMixcenterIndex : %ld", (long)self.nextMixCenterIndex);
+    NSLog(@" currentMixcenterIndex : %ld", (long)self.currentMixCenterIndex);
+    
+    if(self.nextMixCenterIndex < 5) {
         
         if (self.currentMixCenterIndex == 0) {
-            NSLog(@"%ld", (long)self.currentMixCenterIndex);
+
             self.mData.emotion = self.emotionMixCenter.selectedIngredient;
             self.mData.emotionColor = self.emotionMixCenter.selectedIngredientColor;
             self.mData.emotionImageName = self.emotionMixCenter.selectedIngredientImageName;
         }
         
         if (self.currentMixCenterIndex == 1) {
+
             self.mData.ingredient = self.ingredientsMixCenter.selectedIngredient;
             self.mData.ingredientColor = self.ingredientsMixCenter.selectedIngredientColor;
             self.mData.ingredientImageName = self.ingredientsMixCenter.selectedIngredientImageName;
         }
         
         if (self.currentMixCenterIndex == 2) {
+
             self.mData.texture = self.textureMixCenter.selectedIngredient;
             self.mData.textureColor = self.textureMixCenter.selectedIngredientColor;
             self.mData.textureImageName = self.textureMixCenter.selectedIngredientImageName;
-        }
-        
-        if (self.currentMixCenterIndex == 3) {
+            
+        } else {
+
             self.mData.sound = self.soundMixCenter.selectedIngredient;
             self.mData.soundColor = self.soundMixCenter.selectedIngredientColor;
             self.mData.soundImageName = self.soundMixCenter.selectedIngredientImageName;
         }
         
-        [self transitionFromViewController:self.childViewControllers[self.currentMixCenterIndex] toViewController:self.childViewControllers[self.nextMixCenterIndex] duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
-            NSLog(@"%ld", (long)self.currentMixCenterIndex);
-            [self animStateLine];
-        }];
+        if(self.nextMixCenterIndex < 4) {
+            [self transitionFromViewController:self.childViewControllers[self.currentMixCenterIndex] toViewController:self.childViewControllers[self.nextMixCenterIndex] duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
+                NSLog(@"%ld", (long)self.currentMixCenterIndex);
+                [self animStateLine];
+            }];
         
-        self.currentMixCenterIndex++;
-        self.nextMixCenterIndex++;
+            self.currentMixCenterIndex++;
+            self.nextMixCenterIndex++;
+        }
     }
 }
 

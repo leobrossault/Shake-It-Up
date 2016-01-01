@@ -10,8 +10,9 @@
 #import <QuartzCore/QuartzCore.h>
 #import <BAFLuidView/BAFLuidView.h>
 #import "NavigationController.h"
+#import "BodyMixCenter_ViewController.h"
 
-@interface Action_Shaker_ViewController () <UICollisionBehaviorDelegate>
+@interface Action_Shaker_ViewController () <MixCenterDelegate, UICollisionBehaviorDelegate>
 
 #pragma story objects
 @property (weak, nonatomic) IBOutlet UIView *colorObject;
@@ -46,6 +47,13 @@
     // Do any additional setup after loading the view.
     NavigationController *navigation = self.navigationController;
     [navigation hideMenu];
+    
+    // Remove previous View Controller
+    NSInteger count = [self.navigationController.viewControllers count];
+    UIViewController *vc = [self.navigationController.viewControllers objectAtIndex: count - 2];
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
     
 #pragma Wave Init
     screenBound = [[UIScreen mainScreen] bounds];
@@ -400,7 +408,9 @@
 
 - (void) overlayAction:(UITapGestureRecognizer *)recognizer {
     if (shakeEnding == 1) {
-        NSLog(@"Go to next controller");
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"BodyPartMixCenter" bundle:nil];
+        BodyMixCenter_ViewController *body = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:body animated:YES];
     } else {
         if (overlayActive == 1) {
             [UIView animateWithDuration: 1.0 animations:^(void) {

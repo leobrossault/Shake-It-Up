@@ -5,22 +5,29 @@
 //  Created by DRAZIC Jeremie on 02/12/2015.
 //  Copyright © 2015 BROSSAULT Leo. All rights reserved.
 //
-
 #import "MixCenter_ContentViewController.h"
 #import "Action_Shaker_ViewController.h"
+#import "NavigationController.h"
 
-@interface MixCenter_ContentViewController () <MixCenterDelegate>
-
+@interface MixCenter_ContentViewController () <ActionShakerDelegate,MixCenterDelegate>
 @property (nonatomic, strong) CAShapeLayer *line;
 @property (nonatomic, strong) CALayer *point;
 @property (nonatomic, strong) CAShapeLayer *lineMore;
-
 @end
-
 @implementation MixCenter_ContentViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NavigationController *navigation = self.navigationController;
+    [navigation hideMenu];
+    
+    // Remove previous View Controller
+    NSInteger count = [self.navigationController.viewControllers count];
+    UIViewController *vc = [self.navigationController.viewControllers objectAtIndex: count - 2];
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
+    
     self.app = [AppSettings sharedAppSettings];
     self.mData = [MixtureData sharedMixtureData];
     
@@ -55,7 +62,6 @@
     [self.view.layer addSublayer:self.lineMore];
     
 }
-
 - (void)viewDidAppear:(BOOL)animated {
     
     POPSpringAnimation *animLine = [POPSpringAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
@@ -64,12 +70,10 @@
     animLine.toValue = @(0.25);
     [self.lineMore pop_addAnimation:animLine forKey:@"widthLine"];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (void) animStateLine {
     CGFloat strokeEndValue = 0;
     
@@ -87,53 +91,49 @@
     animLine.toValue = @(strokeEndValue);
     [self.lineMore pop_addAnimation:animLine forKey:@"widthLine"];
 }
-
 #pragma mark - MixCenterDelegate
-
 - (void) mixCenterDidFinish {
     
-    NSLog(@" nextMixcenterIndex : %ld", (long)self.nextMixCenterIndex);
-    NSLog(@" currentMixcenterIndex : %ld", (long)self.currentMixCenterIndex);
+//    NSLog(@" nextMixcenterIndex : %ld", (long)self.nextMixCenterIndex);
+//    NSLog(@" currentMixcenterIndex : %ld", (long)self.currentMixCenterIndex);
     
-    if(self.nextMixCenterIndex < 5) {
+    if(self.nextMixCenterIndex < 4) {
         
         if (self.currentMixCenterIndex == 0) {
-
             self.mData.emotion = self.emotionMixCenter.selectedIngredient;
             self.mData.emotionColor = self.emotionMixCenter.selectedIngredientColor;
             self.mData.emotionImageName = self.emotionMixCenter.selectedIngredientImageName;
+            self.emotionMixCenter.delegate = nil;
         }
         
         if (self.currentMixCenterIndex == 1) {
-
             self.mData.ingredient = self.ingredientsMixCenter.selectedIngredient;
             self.mData.ingredientColor = self.ingredientsMixCenter.selectedIngredientColor;
             self.mData.ingredientImageName = self.ingredientsMixCenter.selectedIngredientImageName;
         }
         
         if (self.currentMixCenterIndex == 2) {
-
             self.mData.texture = self.textureMixCenter.selectedIngredient;
             self.mData.textureColor = self.textureMixCenter.selectedIngredientColor;
             self.mData.textureImageName = self.textureMixCenter.selectedIngredientImageName;
-            
-        } else {
-
-            self.mData.sound = self.soundMixCenter.selectedIngredient;
-            self.mData.soundColor = self.soundMixCenter.selectedIngredientColor;
-            self.mData.soundImageName = self.soundMixCenter.selectedIngredientImageName;
-            
-            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Shaker" bundle:nil];
             Action_Shaker_ViewController *shaker = [sb instantiateInitialViewController];
             [self.navigationController pushViewController:shaker animated:YES];
         }
         
-        if(self.nextMixCenterIndex < 4) {
+        if (self.currentMixCenterIndex == 3) {
+            self.mData.sound = self.soundMixCenter.selectedIngredient;
+            self.mData.soundColor = self.soundMixCenter.selectedIngredientColor;
+            self.mData.soundImageName = self.soundMixCenter.selectedIngredientImageName;
+            
+
+        }
+        
+        if(self.nextMixCenterIndex < 3) {
             [self transitionFromViewController:self.childViewControllers[self.currentMixCenterIndex] toViewController:self.childViewControllers[self.nextMixCenterIndex] duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
-                NSLog(@"%ld", (long)self.currentMixCenterIndex);
                 [self animStateLine];
             }];
-        
+            
             self.currentMixCenterIndex++;
             self.nextMixCenterIndex++;
         }

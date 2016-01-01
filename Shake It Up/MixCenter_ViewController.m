@@ -22,13 +22,13 @@
     
     [super viewDidLoad];
     
-    NSLog(@"%@", self.mixCenterType);
+//    NSLog(@"%@", self.mixCenterType);
     
     self.e = [Environment sharedEnvironment];
     self.app = [AppSettings sharedAppSettings];
     self.ingredients = [self.e valueForKey:self.mixCenterType];
     
-    NSLog(@"%@", self.ingredients);
+//    NSLog(@"%@", self.ingredients);
     
     [self buildInterface];
 }
@@ -314,7 +314,7 @@
     if (!self.timer) {
         self.timer = [NSTimer timerWithTimeInterval:animDuration target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
-        NSLog(@"timer started");
+//        NSLog(@"timer started");
     }
 }
 
@@ -322,16 +322,16 @@
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
-        NSLog(@"timer stopped");
+//        NSLog(@"timer stopped");
     }
 }
 
 - (void) updateTimer:(NSTimer *) timer {
     if (dropped) {
-        NSLog(@"timer updating");
+//        NSLog(@"timer updating");
         self.progressTimer.progress += 0.01;
     } else {
-        NSLog(@"timer decreasing");
+//        NSLog(@"timer decreasing");
         self.progressTimer.progress -= 0.1;
     }
     

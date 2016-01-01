@@ -101,7 +101,7 @@
 
 - (void)addFavorite: (UITapGestureRecognizer *)recognizer {
     if (alreadyFav == false) {
-        NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/store/%@/%@", [self.user objectForKey:@"email"], [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"_id"]];
+        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/store/%@/%@", [self.user objectForKey:@"email"], [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"_id"]];
         
         self.ico_star_empty.alpha = 0;
         self.ico_star_full.transform = CGAffineTransformMakeScale(2, 2);
@@ -122,7 +122,7 @@
         }] resume];
         alreadyFav = true;
     } else {
-        NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/store/delete/%@/%@", [self.user objectForKey:@"email"], [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"_id"]];
+        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/store/delete/%@/%@", [self.user objectForKey:@"email"], [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"_id"]];
         
         self.ico_star_empty.alpha = 1;
         self.ico_star_full.transform = CGAffineTransformMakeScale(1, 1);

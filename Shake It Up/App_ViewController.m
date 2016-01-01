@@ -30,6 +30,17 @@
     [navigation hideMenu];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([self isFirstRunning] == YES) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Intro" bundle:nil];
+        Text_Intro_PageViewController *intro = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:intro animated:NO];
+    } else {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        HomeViewController *home = [sb instantiateInitialViewController];
+        home.delegate = self;
+        [self.navigationController pushViewController:home animated:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

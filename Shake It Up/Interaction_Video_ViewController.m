@@ -39,6 +39,13 @@
     NavigationController *navigation = self.navigationController;
     [navigation hideMenu];
     
+    // Remove previous View Controller
+    NSInteger count = [self.navigationController.viewControllers count];
+    UIViewController *vc = [self.navigationController.viewControllers objectAtIndex: count - 2];
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
+    
     // Do any additional setup after loading the view.
     nbTouch = 0;
     firstTouch = 0;

@@ -64,7 +64,7 @@
     
     // Add product to new user
     self.user = [User sharedUser].user;
-    NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], [self.product objectForKey: @"_id"]];
+    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], @"5683d26e2e0f351d5a2be262"];
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
     NSURLSession *session = [NSURLSession sharedSession];

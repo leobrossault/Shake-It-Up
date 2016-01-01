@@ -7,8 +7,9 @@
 //
 
 #import "BodyMixCenter_ViewController.h"
+#import "Interaction_Video_ViewController.h"
 
-@interface BodyMixCenter_ViewController ()
+@interface BodyMixCenter_ViewController ()<VideoInteractionDelegate>
 {
     BOOL dragging;
     BOOL dropZoneFull;
@@ -324,7 +325,10 @@
         self.progressTimer.progress = 0;
         [self stopTimer];
         self.selectedBodyPart = self.droppedItem.value;
-        [self.delegate mixCenterDidFinish];
+
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Video" bundle:nil];
+        Interaction_Video_ViewController *video = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:video animated:YES];
     }
     
     if (self.progressTimer.progress < 0 && timer) {

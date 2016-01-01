@@ -1,18 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CBF45A4A09DCFD3FFC86D4D1598D71062915509D",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "990983E517105ABF4B1512D70B2981FD2EDD436D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "135670503F899053A0744AD90D049E31E09F813C" : 0,
-    "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : 0,
-    "CBF45A4A09DCFD3FFC86D4D1598D71062915509D" : 0
+    "990983E517105ABF4B1512D70B2981FD2EDD436D" : 0,
+    "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "34ED574B-F858-4B4F-9B94-07E6F302D534",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "135670503F899053A0744AD90D049E31E09F813C" : "app\/Shake%20It%20Up\/vendors\/BAFluidView\/",
-    "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : "app\/Shake%20It%20Up\/vendors\/pop\/",
-    "CBF45A4A09DCFD3FFC86D4D1598D71062915509D" : "app\/"
+    "990983E517105ABF4B1512D70B2981FD2EDD436D" : "app\/",
+    "F2FE0AAE95F0B87896F2BEE0B176D4FC32D691A3" : "app\/Shake%20It%20Up\/vendors\/pop\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Shake It Up",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -26,7 +26,7 @@
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/bitbucket.org\/projetsisley\/app.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CBF45A4A09DCFD3FFC86D4D1598D71062915509D"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "990983E517105ABF4B1512D70B2981FD2EDD436D"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/facebook\/pop.git",

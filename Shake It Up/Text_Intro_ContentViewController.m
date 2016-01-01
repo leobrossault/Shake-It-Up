@@ -110,6 +110,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"GenderMixCenter" bundle:nil];
     GenderMixCenter_ViewController *mixCenter = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:mixCenter animated:YES];
+    
+    NSLog(@"%lu", [self.navigationController.viewControllers count]);
 }
 
 @end

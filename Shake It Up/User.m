@@ -36,7 +36,7 @@
     if ([defaults objectForKey:@"isRegister"]) {
         NSLog(@"get user");
         self.responseDataUser = [NSMutableData data];
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.94:8000/api/connection/%@", [defaults objectForKey:@"isRegister"]]]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://37.187.118.146:8000/api/connection/%@", [defaults objectForKey:@"isRegister"]]]];
         NSURLSession *session = [NSURLSession sharedSession];
         session.configuration.timeoutIntervalForResource = 30;
         [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
@@ -59,7 +59,7 @@
     
     if ([defaults objectForKey:@"isRegister"]) {
         self.responseDataProduct = [NSMutableData data];
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.94:8000/api/discoverAll/%@", [defaults objectForKey:@"isRegister"]]]];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://37.187.118.146:8000/api/discoverAll/%@", [defaults objectForKey:@"isRegister"]]]];
         NSURLSession *session = [NSURLSession sharedSession];
         session.configuration.timeoutIntervalForResource = 30;
         [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {

@@ -8,6 +8,7 @@
 
 #import "GenderMixCenter_ViewController.h"
 #import "MixCenter_ContentViewController.h"
+#import "NavigationController.h"
 
 @interface GenderMixCenter_ViewController ()<MixCenterDelegate>
 {
@@ -24,6 +25,16 @@
     [super viewDidLoad];
     self.app = [AppSettings sharedAppSettings];
     [self buildInterface];
+    
+    NavigationController *navigation = self.navigationController;
+    [navigation hideMenu];
+    
+    // Remove previous View Controller
+    NSInteger count = [self.navigationController.viewControllers count];
+    UIViewController *vc = [self.navigationController.viewControllers objectAtIndex: count - 2];
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
 }
 
 #pragma mark - Interface
@@ -285,7 +296,7 @@
     if (!self.timer) {
         self.timer = [NSTimer timerWithTimeInterval:animDuration target:self selector:@selector(updateTimer:) userInfo:nil repeats:YES];
         [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
-        NSLog(@"timer started");
+//        NSLog(@"timer started");
     }
 }
 
@@ -293,16 +304,16 @@
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
-        NSLog(@"timer stopped");
+//        NSLog(@"timer stopped");
     }
 }
 
 - (void) updateTimer:(NSTimer *) timer {
     if (dropped) {
-        NSLog(@"timer updating");
+//        NSLog(@"timer updating");
         self.progressTimer.progress += 0.01;
     } else {
-        NSLog(@"timer decreasing");
+//        NSLog(@"timer decreasing");
         self.progressTimer.progress -= 0.1;
     }
     
@@ -312,10 +323,12 @@
         self.progressTimer.progress = 0;
         [self stopTimer];
         self.selectedGender = self.droppedItem.value;
-//        [self.delegate mixCenterDidFinish];
+
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
         MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
         [self.navigationController pushViewController:mixCenter animated:YES];
+        
+        NSLog(@"%lu", [self.navigationController.viewControllers count]);
     }
     
     if (self.progressTimer.progress < 0 && timer) {

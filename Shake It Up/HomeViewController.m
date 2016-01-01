@@ -236,6 +236,8 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
     MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:mixCenter animated:YES];
+    
+    NSLog(@"%lu", [self.navigationController.viewControllers count]);
 }
 
 @end

@@ -158,15 +158,14 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         if ([self validateEmailWithString: self.mailForm.text] == TRUE) {
-            NSLog(@"%@/%@/%@", firstName, lastName, mail);
-    
-            NSString *url = [NSString stringWithFormat: @"http://192.168.1.94:8000/api/subscribe/%@/%@/%@/%@/%@/%@", firstName, lastName, @"homme", @"passwd", mail, adress];
-            
+            NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/subscribe/%@/%@/%@/%@/%@/%@", firstName, lastName, @"homme", @"passwd", mail, adress];
+
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
             NSURLSession *session = [NSURLSession sharedSession];
             session.configuration.timeoutIntervalForResource = 30;
             [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if (error) {
+                    NSLog(@"error ?");
                     NSLog(@"%@", error.localizedDescription);
                     NSLog(@"%@", error);
                     [UIView animateWithDuration: 0.3f animations:^{
@@ -186,7 +185,6 @@
             }];
             
             self.indicForm.text = @"Connexion en cours ...";
-            
             [self performSegueWithIdentifier:@"validateForm" sender:sender];
 
         } else {

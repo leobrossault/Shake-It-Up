@@ -63,8 +63,7 @@
     [MixtureData sharedMixtureData].emotionImageName = [[MixtureData sharedMixtureData].emotionImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
     [MixtureData sharedMixtureData].textureImageName = [[MixtureData sharedMixtureData].textureImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
     [MixtureData sharedMixtureData].ingredientImageName = [[MixtureData sharedMixtureData].ingredientImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
-    
-    NSLog(@"%@", [MixtureData sharedMixtureData].emotionImageName);
+
     
     [self.colorObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].emotionImageName]];
     [self.textureObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].textureImageName]];
@@ -86,7 +85,7 @@
     // SETTINGS
     animDuration = 2;
     gravityLoopDuration = 0.06;
-    nbShakeRequired = 10;
+    nbShakeRequired = 3;
     coefAmpStart = 40;
     coefAmpShake = 500;
     nbDrops = 150;

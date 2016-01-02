@@ -11,11 +11,14 @@
 #import <BAFLuidView/BAFLuidView.h>
 #import "NavigationController.h"
 #import "BodyMixCenter_ViewController.h"
+#import "MixtureData.h"
 
 @interface Action_Shaker_ViewController () <MixCenterDelegate, UICollisionBehaviorDelegate>
 
 #pragma story objects
-@property (weak, nonatomic) IBOutlet UIView *colorObject;
+@property (strong, nonatomic) MixtureData *mixtureData;
+
+@property (weak, nonatomic) IBOutlet UIImageView *colorObject;
 @property (weak, nonatomic) IBOutlet UIImageView *textureObject;
 @property (weak, nonatomic) IBOutlet UIImageView *ingredientObject;
 @property (weak, nonatomic) IBOutlet UIImageView *soundObject;
@@ -54,6 +57,18 @@
     [vc willMoveToParentViewController:nil];
     [vc.view removeFromSuperview];
     [vc removeFromParentViewController];
+    
+    
+    // Get Img Elements
+    [MixtureData sharedMixtureData].emotionImageName = [[MixtureData sharedMixtureData].emotionImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
+    [MixtureData sharedMixtureData].textureImageName = [[MixtureData sharedMixtureData].textureImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
+    [MixtureData sharedMixtureData].ingredientImageName = [[MixtureData sharedMixtureData].ingredientImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
+    
+    NSLog(@"%@", [MixtureData sharedMixtureData].emotionImageName);
+    
+    [self.colorObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].emotionImageName]];
+    [self.textureObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].textureImageName]];
+    [self.ingredientObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].ingredientImageName]];
     
 #pragma Wave Init
     screenBound = [[UIScreen mainScreen] bounds];

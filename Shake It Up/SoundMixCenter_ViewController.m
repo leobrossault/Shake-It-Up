@@ -54,11 +54,18 @@
         self.descriptionLabel.textColor = self.draggedItem.colorValue;
         [self.descriptionLabel setAlpha:1.0];
         
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"mp3"];
-        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-        player.numberOfLoops = -1; //Infinite
-        [player play];
+//        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"mp3"];
+//        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+//        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
+//        player.numberOfLoops = -1; //Infinite
+//        [player play];
+        
+        SystemSoundID sound;
+        AudioServicesDisposeSystemSoundID (sound);
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"wav"];
+        NSURL *soundURL = [NSURL fileURLWithPath:soundFilePath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &sound);
+        AudioServicesPlaySystemSound(sound);
         
     } else {
         dragging = NO;

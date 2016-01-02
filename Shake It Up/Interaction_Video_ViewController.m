@@ -107,7 +107,7 @@
             self.overlay.alpha = 1;
         }];
     }
-
+    
     self.pathVideo = [[NSBundle mainBundle] pathForResource:@"tropicale" ofType:@"mp4"];
     self.urlVideo = [NSURL fileURLWithPath: self.pathVideo];
     self.asset = [AVAsset assetWithURL: self.urlVideo];

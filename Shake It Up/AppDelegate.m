@@ -17,9 +17,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [User sharedUser];
     [Environment sharedEnvironment];
     [AppSettings sharedAppSettings];
-    [User sharedUser];
     [Store sharedStore];
     
     return YES;

@@ -10,6 +10,7 @@
 #import <pop/POP.h>
 #import "Store_Home_ViewController.h"
 #import "HomeViewController.h"
+#import "MixCenter_ContentViewController.h"
 
 @interface NavigationController ()<Home_DefaultDelegate, StoreDefaultDelegate>
 
@@ -220,7 +221,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ((int)self.selectedSection == 0) {
-        NSLog(@"Créer une nouvelle recette");
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
+        MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
+        [self pushViewController:mixCenter animated:YES];
     } else if ((int)self.selectedSection == 1) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
         HomeViewController *home = [sb instantiateInitialViewController];

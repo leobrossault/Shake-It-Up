@@ -82,20 +82,14 @@
     UITapGestureRecognizer *tapOverlay = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(overlayAction:)];
     [self.overlay addGestureRecognizer:tapOverlay];
     
-    POPSpringAnimation *animIco = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
-    animIco.springSpeed = 10;
-    animIco.springBounciness = 20.f;
-    animIco.repeatForever = YES;
-    animIco.toValue = @(155);
-    [self.icoOverlay pop_addAnimation:animIco forKey:@"bounce"];
-    
-    animIco.completionBlock = ^(POPAnimation *anim, BOOL finished) {
-        POPSpringAnimation *animIcoBack = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotationX];
-        animIcoBack.springSpeed = 10;
-        animIcoBack.springBounciness = 20.f;
-        animIcoBack.toValue = @(M_PI * 0.5);
-        [self.icoOverlay pop_addAnimation:animIcoBack forKey:@"bounceBack"];
-    };
+    // Anim Ico Overlay
+    CABasicAnimation *rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.toValue = @(M_PI * 2.0);
+    rotationAnimation.duration = 2;
+    rotationAnimation.autoreverses = YES;
+    rotationAnimation.repeatCount = HUGE_VALF;
+    rotationAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    [self.icoOverlay.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
     
 #pragma Init Shaker
 

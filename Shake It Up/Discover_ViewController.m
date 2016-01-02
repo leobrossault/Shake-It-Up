@@ -10,6 +10,7 @@
 #import "User.h"
 #import "NavigationController.h"
 #import "Form_SignUp_ViewController.h"
+#import "Form_Validate_ViewController.h"
 
 @interface Discover_ViewController ()<UIScrollViewDelegate>
 
@@ -82,7 +83,7 @@
     
     if ([defaults objectForKey: @"isRegister"]) {
         self.user = [User sharedUser].user;
-        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [self.user objectForKey:@"_id"], [self.product objectForKey: @"_id"]];
+        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [self.user objectForKey:@"email"], [self.product objectForKey: @"_id"]];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
         NSURLSession *session = [NSURLSession sharedSession];
@@ -199,11 +200,20 @@
         //send data
         Form_SignUp_ViewController *controller = (Form_SignUp_ViewController *)segue.destinationViewController;
         controller.product = self.product;
+    } else if ([segue.identifier isEqualToString:@"alreadyForm"]) {
+        Form_Validate_ViewController *controller = (Form_Validate_ViewController *)segue.destinationViewController;
+        controller.product = self.product;
     }
 }
 
 - (void)goForm:(UITapGestureRecognizer *) recognizer {
-    [self performSegueWithIdentifier:@"goForm" sender:recognizer];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults objectForKey: @"isRegister"]) {
+        [self performSegueWithIdentifier:@"alreadyForm" sender:recognizer];
+    } else {
+        [self performSegueWithIdentifier:@"goForm" sender:recognizer];
+    }
 }
 
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vIU-Db-SsJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vIU-Db-SsJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Bariol-Bold.otf">
@@ -42,13 +43,11 @@
                             <view contentMode="scaleToFill" id="mFl-4C-NIw">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AsG-oL-jua">
                                 <rect key="frame" x="75" y="481" width="176" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="21"/>
                                 <state key="normal" title="Découvrez le produit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -60,17 +59,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="yvJ-13-yOW">
                                 <rect key="frame" x="260" y="485" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                             </imageView>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video_eau_tropicale" id="fmB-cG-VBk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Slide to left to start drawing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z4Y-8k-iKi">
                                 <rect key="frame" x="74" y="256" width="172" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -82,7 +78,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RBD-EC-Kaw">
                                         <rect key="frame" x="25" y="88" width="254" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                         <string key="text">Applique le produit 
 </string>
                                         <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="18"/>
@@ -92,7 +87,6 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="que tu viens de créer !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KUX-Tc-4Qp">
                                         <rect key="frame" x="25" y="107" width="254" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -100,14 +94,11 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_draw" id="YNB-Q5-264">
                                         <rect key="frame" x="93" y="173" width="134" height="221"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                     </imageView>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2AT-dO-g4J"/>
@@ -146,17 +137,14 @@
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eau_tropicale_main_img" id="6E6-K7-mJs">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eS0-QL-sWS">
                                                 <rect key="frame" x="0.0" y="329" width="320" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fLm-Oa-Tv0">
                                                 <rect key="frame" x="17" y="364" width="286" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
                                                 <string key="text">Une Eau de Toilette pour femme.
 Fleurie, fraîche et solaire !</string>
                                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="20"/>
@@ -166,7 +154,6 @@ Fleurie, fraîche et solaire !</string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UqB-K6-2ty">
                                                 <rect key="frame" x="17" y="423" width="286" height="337"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <animations/>
                                                 <string key="text">Une fragrance qui évoque l'atmosphère intrigante, chaude et parfumée régnant après une pluie tropicale. Un bonheur d'évasion au cœur d'une terre lointaine et mystérieuse qui cacherait des oiseaux aux chants colorés, des fruits savoureux, des fleurs exhalant des accords inconnus.
 
 Son envolée pétillante et fraîche met en lumière un Accord Floral Exotique accentuées par une Bergamote zestée et un Gingembre éclatant. Dans son cœur floral féminin s'épanouit une Tubéreuse aérienne et solaire sublimée par l'élégance de la Violette et la luminosité de la Rose. 
@@ -179,7 +166,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HhJ-67-04c">
                                                 <rect key="frame" x="17" y="781" width="286" height="47"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                                <animations/>
                                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="15"/>
                                                 <state key="normal" title="REFAIRE L'EXPÉRIENCE">
                                                     <color key="titleColor" red="0.16862745100000001" green="0.047058823530000002" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -192,13 +178,11 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tester ce produit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NMr-mk-cbL">
                                                         <rect key="frame" x="118" y="23" width="179" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.2470588235" green="0.08235294118" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <view contentMode="scaleToFill" id="48T-gZ-JYT">
@@ -208,7 +192,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cela pourrait aussi t’intéresser !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RL3-yZ-Q3O">
                                                         <rect key="frame" x="29" y="27" width="260" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="19"/>
                                                         <color key="textColor" red="0.16862745100000001" green="0.047058823530000002" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -216,30 +199,24 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="similar_product" id="ulX-Rb-7Cp">
                                                         <rect key="frame" x="29" y="56" width="245" height="265"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <animations/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2c7-sX-mxF">
                                                         <rect key="frame" x="29" y="330" width="67" height="14"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <animations/>
                                                         <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
                                                         <state key="normal" title="en savoir +">
                                                             <color key="titleColor" red="0.16862745100000001" green="0.047058823530000002" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
                                                 </subviews>
-                                                <animations/>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
-                                <animations/>
                             </scrollView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2kD-Ax-yRe"/>
@@ -253,6 +230,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                         <outlet property="testProduct" destination="db1-HA-Wzr" id="HgW-Ys-cwD"/>
                         <outlet property="waveContainer" destination="eS0-QL-sWS" id="RBZ-nv-HL8"/>
                         <segue destination="Ogm-oh-TK1" kind="push" identifier="goForm" id="UyH-bz-5yR"/>
+                        <segue destination="Vyf-uV-WDE" kind="push" identifier="alreadyForm" id="WWe-BO-FwB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgd-Ab-uTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -270,7 +248,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton adresse" minimumFontSize="17" id="gZH-S9-7YK">
                                 <rect key="frame" x="36" y="322" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
@@ -282,7 +259,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton mail" textAlignment="natural" minimumFontSize="17" id="cK7-Tc-QX7">
                                 <rect key="frame" x="36" y="379" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
@@ -294,7 +270,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton nom" textAlignment="natural" minimumFontSize="17" id="rYd-5o-Rze">
                                 <rect key="frame" x="36" y="266" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
@@ -306,7 +281,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UG1-lQ-5aa">
                                 <rect key="frame" x="36" y="89" width="178" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <string key="text">Pour recevoir un échantillon,
 </string>
                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
@@ -316,7 +290,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="inscrit-toi ci-dessous !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="x85-Eu-kgI">
                                 <rect key="frame" x="36" y="142" width="172" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="17"/>
                                 <color key="textColor" red="0.11764705882352941" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -328,24 +301,20 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="nuD-P8-pnV">
                                         <rect key="frame" x="258" y="30" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valider" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9WS-Hn-QZn">
                                         <rect key="frame" x="202" y="24" width="59" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V0M-F9-Prh">
                                 <rect key="frame" x="16" y="39" width="10" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <state key="normal" image="back_purple"/>
                                 <connections>
                                     <segue destination="eO4-Hj-ODf" kind="push" id="lII-Dk-lfv"/>
@@ -354,7 +323,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton prénom" textAlignment="natural" minimumFontSize="17" id="Flj-hZ-HsE">
                                 <rect key="frame" x="36" y="207" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
@@ -366,13 +334,11 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remplis tous les champs pour continuer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cCA-BY-JHS">
                                 <rect key="frame" x="36" y="441" width="241" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="whb-dz-q5M"/>
@@ -403,12 +369,10 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eau_tropicale_mini_img" id="2FK-oB-Qf4">
                                 <rect key="frame" x="75" y="82" width="170" height="170"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Merci !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FH0-aY-ISl">
                                 <rect key="frame" x="37" y="286" width="76" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="20"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -416,8 +380,8 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TdW-8q-AGd">
                                 <rect key="frame" x="37" y="320" width="247" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
-                                <string key="text">Tu peux désormais récupérer ton échantillon dans le magasin que tu souhaites en montrant le code promo du produit.</string>
+                                <string key="text">Tu peux désormais récupérer ton échantillon dans le magasin que tu souhaites en montrant le code promo 
+du produit.</string>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -425,7 +389,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="kYy-L3-IlZ">
                                 <rect key="frame" x="37" y="411" width="247" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="13"/>
                                 <state key="normal" title="VOIR MES RECETTES">
@@ -442,22 +405,18 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="CS5-wJ-KpH">
                                         <rect key="frame" x="258" y="30" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="partager à mes amis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EjO-S8-yZC">
                                         <rect key="frame" x="115" y="24" width="146" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.98431372549019602" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zr7-7D-BaC"/>
@@ -484,5 +443,6 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lII-Dk-lfv"/>
+        <segue reference="WWe-BO-FwB"/>
     </inferredMetricsTieBreakers>
 </document>

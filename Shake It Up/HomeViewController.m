@@ -66,9 +66,9 @@
     [self.goMixBtn.layer addSublayer: self.point];
     
     self.userProducts = [User sharedUser].userProducts;
-
+    NSLog(@"%@", self.userProducts);
     if (self.userProducts == NULL) {
-        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.5);
+        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1);
         dispatch_after(delay, dispatch_get_main_queue(), ^(void){
             [self initCollection];
         });
@@ -162,6 +162,8 @@
     } else {
         productImage = [UIImage imageNamed:@"default_product.png"];
     }
+    
+    NSLog(@"%d / %d", indexPath.row, countCell);
     
     [productView setFrame:CGRectMake(0, 0, 145, 200)];
     productView.tag = indexPath.row;

@@ -51,25 +51,25 @@
     UIColor *color4 = [UIColor colorWithRed:255.0 / 255.0 green:241.0 / 255.0 blue:50.0 / 255.0 alpha:1];
     
     //DragView 1
-    self.topLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:@"round_body_01_%d.png" andColor:color1];
+    self.topLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:@"round_corps_01_%d.png" andColor:color1];
     self.topLeftItem.tag = 1;
     self.topLeftItem.value = @"Bouche";
     [self.view addSubview:self.topLeftItem];
     
     //DragView 2
-    self.topRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:@"round_body_02_%d.png" andColor:color2];
+    self.topRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:@"round_corps_02_%d.png" andColor:color2];
     self.topRightItem.tag = 2;
     self.topRightItem.value = @"Visage";
     [self.view addSubview:self.topRightItem];
     
     //DragView 3
-    self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"round_body_03_%d.png" andColor:color3];
+    self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"round_corps_03_%d.png" andColor:color3];
     self.bottomRightItem.tag = 3;
     self.bottomRightItem.value = @"Yeux";
     [self.view addSubview:self.bottomRightItem];
     
     //DragView 4
-    self.bottomLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"round_body_04_%d.png" andColor:color4];
+    self.bottomLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"round_corps_04_%d.png" andColor:color4];
     self.bottomLeftItem.tag = 4;
     self.bottomLeftItem.value = @"Corps entier";
     [self.view addSubview:self.bottomLeftItem];

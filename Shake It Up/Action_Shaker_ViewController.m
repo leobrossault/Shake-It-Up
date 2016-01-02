@@ -90,10 +90,10 @@
     [self.icoOverlay pop_addAnimation:animIco forKey:@"bounce"];
     
     animIco.completionBlock = ^(POPAnimation *anim, BOOL finished) {
-        POPSpringAnimation *animIcoBack = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionX];
+        POPSpringAnimation *animIcoBack = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerRotationX];
         animIcoBack.springSpeed = 10;
         animIcoBack.springBounciness = 20.f;
-        animIcoBack.toValue = @(160);
+        animIcoBack.toValue = @(M_PI * 0.5);
         [self.icoOverlay pop_addAnimation:animIcoBack forKey:@"bounceBack"];
     };
     

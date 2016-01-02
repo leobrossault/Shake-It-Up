@@ -72,7 +72,6 @@
             // Data to Object
                 NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
                 self.userProducts = JSON;
-                NSLog(@"%@", self.userProducts);
             }
         }] resume];
     } else {

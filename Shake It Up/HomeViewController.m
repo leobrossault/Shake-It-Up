@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *userProducts;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, assign) NSInteger *selectedProduct;
+@property (nonatomic, strong) NavigationController *navigation;
 
 
 @end
@@ -31,9 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NavigationController *navigation = self.navigationController;
-    [navigation showMenu];
-    [navigation resetColorMenu];
+    self.navigation = self.navigationController;
+    [self.navigation showMenu];
+    [self.navigation resetColorMenu];
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer *btnMix = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMix:)];
@@ -64,10 +65,16 @@
     
     [self.goMixBtn.layer addSublayer: self.point];
     
-    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.5);
-    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+    self.userProducts = [User sharedUser].userProducts;
+
+    if (self.userProducts == NULL) {
+        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.5);
+        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+            [self initCollection];
+        });
+    } else {
         [self initCollection];
-    });
+    }
 }
 
 - (void) initCollection {
@@ -127,6 +134,8 @@
         self.labelMixBtn.frame = frameLabelBtn;
 
     } completion:^(BOOL finished) {}];
+    
+    [self.navigation resetColorMenu];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -149,7 +158,6 @@
     UILabel *productType = [[UILabel alloc] init];
     
     if (nbProduct > indexPath.row) {
-        NSLog(@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]);
         productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
     } else {
         productImage = [UIImage imageNamed:@"default_product.png"];
@@ -194,7 +202,6 @@
     [productTitle sizeToFit];
     
     if (nbProduct > indexPath.row) {
-//        productType.text = [NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"slogan"]];
         productType.text = @"Eau de toilette";
         if (indexPath.row % 2 != 0) {
             [productType setFrame:CGRectMake(0, 160, 120, 40)];
@@ -212,6 +219,7 @@
     [productView addSubview: productType];
     [cell addSubview:productView];
     countCell ++;
+    
     return cell;
 }
 
@@ -241,8 +249,6 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MixCenters" bundle:nil];
     MixCenter_ContentViewController *mixCenter = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:mixCenter animated:YES];
-    
-    NSLog(@"%lu", [self.navigationController.viewControllers count]);
 }
 
 @end

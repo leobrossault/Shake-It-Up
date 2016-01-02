@@ -36,16 +36,8 @@
     [navigation resetColorMenu];
     // Do any additional setup after loading the view.
     
-    [navigation resetColorMenu];
-    
     UITapGestureRecognizer *btnMix = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMix:)];
     [self.goMixBtn addGestureRecognizer:btnMix];
-    
-    // Get User Data
-    self.userProducts = [User sharedUser].userProducts;
-    nbProduct = [self.userProducts count];
-    nbCell = 10;
-    countCell = 0;
     
     // Bottom Btn
     self.line = [CAShapeLayer layer];
@@ -71,6 +63,19 @@
     self.point.opacity = 0;
     
     [self.goMixBtn.layer addSublayer: self.point];
+    
+    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.5);
+    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+        [self initCollection];
+    });
+}
+
+- (void) initCollection {
+    // Get User Data
+    self.userProducts = [User sharedUser].userProducts;
+    nbProduct = [self.userProducts count];
+    nbCell = 10;
+    countCell = 0;
     
     // Collection
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];

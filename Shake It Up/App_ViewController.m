@@ -106,6 +106,7 @@
         HomeViewController *home = [sb instantiateInitialViewController];
         home.delegate = self;
         [self.navigationController pushViewController:home animated:YES];
+        
     }
 }
 

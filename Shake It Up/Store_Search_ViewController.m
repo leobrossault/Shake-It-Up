@@ -40,6 +40,7 @@
     // Do any additional setup after loading the view.
     NavigationController *navigation = self.navigationController;
     [navigation showMenu];
+    [navigation resetColorMenu];
     
     self.searchField.layer.sublayerTransform = CATransform3DMakeTranslation(60, 0, 0);
     getDist = 0;

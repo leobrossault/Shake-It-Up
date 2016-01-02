@@ -56,7 +56,7 @@
 
 - (void) loadDataProduct {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+
     if ([defaults objectForKey:@"isRegister"]) {
         self.responseDataProduct = [NSMutableData data];
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://37.187.118.146:8000/api/discoverAll/%@", [defaults objectForKey:@"isRegister"]]]];
@@ -72,6 +72,7 @@
             // Data to Object
                 NSArray *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
                 self.userProducts = JSON;
+                NSLog(@"%@", self.userProducts);
             }
         }] resume];
     } else {
@@ -79,6 +80,8 @@
             self.userProducts = [defaults objectForKey:@"products"];
         }
     }
+    
+    
 }
 
 -(BOOL) isAnonymous {

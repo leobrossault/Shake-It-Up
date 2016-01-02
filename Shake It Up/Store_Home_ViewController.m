@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     NavigationController *navigation = self.navigationController;
     [navigation showMenu];
+    [navigation resetColorMenu];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"isRegister"]) {

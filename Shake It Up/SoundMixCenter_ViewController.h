@@ -7,6 +7,8 @@
 //
 
 #import "MixCenter_ViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SoundMixCenter_ViewController : MixCenter_ViewController
 

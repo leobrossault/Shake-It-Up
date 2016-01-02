@@ -97,7 +97,7 @@
 //    NSLog(@" nextMixcenterIndex : %ld", (long)self.nextMixCenterIndex);
 //    NSLog(@" currentMixcenterIndex : %ld", (long)self.currentMixCenterIndex);
     
-    if(self.nextMixCenterIndex < 4) {
+    if(self.nextMixCenterIndex < 5) {
         
         if (self.currentMixCenterIndex == 0) {
             self.mData.emotion = self.emotionMixCenter.selectedIngredient;
@@ -116,9 +116,7 @@
             self.mData.texture = self.textureMixCenter.selectedIngredient;
             self.mData.textureColor = self.textureMixCenter.selectedIngredientColor;
             self.mData.textureImageName = self.textureMixCenter.selectedIngredientImageName;
-            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Shaker" bundle:nil];
-            Action_Shaker_ViewController *shaker = [sb instantiateInitialViewController];
-            [self.navigationController pushViewController:shaker animated:YES];
+
         }
         
         if (self.currentMixCenterIndex == 3) {
@@ -126,10 +124,12 @@
             self.mData.soundColor = self.soundMixCenter.selectedIngredientColor;
             self.mData.soundImageName = self.soundMixCenter.selectedIngredientImageName;
             
-
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Shaker" bundle:nil];
+            Action_Shaker_ViewController *shaker = [sb instantiateInitialViewController];
+            [self.navigationController pushViewController:shaker animated:YES];
         }
         
-        if(self.nextMixCenterIndex < 3) {
+        if(self.nextMixCenterIndex < 4) {
             [self transitionFromViewController:self.childViewControllers[self.currentMixCenterIndex] toViewController:self.childViewControllers[self.nextMixCenterIndex] duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
                 [self animStateLine];
             }];

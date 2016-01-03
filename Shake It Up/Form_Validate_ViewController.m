@@ -66,17 +66,21 @@
     self.user = [User sharedUser].user;
     
     // Product ID
-    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], @"5683d26e2e0f351d5a2be262"];
+    if ([defaults objectForKey:@"isRegister"]) {
+        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], @"5683d26e2e0f351d5a2be262"];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
-    NSURLSession *session = [NSURLSession sharedSession];
-    session.configuration.timeoutIntervalForResource = 30;
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            NSLog(@"%@", error);
-        }
-    }] resume];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+        NSURLSession *session = [NSURLSession sharedSession];
+        session.configuration.timeoutIntervalForResource = 30;
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                NSLog(@"%@", error);
+            }
+        }] resume];
+    } else {
+        NSLog(@"%@", [defaults objectForKey:@"products"]);
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {

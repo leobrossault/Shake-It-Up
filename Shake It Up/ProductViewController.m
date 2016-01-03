@@ -44,11 +44,21 @@
     self.userProducts = [User sharedUser].userProducts;
     
     // Inject Data
-    self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
-    self.sloganProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"slogan"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![defaults objectForKey: @"isRegister"] || self.userProducts == NULL) {
+        self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
+        self.sloganProduct.text = [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int) self.product] objectForKey:@"slogan"];
+        self.descrProduct.text = [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int) self.product] objectForKey:@"description"];
+    } else {
+        self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
+        self.sloganProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"slogan"];
+        self.descrProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"description"];
+    }
+    
     [self.sloganProduct sizeToFit];
-    self.descrProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"description"];
     [self.descrProduct sizeToFit];
+        
     
     NSMutableArray *imgArray = [[NSMutableArray alloc] initWithCapacity: 81];
     for(int i = 0; i < 81; i++) {

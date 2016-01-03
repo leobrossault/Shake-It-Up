@@ -29,6 +29,7 @@
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -338,6 +339,17 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 <color key="textColor" red="0.98039215690000003" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RSs-DJ-J4a">
+                                <rect key="frame" x="100" y="34" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
+                                <state key="normal" title="S'inscrire plus tard">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.0" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipFormAction:" destination="Ogm-oh-TK1" eventType="touchUpInside" id="OUX-o1-1FX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -350,6 +362,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                         <outlet property="labelValidate" destination="9WS-Hn-QZn" id="FGM-UL-Y3G"/>
                         <outlet property="lastNameForm" destination="rYd-5o-Rze" id="1DJ-BZ-V7h"/>
                         <outlet property="mailForm" destination="cK7-Tc-QX7" id="W8W-zX-Jc2"/>
+                        <outlet property="skipForm" destination="RSs-DJ-J4a" id="Bha-2D-GkI"/>
                         <outlet property="validateBtn" destination="TSh-3i-M8f" id="UOi-c6-awd"/>
                         <segue destination="Vyf-uV-WDE" kind="push" identifier="validateForm" id="phv-xX-jxG"/>
                     </connections>
@@ -442,7 +455,7 @@ du produit.</string>
         <image name="video_eau_tropicale" width="744" height="1321"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="phv-xX-jxG"/>
         <segue reference="lII-Dk-lfv"/>
-        <segue reference="WWe-BO-FwB"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -31,6 +31,7 @@
 
 @property (nonatomic, strong) NavigationController *navigation;
 @property (nonatomic, strong) User *userObject;
+@property (weak, nonatomic) IBOutlet UIButton *skipForm;
 
 @end
 
@@ -276,5 +277,8 @@
     }
 }
 
+- (IBAction)skipFormAction:(id)sender {
+    [self performSegueWithIdentifier:@"validateForm" sender:sender];
+}
 
 @end

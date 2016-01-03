@@ -35,6 +35,8 @@
     self.navigation = self.navigationController;
     [self.navigation showMenu];
     [self.navigation resetColorMenu];
+    
+    productNotLoaded = 0;
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer *btnMix = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMix:)];
@@ -66,25 +68,31 @@
     [self.goMixBtn.layer addSublayer: self.point];
     
     self.userProducts = [User sharedUser].userProducts;
-    NSLog(@"%@", self.userProducts);
-    if (self.userProducts == NULL) {
-        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1);
-        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
-            [self initCollection];
-        });
-    } else {
+
+//    if (self.userProducts == NULL) {
+//        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1);
+//        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+//            [self initCollection];
+//        });
+//    } else {
         [self initCollection];
-    }
+//    }
 }
 
 - (void) initCollection {
     // Get User Data
     self.userProducts = [User sharedUser].userProducts;
+    
+    if (self.userProducts == NULL) {
+        productNotLoaded = 1;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        self.userProducts = [defaults objectForKey: @"products"];
+    }
+    
     nbProduct = [self.userProducts count];
     nbCell = 10;
     countCell = 0;
     
-    // Collection
     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
     collectionView = [[UICollectionView alloc] initWithFrame:self.scrollView.frame collectionViewLayout:layout];
     
@@ -156,14 +164,17 @@
     UIImage *productImage = [[UIImage alloc] init];
     UILabel *productTitle = [[UILabel alloc] init];
     UILabel *productType = [[UILabel alloc] init];
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
     if (nbProduct > indexPath.row) {
-        productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
+        if (![defaults objectForKey: @"isRegister"] || productNotLoaded == 1) {
+            productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: indexPath.row] objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
+        } else {
+            productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
+        }
     } else {
         productImage = [UIImage imageNamed:@"default_product.png"];
     }
-    
-    NSLog(@"%d / %d", indexPath.row, countCell);
     
     [productView setFrame:CGRectMake(0, 0, 145, 200)];
     productView.tag = indexPath.row;
@@ -189,7 +200,11 @@
     productTitle.numberOfLines = 0;
     
     if (nbProduct > indexPath.row) {
-        productTitle.text = [NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"label"]];
+        if (![defaults objectForKey: @"isRegister"] || productNotLoaded == 1) {
+            productTitle.text = [NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: indexPath.row] objectAtIndex: indexPath.row] objectForKey:@"label"]];
+        } else {
+            productTitle.text = [NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"label"]];
+        }
         
         if (indexPath.row % 2 != 0) {
             [productTitle setFrame:CGRectMake(0, 125, 100, 22)];

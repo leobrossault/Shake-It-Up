@@ -63,11 +63,13 @@
     [MixtureData sharedMixtureData].emotionImageName = [[MixtureData sharedMixtureData].emotionImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
     [MixtureData sharedMixtureData].textureImageName = [[MixtureData sharedMixtureData].textureImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
     [MixtureData sharedMixtureData].ingredientImageName = [[MixtureData sharedMixtureData].ingredientImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
+    [MixtureData sharedMixtureData].soundImageName = [[MixtureData sharedMixtureData].soundImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
 
     
     [self.colorObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].emotionImageName]];
     [self.textureObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].textureImageName]];
     [self.ingredientObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].ingredientImageName]];
+    [self.soundObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].soundImageName]];
     
 #pragma Wave Init
     screenBound = [[UIScreen mainScreen] bounds];
@@ -347,6 +349,7 @@
         shakeEnding = 1;
 
         self.labelOverlay.text = @"Bravo votre mixture est prête !";
+        self.botLabelOverlay.text = @"Tap pour passer à la suite";
         [UIView animateWithDuration: 1.0 animations:^(void) {
             self.overlay.alpha = 1;
         }];

@@ -10,6 +10,7 @@
 #import "NavigationController.h"
 #import "Store_Search_ViewController.h"
 #import "HomeViewController.h"
+#import "Sign_Up_Later_ViewController.h"
 
 @interface Store_Home_ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *nearStores;
@@ -28,9 +29,9 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"isRegister"]) {
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-        HomeViewController *home = [sb instantiateInitialViewController];
-        [self.navigationController pushViewController:home animated:YES];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"signUp" bundle:nil];
+        Sign_Up_Later_ViewController *signup = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:signup animated:YES];
     }
 }
 

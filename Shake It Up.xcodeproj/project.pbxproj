@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D4859281C3963EE00A26E01 /* Sign_Up_Later_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4859271C3963EE00A26E01 /* Sign_Up_Later_ViewController.m */; };
+		0D48592B1C3969A900A26E01 /* Congrats_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D48592A1C3969A900A26E01 /* Congrats_ViewController.m */; };
 		0D4DC4A51C0CB15400DA1FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */; };
 		0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A71C0CB36B00DA1FDD /* Bariol.ttf */; };
 		0D4DC4AC1C0CB37C00DA1FDD /* intro1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A91C0CB37C00DA1FDD /* intro1.mp4 */; };
@@ -101,6 +103,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D4859261C3963EE00A26E01 /* Sign_Up_Later_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sign_Up_Later_ViewController.h; sourceTree = "<group>"; };
+		0D4859271C3963EE00A26E01 /* Sign_Up_Later_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sign_Up_Later_ViewController.m; sourceTree = "<group>"; };
+		0D4859291C3969A900A26E01 /* Congrats_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Congrats_ViewController.h; sourceTree = "<group>"; };
+		0D48592A1C3969A900A26E01 /* Congrats_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Congrats_ViewController.m; sourceTree = "<group>"; };
 		0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D4DC4A71C0CB36B00DA1FDD /* Bariol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol.ttf; sourceTree = "<group>"; };
 		0D4DC4A91C0CB37C00DA1FDD /* intro1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro1.mp4; sourceTree = "<group>"; };
@@ -487,6 +493,10 @@
 		A45CF7CB1BE777BC003D793A /* Sign Up */ = {
 			isa = PBXGroup;
 			children = (
+				0D4859261C3963EE00A26E01 /* Sign_Up_Later_ViewController.h */,
+				0D4859271C3963EE00A26E01 /* Sign_Up_Later_ViewController.m */,
+				0D4859291C3969A900A26E01 /* Congrats_ViewController.h */,
+				0D48592A1C3969A900A26E01 /* Congrats_ViewController.m */,
 			);
 			name = "Sign Up";
 			sourceTree = "<group>";
@@ -809,6 +819,7 @@
 				0D4DC4DA1C18CD8200DA1FDD /* Store_Home_ViewController.m in Sources */,
 				0D4DC4B51C0CD3D600DA1FDD /* Second_Text_Intro_Page_DetailViewController.m in Sources */,
 				0D4DC4D41C18A51500DA1FDD /* Form_Validate_ViewController.m in Sources */,
+				0D48592B1C3969A900A26E01 /* Congrats_ViewController.m in Sources */,
 				0D4DC4B81C0CD48100DA1FDD /* Third_Text_Intro_Page_DetailViewController.m in Sources */,
 				A45CF7EC1BE77AC9003D793A /* Share_ViewController.m in Sources */,
 				0D4DC4BF1C1054A900DA1FDD /* User.m in Sources */,
@@ -827,6 +838,7 @@
 				A4FC89A01BECA1E100771A71 /* Environment.m in Sources */,
 				0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */,
 				0D4DC4DD1C18CDA300DA1FDD /* Store_Search_ViewController.m in Sources */,
+				0D4859281C3963EE00A26E01 /* Sign_Up_Later_ViewController.m in Sources */,
 				0FE18C151C286B3500F5E7BB /* BodyMixCenter_ViewController.m in Sources */,
 				0D4DC4CE1C11D28E00DA1FDD /* MixCenter_ContentViewController.m in Sources */,
 				0D4DC4BC1C0EF81E00DA1FDD /* HomeViewController.m in Sources */,

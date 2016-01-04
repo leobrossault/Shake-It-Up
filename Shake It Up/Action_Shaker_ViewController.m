@@ -348,8 +348,19 @@
         isShake = 0;
         shakeEnding = 1;
 
-        self.labelOverlay.text = @"Bravo votre mixture est prête !";
-        self.botLabelOverlay.text = @"Tap pour passer à la suite";
+        self.labelOverlay.text = @"Ta préparation est prête !";
+        self.botLabelOverlay.text = @"Tap pour continuer";
+        
+        CGRect icoFrame = self.icoOverlay.frame;
+        icoFrame.size.width = 36;
+        icoFrame.size.height = 48;
+        icoFrame.origin.x = icoFrame.origin.x + 20;
+        icoFrame.origin.y = icoFrame.origin.y + 20;
+        self.icoOverlay.frame = icoFrame;
+        
+        [self.icoOverlay setImage: [UIImage imageNamed:@"tap_ico"]];
+        [self.icoOverlay.layer removeAllAnimations];
+        
         [UIView animateWithDuration: 1.0 animations:^(void) {
             self.overlay.alpha = 1;
         }];

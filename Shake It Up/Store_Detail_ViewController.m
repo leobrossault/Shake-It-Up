@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *favoriteView;
 @property (weak, nonatomic) IBOutlet UIImageView *ico_star_empty;
 @property (weak, nonatomic) IBOutlet UIImageView *ico_star_full;
+@property (weak, nonatomic) IBOutlet UIImageView *ico_store;
 
 @property (strong, nonatomic) NSDictionary *user;
 @property (strong, nonatomic) User *objectUser;
@@ -35,12 +36,6 @@
     self.user = [User sharedUser].user;
     self.objectUser = [User sharedUser];
     
-    // Init Text
-    self.containerDetail.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
-    self.titleDetail.text = [[[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"title"] uppercaseString];
-    self.streetDetail.text = [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"street"];
-    self.cityDetail.text = [NSString stringWithFormat:@"%@ %@", [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"postalCode"], [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"city"]];
-    
     // Check if is already in fav
     alreadyFav = false;
     
@@ -50,6 +45,21 @@
             self.ico_star_full.alpha = 1;
             alreadyFav = true;
         }
+    }
+    
+    // Init Text
+    if (alreadyFav == true) {
+        self.containerDetail.backgroundColor = [UIColor colorWithRed:0.161 green:0.059 blue:0.388 alpha:1];
+    } else {
+        self.containerDetail.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
+    }
+    
+    self.titleDetail.text = [[[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"title"] uppercaseString];
+    self.streetDetail.text = [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"street"];
+    self.cityDetail.text = [NSString stringWithFormat:@"%@ %@", [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"postalCode"], [[self.selectedStore objectAtIndex: (int)self.posSelectedStore] objectForKey:@"city"]];
+    
+    if (alreadyFav == true) {
+        [self.ico_store setImage: [UIImage imageNamed:@"ico_store_favorite"]];
     }
     
     // Get location

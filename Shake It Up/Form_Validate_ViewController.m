@@ -10,8 +10,9 @@
 #import <pop/POP.h>
 #import "HomeViewController.h"
 #import "User.h"
+#import "Store_Home_ViewController.h"
 
-@interface Form_Validate_ViewController ()<Home_DefaultDelegate, UITextFieldDelegate>
+@interface Form_Validate_ViewController ()<Home_DefaultDelegate, UITextFieldDelegate, StoreDefaultDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *goHomeBtn;
 
@@ -78,6 +79,8 @@
                 NSLog(@"%@", error);
             }
         }] resume];
+        
+        [self.goHomeBtn setTitle:@"Trouver une boutique" forState:UIControlStateNormal];
     } else {
         NSLog(@"%@", [defaults objectForKey:@"products"]);
     }
@@ -123,10 +126,19 @@
 }
 
 - (IBAction)goHome:(id)sender {
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-    HomeViewController *home = [sb instantiateInitialViewController];
-    home.delegate = self;
-    [self.navigationController pushViewController:home animated:YES];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults objectForKey:@"isRegister"]) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Store" bundle:nil];
+        Store_Home_ViewController *store = [sb instantiateInitialViewController];
+        store.delegate = self;
+        [self.navigationController pushViewController:store animated:YES];
+    } else {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        HomeViewController *home = [sb instantiateInitialViewController];
+        home.delegate = self;
+        [self.navigationController pushViewController:home animated:YES];
+    }
 }
 
 @end

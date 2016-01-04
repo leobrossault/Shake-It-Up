@@ -81,7 +81,7 @@
     
     // Init Content Menu
     self.titleSections = [NSArray arrayWithObjects:@"Créer une nouvelle recette", @"Mes recettes", @"Mon profil", @"Mes boutiques", @"Paramètres", @"Quitter l'application", nil];
-    self.icoSections = [NSArray arrayWithObjects:@"ico_default_menu", @"ico_default_menu", @"ico_default_menu", @"ico_default_menu", @"ico_default_menu", @"ico_default_menu", nil];
+    self.icoSections = [NSArray arrayWithObjects:@"ico_mix_menu", @"ico_title_home", @"ico_default_menu", @"ico_title_store", @"ico_settings", @"ico_shutdown", nil];
     // Title Menu
     UILabel *titleMenu = [[UILabel alloc] init];
     [titleMenu setFrame:CGRectMake(25, 35, 200, 30)];

@@ -8,6 +8,9 @@
         <mutableArray key="Bariol-Bold.otf">
             <string>Bariol-Bold</string>
             <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
         </mutableArray>
         <mutableArray key="Bariol.ttf">
             <string>Bariol-Regular</string>
@@ -27,30 +30,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="riz-xW-Knc">
-                                <rect key="frame" x="96" y="133" width="129" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_title_store" id="V2r-Mi-ADi">
+                                <rect key="frame" x="20" y="37" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Boutiques proches"/>
-                                <connections>
-                                    <action selector="nearStoresAction:" destination="Tkf-5G-Nhm" eventType="touchUpInside" id="WI4-kf-1Ks"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Au8-2F-vle">
-                                <rect key="frame" x="94" y="195" width="132" height="30"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes boutiques" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZDc-11-8fW">
+                                <rect key="frame" x="58" y="41" width="188" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Boutiques favorites"/>
-                                <connections>
-                                    <action selector="favoriteStoresAction:" destination="Tkf-5G-Nhm" eventType="touchUpInside" id="LF2-lX-ne3"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" id="lZO-sE-IW6">
+                                <rect key="frame" x="104" y="110" width="113" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_next_store" id="jcr-ee-Xhg">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Je1-Q6-Vgl">
+                                        <rect key="frame" x="0.0" y="121" width="113" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">Boutiques proches</string>
+                                        <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
+                                        <color key="textColor" red="0.97647058819999999" green="0.0" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="ZNb-kd-K0X">
+                                <rect key="frame" x="104" y="339" width="113" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_fav_store" id="FwT-b9-2q2">
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="113"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boutiques favorites" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="saT-Pn-RO2">
+                                        <rect key="frame" x="0.0" y="121" width="113" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
+                                        <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="W2r-ls-Me3"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="favoriteStores" destination="Au8-2F-vle" id="WEQ-gP-Oaz"/>
-                        <outlet property="nearStores" destination="riz-xW-Knc" id="lgZ-uk-Q6d"/>
+                        <outlet property="btnFavStore" destination="ZNb-kd-K0X" id="LTB-sR-8Cm"/>
+                        <outlet property="btnNextStore" destination="lZO-sE-IW6" id="ej8-WF-ede"/>
                         <segue destination="aT2-OT-Zhx" kind="push" identifier="goToSearch" id="nxl-Qg-QPj"/>
                     </connections>
                 </viewController>
@@ -95,14 +130,6 @@
                                 <rect key="frame" x="49" y="166" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6RN-vV-q12">
-                                <rect key="frame" x="16" y="39" width="10" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back_purple"/>
-                                <connections>
-                                    <segue destination="Tkf-5G-Nhm" kind="push" id="9Gt-zo-o6b"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="gKn-zH-eXY">
                                 <rect key="frame" x="0.0" y="231" width="320" height="337"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -114,6 +141,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6RN-vV-q12">
+                                <rect key="frame" x="20" y="25" width="23" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_purple"/>
+                                <connections>
+                                    <segue destination="Tkf-5G-Nhm" kind="push" id="9Gt-zo-o6b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -141,40 +176,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cEa-Na-lk1">
-                                <rect key="frame" x="16" y="39" width="10" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back_purple"/>
-                                <connections>
-                                    <segue destination="aT2-OT-Zhx" kind="push" identifier="returnAllStore" id="q4u-uw-0Bx"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" id="2nQ-vv-0wg">
                                 <rect key="frame" x="0.0" y="87" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" id="mya-aI-NiR">
-                                        <rect key="frame" x="229" y="0.0" width="91" height="85"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_star" id="vQ4-Eu-oPf">
-                                                <rect key="frame" x="35" y="18" width="21" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="favoris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UXa-j8-Rqg">
-                                                <rect key="frame" x="24" y="51" width="42" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_star_full" id="z6o-AK-iMd">
-                                                <rect key="frame" x="35" y="18" width="21" height="20"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_store" id="1x9-5s-20v">
                                         <rect key="frame" x="20" y="25" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -200,6 +205,28 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" id="mya-aI-NiR">
+                                        <rect key="frame" x="229" y="0.0" width="91" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_star" id="vQ4-Eu-oPf">
+                                                <rect key="frame" x="35" y="18" width="21" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="favoris" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UXa-j8-Rqg">
+                                                <rect key="frame" x="24" y="51" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="14"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_star_full" id="z6o-AK-iMd">
+                                                <rect key="frame" x="35" y="18" width="21" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.0" blue="0.2627450980392157" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -210,6 +237,14 @@
                                     <outlet property="delegate" destination="pbh-E8-ZnR" id="8Pf-Cy-vk1"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="cEa-Na-lk1">
+                                <rect key="frame" x="20" y="25" width="23" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back_purple"/>
+                                <connections>
+                                    <segue destination="aT2-OT-Zhx" kind="push" identifier="returnAllStore" id="q4u-uw-0Bx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -221,6 +256,7 @@
                         <outlet property="favoriteView" destination="mya-aI-NiR" id="MK0-I5-OPn"/>
                         <outlet property="ico_star_empty" destination="vQ4-Eu-oPf" id="VbW-72-izF"/>
                         <outlet property="ico_star_full" destination="z6o-AK-iMd" id="fwx-QW-2bG"/>
+                        <outlet property="ico_store" destination="1x9-5s-20v" id="hg5-qL-Ucn"/>
                         <outlet property="mapView" destination="CU0-HY-355" id="tFQ-st-fGo"/>
                         <outlet property="streetDetail" destination="g9A-kM-aAc" id="5X1-og-1fk"/>
                         <outlet property="titleDetail" destination="ZED-IX-GNN" id="hoL-Cz-UeU"/>
@@ -233,9 +269,12 @@
     </scenes>
     <resources>
         <image name="back_purple" width="17" height="30"/>
+        <image name="ico_fav_store" width="226" height="226"/>
+        <image name="ico_next_store" width="226" height="226"/>
         <image name="ico_star" width="42" height="40"/>
         <image name="ico_star_full" width="42" height="40"/>
         <image name="ico_store" width="70" height="70"/>
+        <image name="ico_title_store" width="60" height="60"/>
         <image name="search" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -13,8 +13,9 @@
 #import "Sign_Up_Later_ViewController.h"
 
 @interface Store_Home_ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *nearStores;
-@property (weak, nonatomic) IBOutlet UIButton *favoriteStores;
+
+@property (weak, nonatomic) IBOutlet UIView *btnNextStore;
+@property (weak, nonatomic) IBOutlet UIView *btnFavStore;
 
 @end
 
@@ -33,6 +34,12 @@
         Sign_Up_Later_ViewController *signup = [sb instantiateInitialViewController];
         [self.navigationController pushViewController:signup animated:YES];
     }
+    
+    UITapGestureRecognizer *tapNext = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nearStoresAction:)];
+    [self.btnNextStore addGestureRecognizer:tapNext];
+    
+    UITapGestureRecognizer *tapFav = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favoriteStoresAction:)];
+    [self.btnFavStore addGestureRecognizer:tapFav];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,12 +55,12 @@
     }
 }
 
-- (IBAction)nearStoresAction:(id)sender {
+- (void)nearStoresAction:(UITapGestureRecognizer *)sender {
     storeChoice = 0;
     [self performSegueWithIdentifier:@"goToSearch" sender:sender];
 }
 
-- (IBAction)favoriteStoresAction:(id)sender {
+- (void)favoriteStoresAction:(UITapGestureRecognizer *)sender {
     storeChoice = 1;
     [self performSegueWithIdentifier:@"goToSearch" sender:sender];
 }

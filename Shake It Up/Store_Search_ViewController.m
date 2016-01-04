@@ -111,6 +111,11 @@
     scrollFrame.origin.y = 157;
     scrollFrame.size.height = 411;
     self.scrollView.frame = scrollFrame;
+    
+    if (nbCell == 0) {
+        self.indicSearch.hidden = false;
+        self.indicSearch.text = @"Tu n'as enregistré aucun magasin en favoris";
+    }
 }
 
 - (void) buildCollection {
@@ -126,8 +131,12 @@
     for (UIView *v in [cell subviews]) {
         [v removeFromSuperview];
     }
+    if (self.favorites == 0) {
+        cell.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
+    } else {
+        cell.backgroundColor = [UIColor colorWithRed:0.161 green:0.059 blue:0.388 alpha:1];
+    }
     
-    cell.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
     if (nbCell - 1 > indexPath.row) {
         CALayer *bottomBorder = [CALayer layer];
         bottomBorder.frame = CGRectMake(0.0f, cell.frame.size.height, cell.frame.size.width, 1.0f);
@@ -137,7 +146,12 @@
     
     UIImageView *icoStore = [[UIImageView alloc] init];
     [icoStore setFrame:CGRectMake(20, 25, 35, 35)];
-    [icoStore setImage:[UIImage imageNamed:@"ico_store"]];
+    
+    if (self.favorites == 0) {
+        [icoStore setImage:[UIImage imageNamed:@"ico_store"]];
+    } else {
+        [icoStore setImage:[UIImage imageNamed:@"ico_store_favorite"]];
+    }
     
     UIImageView *icoArrow = [[UIImageView alloc] init];
     [icoArrow setFrame:CGRectMake(260, 36, 15, 12)];

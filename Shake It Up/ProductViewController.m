@@ -9,6 +9,7 @@
 #import "ProductViewController.h"
 #import "User.h"
 #import "NavigationController.h"
+#import "Sign_Up_Later_ViewController.h"
 
 @interface ProductViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *mainImgProduct;
@@ -44,11 +45,21 @@
     self.userProducts = [User sharedUser].userProducts;
     
     // Inject Data
-    self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
-    self.sloganProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"slogan"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if (![defaults objectForKey: @"isRegister"] || self.userProducts == NULL) {
+        self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
+        self.sloganProduct.text = [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int) self.product] objectForKey:@"slogan"];
+        self.descrProduct.text = [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int) self.product] objectForKey:@"description"];
+    } else {
+        self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
+        self.sloganProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"slogan"];
+        self.descrProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"description"];
+    }
+    
     [self.sloganProduct sizeToFit];
-    self.descrProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"description"];
     [self.descrProduct sizeToFit];
+        
     
     NSMutableArray *imgArray = [[NSMutableArray alloc] initWithCapacity: 81];
     for(int i = 0; i < 81; i++) {
@@ -71,8 +82,8 @@
     // Test Product
     self.line = [CAShapeLayer layer];
     UIBezierPath *linePath=[UIBezierPath bezierPath];
-    [linePath moveToPoint: CGPointMake(270, 50)];
-    [linePath addLineToPoint: CGPointMake(295, 50)];
+    [linePath moveToPoint: CGPointMake(228, 50)];
+    [linePath addLineToPoint: CGPointMake(253, 50)];
     self.line.path = linePath.CGPath;
     self.line.fillColor = nil;
     self.line.lineWidth = 2.5;
@@ -87,7 +98,7 @@
     [self.point setMasksToBounds:YES];
     self.point.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
     [self.point setCornerRadius: 3.0f];
-    self.point.frame = CGRectMake(260, 48.7, 6, 2.5);
+    self.point.frame = CGRectMake(218, 48.7, 6, 2.5);
     
     [self.testProduct.layer addSublayer: self.point];
     
@@ -113,6 +124,9 @@
     self.pointMore.frame = CGRectMake(63, 350.7, 6, 2.5);
     
     [self.similarProduct.layer addSublayer: self.pointMore];
+    
+    UITapGestureRecognizer *testProduct = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToStore:)];
+    [self.testProduct addGestureRecognizer:testProduct];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,14 +149,10 @@
     }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) goToStore: (UITapGestureRecognizer *) sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Store" bundle:nil];
+    Sign_Up_Later_ViewController *store = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:store animated:YES];
 }
-*/
 
 @end

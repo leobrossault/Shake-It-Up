@@ -17,6 +17,7 @@
     int nbProduct;
     int nbCell;
     int countCell;
+    BOOL productNotLoaded;
 }
 
 @property (nonatomic, weak) id <Home_DefaultDelegate> delegate;

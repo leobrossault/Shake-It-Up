@@ -9,9 +9,9 @@
             <string>Bariol-Bold</string>
             <string>Bariol-Bold</string>
             <string>Bariol-Bold</string>
+            <string>Bariol-Bold</string>
         </mutableArray>
         <mutableArray key="Bariol.ttf">
-            <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
@@ -27,13 +27,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes recettes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uHQ-GM-jPl">
-                                <rect key="frame" x="20" y="35" width="118" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="22"/>
-                                <color key="textColor" red="0.11764705882352941" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" id="rb6-lb-zdM">
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -46,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_new_mix" id="hBB-Ji-VcJ">
-                                        <rect key="frame" x="260" y="30" width="19" height="28"/>
+                                        <rect key="frame" x="260" y="30" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -57,6 +50,17 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                             </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_title_home" id="YdM-1h-Cz3">
+                                <rect key="frame" x="20" y="37" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mes recettes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uHQ-GM-jPl">
+                                <rect key="frame" x="58" y="41" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
+                                <color key="textColor" red="0.11764705882352941" green="0.0" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -71,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CS9-T4-a8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="2387"/>
+            <point key="canvasLocation" x="1137" y="2387"/>
         </scene>
         <!--Product View Controller-->
         <scene sceneID="VYP-6h-I7u">
@@ -89,10 +93,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1295"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZfO-vz-RLT">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Nbg-7h-RYq">
                                                 <rect key="frame" x="0.0" y="329" width="320" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,12 +131,16 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tester ce produit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lBA-9h-eY3">
-                                                        <rect key="frame" x="118" y="23" width="179" height="21"/>
+                                                        <rect key="frame" x="78" y="27" width="179" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_test_product" id="dkh-wS-phH">
+                                                        <rect key="frame" x="269" y="22" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.24705882352941178" green="0.082352941176470587" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
@@ -166,13 +170,17 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.90196078431372551" green="0.89803921568627454" blue="0.9882352941176471" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZfO-vz-RLT">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mlm-5p-naa">
-                                <rect key="frame" x="17" y="37" width="14" height="25"/>
+                                <rect key="frame" x="20" y="28" width="23" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back"/>
                                 <connections>
@@ -203,7 +211,9 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
     </scenes>
     <resources>
         <image name="back" width="17" height="30"/>
-        <image name="ico_new_mix" width="39" height="58"/>
+        <image name="ico_new_mix" width="60" height="60"/>
+        <image name="ico_test_product" width="60" height="60"/>
+        <image name="ico_title_home" width="60" height="60"/>
         <image name="similar_product" width="489" height="529"/>
     </resources>
 </document>

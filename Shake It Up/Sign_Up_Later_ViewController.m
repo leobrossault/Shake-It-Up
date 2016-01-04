@@ -1,24 +1,27 @@
 //
-//  Form_SignUp_ViewController.m
+//  Sign_Up_Later_ViewController.m
 //  Shake It Up
 //
-//  Created by BROSSAULT Leo on 02/11/2015.
-//  Copyright © 2015 BROSSAULT Leo. All rights reserved.
+//  Created by Léo Brossault on 03/01/2016.
+//  Copyright © 2016 BROSSAULT Leo. All rights reserved.
 //
 
-#import "Form_SignUp_ViewController.h"
+#import "Sign_Up_Later_ViewController.h"
 #import "NavigationController.h"
 #import <pop/POP.h>
 #import "User.h"
-#import "Form_Validate_ViewController.h"
+#import "Congrats_ViewController.h"
 
-@interface Form_SignUp_ViewController ()<UITextFieldDelegate>
+@interface Sign_Up_Later_ViewController ()<UITextFieldDelegate>
+
 
 @property (weak, nonatomic) IBOutlet UITextField *firstNameForm;
 @property (weak, nonatomic) IBOutlet UITextField *lastNameForm;
-@property (weak, nonatomic) IBOutlet UITextField *adressForm;
 @property (weak, nonatomic) IBOutlet UITextField *mailForm;
 @property (weak, nonatomic) IBOutlet UITextField *cityForm;
+@property (weak, nonatomic) IBOutlet UITextField *adressForm;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *indicForm;
 @property (strong, nonatomic) UIDatePicker *datePicker;
 
@@ -29,14 +32,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *icoValidate;
 @property (weak, nonatomic) IBOutlet UILabel *labelValidate;
 
-
 @property (nonatomic, strong) NavigationController *navigation;
 @property (nonatomic, strong) User *userObject;
-@property (weak, nonatomic) IBOutlet UIButton *skipForm;
 
 @end
 
-@implementation Form_SignUp_ViewController
+@implementation Sign_Up_Later_ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -154,7 +155,7 @@
     [self.lastNameForm resignFirstResponder];
     [self.adressForm resignFirstResponder];
     [self.mailForm resignFirstResponder];
-
+    
     if ([self.firstNameForm.text length] != 0 && [self.lastNameForm.text length] != 0 && [self.mailForm.text length] != 0 && [self.adressForm.text length] != 0) {
         NSString *firstName = self.firstNameForm.text;
         NSString *lastName = self.lastNameForm.text;
@@ -167,13 +168,12 @@
         
         if ([self validateEmailWithString: self.mailForm.text] == TRUE) {
             NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/subscribe/%@/%@/%@/%@/%@/%@", firstName, lastName, @"homme", @"passwd", mail, adress];
-
+            
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
             NSURLSession *session = [NSURLSession sharedSession];
             session.configuration.timeoutIntervalForResource = 30;
             [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 if (error) {
-                    NSLog(@"error ?");
                     NSLog(@"%@", error.localizedDescription);
                     NSLog(@"%@", error);
                     [UIView animateWithDuration: 0.3f animations:^{
@@ -193,8 +193,26 @@
             }];
             
             self.indicForm.text = @"Connexion en cours ...";
-            [self performSegueWithIdentifier:@"validateForm" sender:sender];
-
+            
+            if ([defaults objectForKey: @"products"] != NULL) {
+                for (int p = 0; p < [[[defaults objectForKey: @"products"] objectAtIndex:0] count]; p ++) {
+                    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", self.mailForm.text, [[[[defaults objectForKey: @"products"] objectAtIndex:0] objectAtIndex:p] objectForKey: @"_id"]];
+                    
+                    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+                    NSURLSession *session = [NSURLSession sharedSession];
+                    session.configuration.timeoutIntervalForResource = 30;
+                    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                        if (error) {
+                            NSLog(@"%@", error.localizedDescription);
+                            NSLog(@"%@", error);
+                        }
+                    }] resume];
+                    
+                    if (p + 1 == [[[defaults objectForKey: @"products"] objectAtIndex:0] count]) {
+                        [self performSegueWithIdentifier:@"saveUser" sender:sender];
+                    }
+                }
+            }
         } else {
             [UIView animateWithDuration: 0.3f animations:^{
                 self.indicForm.alpha = 1;
@@ -277,15 +295,5 @@
     }];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"validateForm"]) {
-        Form_Validate_ViewController *controller = (Form_Validate_ViewController *)segue.destinationViewController;
-        controller.product = self.product;
-    }
-}
-
-- (IBAction)skipFormAction:(id)sender {
-    [self performSegueWithIdentifier:@"validateForm" sender:sender];
-}
 
 @end

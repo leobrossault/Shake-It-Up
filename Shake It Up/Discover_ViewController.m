@@ -128,8 +128,8 @@
     // Test Product
     self.line = [CAShapeLayer layer];
     UIBezierPath *linePath=[UIBezierPath bezierPath];
-    [linePath moveToPoint: CGPointMake(270, 50)];
-    [linePath addLineToPoint: CGPointMake(295, 50)];
+    [linePath moveToPoint: CGPointMake(228, 50)];
+    [linePath addLineToPoint: CGPointMake(253, 50)];
     self.line.path = linePath.CGPath;
     self.line.fillColor = nil;
     self.line.lineWidth = 2.5;
@@ -144,7 +144,7 @@
     [self.point setMasksToBounds:YES];
     self.point.backgroundColor = [UIColor colorWithRed:1 green:1 blue:1 alpha:1].CGColor;
     [self.point setCornerRadius: 3.0f];
-    self.point.frame = CGRectMake(260, 48.7, 6, 2.5);
+    self.point.frame = CGRectMake(218, 48.7, 6, 2.5);
     
     [self.testProduct.layer addSublayer: self.point];
     

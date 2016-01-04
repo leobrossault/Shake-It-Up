@@ -29,6 +29,8 @@
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
             <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
+            <string>Bariol-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -56,7 +58,7 @@
                                     <action selector="discoverProduct:" destination="vIU-Db-SsJ" eventType="touchUpInside" id="sBm-C6-GBC"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="yvJ-13-yOW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_gift" id="yvJ-13-yOW">
                                 <rect key="frame" x="260" y="485" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -131,7 +133,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="rfu-iX-F2a">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1295"/>
+                                        <rect key="frame" x="0.0" y="-800" width="320" height="1295"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eau_tropicale_main_img" id="6E6-K7-mJs">
@@ -176,12 +178,16 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tester ce produit" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NMr-mk-cbL">
-                                                        <rect key="frame" x="118" y="23" width="179" height="21"/>
+                                                        <rect key="frame" x="78" y="27" width="179" height="21"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="20"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_test_product" id="Zq3-89-9ir">
+                                                        <rect key="frame" x="269" y="23" width="30" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.2470588235" green="0.08235294118" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
@@ -245,19 +251,19 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton adresse" minimumFontSize="17" id="gZH-S9-7YK">
-                                <rect key="frame" x="36" y="322" width="241" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ta ville" minimumFontSize="17" id="6hn-Wf-ExB">
+                                <rect key="frame" x="36" y="352" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="Ogm-oh-TK1" id="2qH-08-Emw"/>
+                                    <outlet property="delegate" destination="Ogm-oh-TK1" id="8sF-6G-Fjt"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton mail" textAlignment="natural" minimumFontSize="17" id="cK7-Tc-QX7">
-                                <rect key="frame" x="36" y="379" width="241" height="30"/>
+                                <rect key="frame" x="36" y="409" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,7 +274,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton nom" textAlignment="natural" minimumFontSize="17" id="rYd-5o-Rze">
-                                <rect key="frame" x="36" y="266" width="241" height="30"/>
+                                <rect key="frame" x="36" y="239" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -298,7 +304,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="nuD-P8-pnV">
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_check" id="nuD-P8-pnV">
                                         <rect key="frame" x="258" y="30" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -313,7 +319,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 <color key="backgroundColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="V0M-F9-Prh">
-                                <rect key="frame" x="16" y="39" width="10" height="20"/>
+                                <rect key="frame" x="20" y="25" width="23" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_purple"/>
                                 <connections>
@@ -321,7 +327,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton prénom" textAlignment="natural" minimumFontSize="17" id="Flj-hZ-HsE">
-                                <rect key="frame" x="36" y="207" width="241" height="30"/>
+                                <rect key="frame" x="36" y="182" width="241" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,24 +338,48 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remplis tous les champs pour continuer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cCA-BY-JHS">
-                                <rect key="frame" x="36" y="441" width="241" height="25"/>
+                                <rect key="frame" x="36" y="459" width="241" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
                                 <color key="textColor" red="0.98039215690000003" green="0.078431372550000003" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RSs-DJ-J4a">
+                                <rect key="frame" x="100" y="34" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="15"/>
+                                <state key="normal" title="S'inscrire plus tard">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.0" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="skipFormAction:" destination="Ogm-oh-TK1" eventType="touchUpInside" id="OUX-o1-1FX"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton adresse" minimumFontSize="17" id="gZH-S9-7YK">
+                                <rect key="frame" x="36" y="296" width="241" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93333333330000001" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.1176470588" green="0.0" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Bariol-Regular" family="Bariol" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ogm-oh-TK1" id="2qH-08-Emw"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="whb-dz-q5M"/>
                     <connections>
                         <outlet property="adressForm" destination="gZH-S9-7YK" id="vDK-5p-DCx"/>
+                        <outlet property="cityForm" destination="6hn-Wf-ExB" id="ucn-d6-On7"/>
                         <outlet property="firstNameForm" destination="Flj-hZ-HsE" id="ZQ0-lr-MnI"/>
                         <outlet property="icoValidate" destination="nuD-P8-pnV" id="auv-6O-FDd"/>
                         <outlet property="indicForm" destination="cCA-BY-JHS" id="T4w-vf-Atu"/>
                         <outlet property="labelValidate" destination="9WS-Hn-QZn" id="FGM-UL-Y3G"/>
                         <outlet property="lastNameForm" destination="rYd-5o-Rze" id="1DJ-BZ-V7h"/>
                         <outlet property="mailForm" destination="cK7-Tc-QX7" id="W8W-zX-Jc2"/>
+                        <outlet property="skipForm" destination="RSs-DJ-J4a" id="Bha-2D-GkI"/>
                         <outlet property="validateBtn" destination="TSh-3i-M8f" id="UOi-c6-awd"/>
                         <segue destination="Vyf-uV-WDE" kind="push" identifier="validateForm" id="phv-xX-jxG"/>
                     </connections>
@@ -402,7 +432,7 @@ du produit.</string>
                                 <rect key="frame" x="0.0" y="498" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_default_all" id="CS5-wJ-KpH">
+                                    <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_share" id="CS5-wJ-KpH">
                                         <rect key="frame" x="258" y="30" width="30" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -436,13 +466,16 @@ du produit.</string>
         <image name="back_purple" width="17" height="30"/>
         <image name="eau_tropicale_main_img" width="640" height="751"/>
         <image name="eau_tropicale_mini_img" width="226" height="225"/>
-        <image name="ico_default_all" width="60" height="60"/>
+        <image name="ico_check" width="60" height="60"/>
         <image name="ico_draw" width="268" height="552"/>
+        <image name="ico_gift" width="60" height="60"/>
+        <image name="ico_share" width="60" height="60"/>
+        <image name="ico_test_product" width="60" height="60"/>
         <image name="similar_product" width="489" height="529"/>
         <image name="video_eau_tropicale" width="744" height="1321"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lII-Dk-lfv"/>
+        <segue reference="eTm-9Y-DB8"/>
         <segue reference="WWe-BO-FwB"/>
     </inferredMetricsTieBreakers>
 </document>

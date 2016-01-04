@@ -119,14 +119,13 @@
             self.mData.texture = self.textureMixCenter.selectedIngredient;
             self.mData.textureColor = self.textureMixCenter.selectedIngredientColor;
             self.mData.textureImageName = self.textureMixCenter.selectedIngredientImageName;
-
         }
         
         if (self.currentMixCenterIndex == 3) {
             self.mData.sound = self.soundMixCenter.selectedIngredient;
             self.mData.soundColor = self.soundMixCenter.selectedIngredientColor;
             self.mData.soundImageName = self.soundMixCenter.selectedIngredientImageName;
-            
+
             UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Shaker" bundle:nil];
             Action_Shaker_ViewController *shaker = [sb instantiateInitialViewController];
             [self.navigationController pushViewController:shaker animated:YES];

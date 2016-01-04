@@ -76,6 +76,7 @@
             }
         }] resume];
     } else {
+        NSLog(@"Not connected");
         if ([defaults objectForKey:@"products"]) {
             self.userProducts = [defaults objectForKey:@"products"];
         }

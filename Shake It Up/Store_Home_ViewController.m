@@ -10,10 +10,12 @@
 #import "NavigationController.h"
 #import "Store_Search_ViewController.h"
 #import "HomeViewController.h"
+#import "Sign_Up_Later_ViewController.h"
 
 @interface Store_Home_ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *nearStores;
-@property (weak, nonatomic) IBOutlet UIButton *favoriteStores;
+
+@property (weak, nonatomic) IBOutlet UIView *btnNextStore;
+@property (weak, nonatomic) IBOutlet UIView *btnFavStore;
 
 @end
 
@@ -28,10 +30,16 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"isRegister"]) {
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-        HomeViewController *home = [sb instantiateInitialViewController];
-        [self.navigationController pushViewController:home animated:YES];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"signUp" bundle:nil];
+        Sign_Up_Later_ViewController *signup = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:signup animated:YES];
     }
+    
+    UITapGestureRecognizer *tapNext = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(nearStoresAction:)];
+    [self.btnNextStore addGestureRecognizer:tapNext];
+    
+    UITapGestureRecognizer *tapFav = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(favoriteStoresAction:)];
+    [self.btnFavStore addGestureRecognizer:tapFav];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,12 +55,12 @@
     }
 }
 
-- (IBAction)nearStoresAction:(id)sender {
+- (void)nearStoresAction:(UITapGestureRecognizer *)sender {
     storeChoice = 0;
     [self performSegueWithIdentifier:@"goToSearch" sender:sender];
 }
 
-- (IBAction)favoriteStoresAction:(id)sender {
+- (void)favoriteStoresAction:(UITapGestureRecognizer *)sender {
     storeChoice = 1;
     [self performSegueWithIdentifier:@"goToSearch" sender:sender];
 }

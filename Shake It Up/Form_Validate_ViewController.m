@@ -67,22 +67,21 @@
     self.user = [User sharedUser].user;
     
     // Product ID
+    NSLog(@"%@", [defaults objectForKey:@"isRegister"]);
     if ([defaults objectForKey:@"isRegister"]) {
-        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], @"5683d26e2e0f351d5a2be262"];
-    
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
-        NSURLSession *session = [NSURLSession sharedSession];
-        session.configuration.timeoutIntervalForResource = 30;
-        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (error) {
-                NSLog(@"%@", error.localizedDescription);
-                NSLog(@"%@", error);
-            }
-        }] resume];
+//        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], [[defaults objectForKey:@"actualProduct"] objectForKey:@"_id"]];
+//    
+//        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+//        NSURLSession *session = [NSURLSession sharedSession];
+//        session.configuration.timeoutIntervalForResource = 30;
+//        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//            if (error) {
+//                NSLog(@"%@", error.localizedDescription);
+//                NSLog(@"%@", error);
+//            }
+//        }] resume];
         
-        [self.goHomeBtn setTitle:@"Trouver une boutique" forState:UIControlStateNormal];
-    } else {
-        NSLog(@"%@", [defaults objectForKey:@"products"]);
+        [self.goHomeBtn setTitle:@"TROUVER UNE BOUTIQUE" forState:UIControlStateNormal];
     }
 }
 
@@ -118,6 +117,22 @@
         self.labelShare.frame = frameLabelBtn;
         
     } completion:^(BOOL finished) {}];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ([defaults objectForKey:@"isRegister"]) {
+        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [defaults objectForKey:@"isRegister"], [[defaults objectForKey:@"actualProduct"] objectForKey:@"_id"]];
+        
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+        NSURLSession *session = [NSURLSession sharedSession];
+        session.configuration.timeoutIntervalForResource = 30;
+        [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (error) {
+                NSLog(@"%@", error.localizedDescription);
+                NSLog(@"%@", error);
+            }
+        }] resume];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

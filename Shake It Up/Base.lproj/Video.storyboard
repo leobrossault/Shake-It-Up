@@ -133,15 +133,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="rfu-iX-F2a">
-                                        <rect key="frame" x="0.0" y="-800" width="320" height="1295"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1295"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eau_tropicale_main_img" id="6E6-K7-mJs">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="350"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eS0-QL-sWS">
-                                                <rect key="frame" x="0.0" y="329" width="320" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fLm-Oa-Tv0">
@@ -217,6 +213,10 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.90196078430000004" green="0.8980392157" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="eS0-QL-sWS">
+                                                <rect key="frame" x="0.0" y="329" width="320" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -475,7 +475,7 @@ du produit.</string>
         <image name="video_eau_tropicale" width="744" height="1321"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eTm-9Y-DB8"/>
         <segue reference="WWe-BO-FwB"/>
+        <segue reference="lII-Dk-lfv"/>
     </inferredMetricsTieBreakers>
 </document>

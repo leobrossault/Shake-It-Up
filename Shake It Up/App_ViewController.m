@@ -16,8 +16,18 @@
 #import "GenderMixCenter_ViewController.h"
 #import "BodyMixCenter_ViewController.h"
 #import "HomeViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface App_ViewController () <ActionShakerDelegate, VideoInteractionDelegate, Home_DefaultDelegate>
+
+// Video Attributes
+@property (strong, nonatomic) NSString *pathVideo;
+@property (strong, nonatomic) NSURL *urlVideo;
+@property (strong, nonatomic) AVAsset *asset;
+@property (strong, nonatomic) AVPlayerItem *playerItem;
+@property (strong, nonatomic) AVPlayer *avPlayer;
+@property (strong, nonatomic) AVPlayerLayer *avPlayerLayer;
+@property (weak, nonatomic) IBOutlet UIView *videoView;
 
 @end
 
@@ -29,18 +39,22 @@
     NavigationController *navigation = self.navigationController;
     [navigation hideMenu];
     
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    
-//    if ([self isFirstRunning] == YES) {
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Intro" bundle:nil];
-//        Text_Intro_PageViewController *intro = [sb instantiateInitialViewController];
-//        [self.navigationController pushViewController:intro animated:NO];
-//    } else {
-//        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
-//        HomeViewController *home = [sb instantiateInitialViewController];
-//        home.delegate = self;
-//        [self.navigationController pushViewController:home animated:NO];
-//    }
+    // Splashscreen
+    // Get video and play
+    
+    self.pathVideo = [[NSBundle mainBundle] pathForResource:@"splashscreen" ofType:@"mp4"];
+    self.urlVideo = [NSURL fileURLWithPath: self.pathVideo];
+    self.asset = [AVAsset assetWithURL: self.urlVideo];
+    self.playerItem = [[AVPlayerItem alloc] initWithAsset: self.asset];
+    self.avPlayer = [AVPlayer playerWithPlayerItem: self.playerItem];
+    self.avPlayerLayer = [AVPlayerLayer playerLayerWithPlayer: self.avPlayer];
+    
+    // Send notification when ended
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object: self.playerItem];
+    
+    self.avPlayerLayer.frame = self.view.bounds;
+    [self.videoView.layer addSublayer: self.avPlayerLayer];
+    [self.avPlayer play];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,6 +141,19 @@
 
 - (void) videoDidFinish {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)videoDidFinishPlaying:(NSNotification *) notification {
+    if ([self isFirstRunning] == YES) {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Intro" bundle:nil];
+        Text_Intro_PageViewController *intro = [sb instantiateInitialViewController];
+        [self.navigationController pushViewController:intro animated:NO];
+    } else {
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Home" bundle:nil];
+        HomeViewController *home = [sb instantiateInitialViewController];
+        home.delegate = self;
+        [self.navigationController pushViewController:home animated:NO];
+    }
 }
 
 @end

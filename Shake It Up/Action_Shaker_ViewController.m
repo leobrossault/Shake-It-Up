@@ -38,6 +38,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelOverlay;
 @property (weak, nonatomic) IBOutlet UILabel *botLabelOverlay;
 @property (weak, nonatomic) IBOutlet UIImageView *icoOverlay;
+@property (weak, nonatomic) IBOutlet UIImageView *icoTapOverlay;
 
 @end
 
@@ -87,7 +88,7 @@
     // SETTINGS
     animDuration = 2;
     gravityLoopDuration = 0.06;
-    nbShakeRequired = 3;
+    nbShakeRequired = 10;
     coefAmpStart = 40;
     coefAmpShake = 500;
     nbDrops = 150;
@@ -199,6 +200,32 @@
     for (int k = 0; k < [self.shakeObjects count]; k ++) {
         [[self.shakeObjects objectAtIndex: (NSInteger) k] setAlpha: 0.5];
     }
+    
+#pragma Get Good Product
+
+    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/product/discover/%@/%@/%@/%@", [MixtureData sharedMixtureData].emotion, [MixtureData sharedMixtureData].ingredient, [MixtureData sharedMixtureData].texture, [MixtureData sharedMixtureData].sound];
+//    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/product/discover/%@/%@/%@/%@", @"emotion2", @"ingredient2", @"texture2", @"sound2"];
+    
+    NSLog(@"%@", url);
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    NSURLSession *session = [NSURLSession sharedSession];
+    session.configuration.timeoutIntervalForResource = 30;
+    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error);
+        }
+        
+        NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
+        self.product = JSON;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject: self.product forKey:@"actualProduct"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSLog(@"%@", [[defaults objectForKey:@"actualProduct"] objectForKey: @"_id"]);
+    }] resume];
 }
 
 - (void) didReceiveMemoryWarning {
@@ -351,15 +378,19 @@
         self.labelOverlay.text = @"Ta préparation est prête !";
         self.botLabelOverlay.text = @"Tap pour continuer";
         
-        CGRect icoFrame = self.icoOverlay.frame;
-        icoFrame.size.width = 36;
-        icoFrame.size.height = 48;
-        icoFrame.origin.x = icoFrame.origin.x + 20;
-        icoFrame.origin.y = icoFrame.origin.y + 20;
-        self.icoOverlay.frame = icoFrame;
+        self.icoOverlay.hidden = true;
+        self.icoTapOverlay.hidden = false;
         
-        [self.icoOverlay setImage: [UIImage imageNamed:@"tap_ico"]];
-        [self.icoOverlay.layer removeAllAnimations];
+        NSMutableArray* imgArray = [[NSMutableArray alloc] initWithCapacity: 25];
+        for(int i = 0; i < 25; i++) {
+            UIImage* image = [UIImage imageNamed:[NSString stringWithFormat: @"tap_%d", i]];
+            [imgArray addObject:image];
+        }
+        
+        self.icoTapOverlay.animationImages = imgArray;
+        self.icoTapOverlay.animationDuration = 1.0f;
+        self.icoTapOverlay.animationRepeatCount = 0;
+        [self.icoTapOverlay startAnimating];
         
         [UIView animateWithDuration: 1.0 animations:^(void) {
             self.overlay.alpha = 1;

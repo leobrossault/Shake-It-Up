@@ -73,6 +73,10 @@
                                         <rect key="frame" x="117" y="228" width="85" height="112"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tap_0" id="aPn-ir-Tdo">
+                                        <rect key="frame" x="124" y="237" width="72" height="94"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -88,6 +92,7 @@
                         <outlet property="collisionView" destination="3Th-3s-ReQ" id="TrD-IY-sQP"/>
                         <outlet property="colorObject" destination="mok-Ru-J04" id="Xq9-KW-ysl"/>
                         <outlet property="icoOverlay" destination="7R8-lu-ti2" id="VXi-EB-JCY"/>
+                        <outlet property="icoTapOverlay" destination="aPn-ir-Tdo" id="SXy-Xc-CRs"/>
                         <outlet property="ingredientObject" destination="tAs-rQ-mf5" id="6DK-lu-AoM"/>
                         <outlet property="labelOverlay" destination="Hex-SS-Vow" id="G2c-nu-H6G"/>
                         <outlet property="overlay" destination="jaF-cd-5Bz" id="xjD-hP-rej"/>
@@ -105,6 +110,7 @@
         <image name="ble" width="256" height="256"/>
         <image name="device_rotation" width="171" height="225"/>
         <image name="sound" width="684" height="641"/>
+        <image name="tap_0" width="88" height="116"/>
         <image name="texture" width="1600" height="1200"/>
     </resources>
 </document>

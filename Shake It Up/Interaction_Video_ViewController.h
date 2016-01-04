@@ -22,5 +22,6 @@
 }
 
 @property (nonatomic, weak) id <VideoInteractionDelegate> delegate;
+@property (strong, nonatomic) NSDictionary *product;
 
 @end

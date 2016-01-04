@@ -42,11 +42,10 @@
     [self.navigation showMenu];
     [self.navigation whiteMenu];
     // Do any additional setup after loading the view.
-    self.userProducts = [User sharedUser].userProducts;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.userProducts = [defaults objectForKey: @"products"];
     
     // Inject Data
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
     if (![defaults objectForKey: @"isRegister"] || self.userProducts == NULL) {
         self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
         self.sloganProduct.text = [[[self.userProducts objectAtIndex: (int)self.product] objectAtIndex: (int) self.product] objectForKey:@"slogan"];

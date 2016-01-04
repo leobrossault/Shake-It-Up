@@ -69,27 +69,15 @@
     
     self.userProducts = [User sharedUser].userProducts;
 
-//    if (self.userProducts == NULL) {
-//        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1);
-//        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
-//            [self initCollection];
-//        });
-//    } else {
-        [self initCollection];
-//    }
+    [self initCollection];
 }
 
 - (void) initCollection {
     // Get User Data
-    self.userProducts = [User sharedUser].userProducts;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.userProducts = [defaults objectForKey: @"products"];
     
-    if (self.userProducts == NULL) {
-        productNotLoaded = 1;
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        self.userProducts = [defaults objectForKey: @"products"];
-    }
-    
-    nbProduct = [self.userProducts count];
+    nbProduct = (int)[self.userProducts count];
     nbCell = 10;
     countCell = 0;
     
@@ -167,11 +155,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (nbProduct > indexPath.row) {
-        if (![defaults objectForKey: @"isRegister"] || productNotLoaded == 1) {
-            productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: indexPath.row] objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
-        } else {
-            productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
-        }
+        productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
     } else {
         productImage = [UIImage imageNamed:@"default_product.png"];
     }
@@ -200,11 +184,7 @@
     productTitle.numberOfLines = 0;
     
     if (nbProduct > indexPath.row) {
-        if (![defaults objectForKey: @"isRegister"] || productNotLoaded == 1) {
-            productTitle.text = [NSString stringWithFormat:@"%@", [[[self.userProducts objectAtIndex: indexPath.row] objectAtIndex: indexPath.row] objectForKey:@"label"]];
-        } else {
-            productTitle.text = [NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"label"]];
-        }
+        productTitle.text = [NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"label"]];
         
         if (indexPath.row % 2 != 0) {
             [productTitle setFrame:CGRectMake(0, 125, 100, 22)];

@@ -326,10 +326,8 @@
 
 - (void) updateTimer:(NSTimer *) timer {
     if (dropped) {
-//        NSLog(@"timer updating");
         self.progressTimer.progress += 0.01;
     } else {
-//        NSLog(@"timer decreasing");
         self.progressTimer.progress -= 0.1;
     }
     
@@ -348,6 +346,29 @@
         self.progressTimer.progress = 0;
         [self stopTimer];
     }
+}
+
+- (void) purge {
+    NSLog(@"purging");
+    
+    [self.topLeftItem removeFromSuperview];
+    self.topLeftItem = nil;
+    
+    [self.topRightItem removeFromSuperview];
+    self.topRightItem = nil;
+    
+    [self.bottomLeftItem removeFromSuperview];
+    self.bottomLeftItem = nil;
+    
+    [self.bottomRightItem removeFromSuperview];
+    self.bottomRightItem = nil;
+    
+    self.droppedItem = nil;
+    
+    self.previousDroppedItem = nil;
+    
+    self.draggedItem = nil;
+
 }
 
 @end

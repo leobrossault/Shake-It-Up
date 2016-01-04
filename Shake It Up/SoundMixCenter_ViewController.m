@@ -60,12 +60,14 @@
 //        player.numberOfLoops = -1; //Infinite
 //        [player play];
         
+        //créer dans view didload
         SystemSoundID sound;
-        AudioServicesDisposeSystemSoundID (sound);
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"wav"];
         NSURL *soundURL = [NSURL fileURLWithPath:soundFilePath];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &sound);
         AudioServicesPlaySystemSound(sound);
+        //à mettre dans le dealloc
+//        AudioServicesDisposeSystemSoundID (sound);
         
     } else {
         dragging = NO;

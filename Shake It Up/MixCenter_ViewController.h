@@ -29,10 +29,10 @@
 @property (nonatomic) DragView *bottomLeftItem;
 @property (nonatomic) DropView *dropZone;
 
-@property (weak, nonatomic) IBOutlet DragView *draggedItem;
+@property (weak, nonatomic) DragView *draggedItem;
 
-@property (assign, nonatomic) DragView *droppedItem;
-@property (assign, nonatomic) DragView *previousDroppedItem;
+@property (weak, nonatomic) DragView *droppedItem;
+@property (weak, nonatomic) DragView *previousDroppedItem;
 
 @property (nonatomic) CircularLoaderView *progressTimer;
 
@@ -56,5 +56,7 @@
 @property (nonatomic, strong) UIColor *selectedIngredientColor;
 
 - (void) buildInterface;
+
+- (void) purge;
 
 @end

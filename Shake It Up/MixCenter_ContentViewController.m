@@ -14,7 +14,9 @@
 @property (nonatomic, strong) CALayer *point;
 @property (nonatomic, strong) CAShapeLayer *lineMore;
 @end
+
 @implementation MixCenter_ContentViewController
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -64,6 +66,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     
+    [super viewDidAppear:animated];
     POPSpringAnimation *animLine = [POPSpringAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeEnd];
     animLine.springSpeed = 10;
     animLine.springBounciness = 20.f;
@@ -130,7 +133,12 @@
         }
         
         if(self.nextMixCenterIndex < 4) {
+            NSInteger indexToPurge = self.currentMixCenterIndex;
+            
             [self transitionFromViewController:self.childViewControllers[self.currentMixCenterIndex] toViewController:self.childViewControllers[self.nextMixCenterIndex] duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{} completion:^(BOOL finished) {
+
+                [self.childViewControllers[indexToPurge] purge];
+                self.childViewControllers[indexToPurge].view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
                 [self animStateLine];
             }];
             

@@ -39,13 +39,17 @@
         UIImage* image = [UIImage imageNamed:[NSString stringWithFormat: self.path, i]];
         [imgArray addObject:image];
     }
-    
     UIImageView* animatedImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 70, 70)];
     animatedImageView.animationImages = imgArray;
     animatedImageView.animationDuration = 1.0f;
     animatedImageView.animationRepeatCount = 0;
-    [animatedImageView startAnimating];
     [self addSubview: animatedImageView];
+    [animatedImageView startAnimating];
+}
+
+- (void)dealloc
+{
+    NSLog(@"dragView %zd dealloc", self.tag);
 }
 
 @end

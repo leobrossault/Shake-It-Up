@@ -25,7 +25,15 @@
         self.colorValue = color;
         self.imageValue = path;
         
-        [self buildSprite];
+//        NSString *imageName = [self.path stringByReplacingOccurrencesOfString:@".gif" withString:@""];
+        NSURL *url = [[NSBundle mainBundle] URLForResource:self.path withExtension:@"gif"];
+        FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL:url]];
+        FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
+        imageView.animatedImage = image;
+        imageView.frame = CGRectMake(0.0, 0.0, 70.0, 70.0);
+        [self addSubview:imageView];
+        
+//        [self buildSprite];
         
     }
     return self;

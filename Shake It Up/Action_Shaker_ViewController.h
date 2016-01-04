@@ -44,5 +44,6 @@
 @property (nonatomic, weak) id <ActionShakerDelegate> delegate;
 @property (strong, nonatomic) CMMotionManager *motionManager;
 @property (strong, nonatomic) NSMutableArray *shakeObjects;
+@property (strong, nonatomic) NSDictionary *product;
 
 @end

@@ -53,37 +53,45 @@
     
     // Get Product from Database
     // Fake request
-    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/product/debug"];
+//    NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/product/debug"];
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    session.configuration.timeoutIntervalForResource = 30;
+//    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"%@", error.localizedDescription);
+//            NSLog(@"%@", error);
+//        }
+//        
+//        NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
+//        self.product = JSON;
+//        
+//        if (![defaults objectForKey: @"products"]) {
+//            self.anonymousProduct = [[NSMutableArray alloc] init];
+//        } else {
+//            self.anonymousProduct = [[NSMutableArray alloc] initWithArray: [defaults objectForKey:@"products"]];
+//        }
+//        
+//        [self.anonymousProduct addObject: self.product];
+//        [defaults setObject: self.anonymousProduct forKey:@"products"];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        
+//    }] resume];
     
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
-    NSURLSession *session = [NSURLSession sharedSession];
-    session.configuration.timeoutIntervalForResource = 30;
-    [[session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable jsonData, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        if (error) {
-            NSLog(@"%@", error.localizedDescription);
-            NSLog(@"%@", error);
-        }
-        
-        NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:jsonData options: NSJSONReadingMutableContainers error: nil];
-        self.product = JSON;
-        
-        if (![defaults objectForKey: @"products"]) {
-            self.anonymousProduct = [[NSMutableArray alloc] init];
-        } else {
-            self.anonymousProduct = [[NSMutableArray alloc] initWithArray: [defaults objectForKey:@"products"]];
-        }
-        
-        [self.anonymousProduct addObject: self.product];
-        [defaults setObject: self.anonymousProduct forKey:@"products"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
-    }] resume];
+    if (![defaults objectForKey: @"products"]) {
+        self.anonymousProduct = [[NSMutableArray alloc] init];
+    } else {
+        self.anonymousProduct = [[NSMutableArray alloc] initWithArray: [defaults objectForKey:@"products"]];
+    }
     
-    
+    [self.anonymousProduct addObject: [defaults objectForKey:@"actualProduct"]];
+    [defaults setObject: self.anonymousProduct forKey:@"products"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
     if ([defaults objectForKey: @"isRegister"]) {
         self.user = [User sharedUser].user;
-        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [self.user objectForKey:@"email"], [self.product objectForKey: @"_id"]];
+        NSString *url = [NSString stringWithFormat: @"http://37.187.118.146:8000/api/addProduct/%@/%@", [self.user objectForKey:@"email"], [[defaults objectForKey:@"actualProduct"] objectForKey: @"_id"]];
         
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
         NSURLSession *session = [NSURLSession sharedSession];
@@ -101,11 +109,11 @@
     }
     
     // Inject Data
-//    self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"pathMainImg"]]];
-//    self.sloganProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"slogan"];
-//    [self.sloganProduct sizeToFit];
-//    self.descrProduct.text = [[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"description"];
-//    [self.descrProduct sizeToFit];
+    self.mainImgProduct.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[defaults objectForKey:@"actualProduct"] objectForKey:@"pathMainImg"]]];
+    self.sloganProduct.text = [[defaults objectForKey:@"actualProduct"] objectForKey:@"slogan"];
+    [self.sloganProduct sizeToFit];
+    self.descrProduct.text = [[defaults objectForKey:@"actualProduct"] objectForKey:@"description"];
+    [self.descrProduct sizeToFit];
     
     NSMutableArray *imgArray = [[NSMutableArray alloc] initWithCapacity: 81];
     for(int i = 0; i < 81; i++) {

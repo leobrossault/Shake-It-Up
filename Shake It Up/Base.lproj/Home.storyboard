@@ -201,7 +201,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                         <outlet property="sloganProduct" destination="yFN-vT-w8k" id="wCc-9d-e9D"/>
                         <outlet property="testProduct" destination="UHh-Kf-d0D" id="lRM-0V-vwH"/>
                         <outlet property="waveContainer" destination="Nbg-7h-RYq" id="kGf-Kk-yRA"/>
-                        <segue destination="Hq3-xH-Xm2" kind="push" identifier="backToHome" id="gBZ-nV-Mp3"/>
+                        <segue destination="Hq3-xH-Xm2" kind="custom" identifier="backToHome" customClass="ReverseTransition" id="gBZ-nV-Mp3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SrK-a7-Ymk" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@
 		0D4859331C3BB8F500A26E01 /* tropicale_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859321C3BB8F500A26E01 /* tropicale_1.mp4 */; };
 		0D4859361C3BB92E00A26E01 /* yeux_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859341C3BB92E00A26E01 /* yeux_1.mp4 */; };
 		0D4859371C3BB92E00A26E01 /* yeux_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859351C3BB92E00A26E01 /* yeux_2.mp4 */; };
+		0D48593A1C3BF58F00A26E01 /* ReverseTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4859391C3BF58F00A26E01 /* ReverseTransition.m */; };
 		0D4DC4A51C0CB15400DA1FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */; };
 		0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A71C0CB36B00DA1FDD /* Bariol.ttf */; };
 		0D4DC4AC1C0CB37C00DA1FDD /* intro1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A91C0CB37C00DA1FDD /* intro1.mp4 */; };
@@ -133,6 +134,8 @@
 		0D4859321C3BB8F500A26E01 /* tropicale_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tropicale_1.mp4; sourceTree = "<group>"; };
 		0D4859341C3BB92E00A26E01 /* yeux_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yeux_1.mp4; sourceTree = "<group>"; };
 		0D4859351C3BB92E00A26E01 /* yeux_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yeux_2.mp4; sourceTree = "<group>"; };
+		0D4859381C3BF58F00A26E01 /* ReverseTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverseTransition.h; sourceTree = "<group>"; };
+		0D4859391C3BF58F00A26E01 /* ReverseTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverseTransition.m; sourceTree = "<group>"; };
 		0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D4DC4A71C0CB36B00DA1FDD /* Bariol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol.ttf; sourceTree = "<group>"; };
 		0D4DC4A91C0CB37C00DA1FDD /* intro1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro1.mp4; sourceTree = "<group>"; };
@@ -432,6 +435,8 @@
 				A45CF7F91BE7BA5C003D793A /* App_ViewController.m */,
 				A458E69B1BE8B1A600687DC0 /* NavigationController.h */,
 				A458E69C1BE8B1A600687DC0 /* NavigationController.m */,
+				0D4859381C3BF58F00A26E01 /* ReverseTransition.h */,
+				0D4859391C3BF58F00A26E01 /* ReverseTransition.m */,
 				A4FC89A51BECA1E900771A71 /* Objects */,
 				A45CF7F01BE77B1C003D793A /* Assets */,
 				A45CF7C61BE77751003D793A /* Intro */,
@@ -929,6 +934,7 @@
 				A45CF7E31BE77A1D003D793A /* Detail_Discover_ViewController.m in Sources */,
 				A4FC89A01BECA1E100771A71 /* Environment.m in Sources */,
 				0F4693D01C0E465200B231E8 /* SoundMixCenter_ViewController.m in Sources */,
+				0D48593A1C3BF58F00A26E01 /* ReverseTransition.m in Sources */,
 				0D4DC4DD1C18CDA300DA1FDD /* Store_Search_ViewController.m in Sources */,
 				0D4859281C3963EE00A26E01 /* Sign_Up_Later_ViewController.m in Sources */,
 				0FE18C151C286B3500F5E7BB /* BodyMixCenter_ViewController.m in Sources */,

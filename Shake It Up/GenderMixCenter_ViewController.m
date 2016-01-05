@@ -41,12 +41,12 @@
 
 - (void) buildInterface {
     self.descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(37.0, 113.0, 245.0, 37.5)];
-    self.descriptionLabel.font = self.app.font37;
+    self.descriptionLabel.font = self.app.font37Bold;
     self.descriptionLabel.textAlignment = NSTextAlignmentRight;
     [self.descriptionLabel setAlpha:0.0];
     [self.view addSubview:self.descriptionLabel];
     
-    self.genderLabel.font = self.app.font18;
+    self.genderLabel.font = self.app.font20;
     self.genderLabel.textColor = self.app.purple;
     
     [self drawDragViews];

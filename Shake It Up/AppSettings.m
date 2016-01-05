@@ -26,7 +26,13 @@
         
         self.font12 = [UIFont fontWithName:@"Bariol" size:12];
         self.font18 = [UIFont fontWithName:@"Bariol" size:18];
+        self.font20 = [UIFont fontWithName:@"Bariol" size:20];
+        self.font24 = [UIFont fontWithName:@"Bariol" size:24];
         self.font37 = [UIFont fontWithName:@"Bariol" size:37];
+        
+        self.font18Bold = [UIFont fontWithName:@"Bariol-bold" size:18];
+        self.font37Bold = [UIFont fontWithName:@"Bariol-bold" size:37];
+        self.font12Bold = [UIFont fontWithName:@"Bariol-bold" size:12];
         
         self.purple = [UIColor colorWithRed:91.0/255.0 green:45.0/255.0 blue:148.0/255.0 alpha:1.0];
         self.lightGrey = [UIColor colorWithRed:249.0/255.0 green:249.0/255.0 blue:254.0/255.0 alpha:1.0];

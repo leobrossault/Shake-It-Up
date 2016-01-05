@@ -54,11 +54,17 @@
         self.descriptionLabel.textColor = self.draggedItem.colorValue;
         [self.descriptionLabel setAlpha:1.0];
         
-//        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"mp3"];
-//        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-//        AVAudioPlayer *player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFileURL error:nil];
-//        player.numberOfLoops = -1; //Infinite
-//        [player play];
+        POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+        shake.fromValue = @(110);
+        shake.toValue = @(120);
+        shake.springBounciness = 20;
+        shake.velocity = @(10);
+        [self.descriptionLabel.layer pop_addAnimation:shake forKey:@"descriptionLabelAnimation"];
+        
+        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+        opacityAnimation.fromValue = @(0.0);
+        opacityAnimation.toValue = @(1.0);
+        [self.descriptionLabel.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
         
         //créer dans view didload
         SystemSoundID sound;
@@ -203,7 +209,7 @@
         if ([self.dropZone pointInside:[touch locationInView:self.dropZone] withEvent:nil]) {
             
             dropped = YES;
-            self.progressTimer.circlePathColor = self.droppedItem.backgroundColor;
+            self.progressTimer.circlePathColor = self.droppedItem.colorValue;
             [self startTimer];
             
             //if not in center of drop zone

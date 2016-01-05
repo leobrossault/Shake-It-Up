@@ -67,7 +67,7 @@
     
     [self.goMixBtn.layer addSublayer: self.point];
     
-    self.userProducts = [User sharedUser].userProducts;
+//    self.userProducts = [User sharedUser].userProducts;
 
     [self initCollection];
 }
@@ -152,7 +152,6 @@
     UIImage *productImage = [[UIImage alloc] init];
     UILabel *productTitle = [[UILabel alloc] init];
     UILabel *productType = [[UILabel alloc] init];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if (nbProduct > indexPath.row) {
         productImage = [UIImage imageNamed:[NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"pathMiniImg"]]];
@@ -177,7 +176,7 @@
     imgFrame.size.height = 122;
     productImageView.frame = imgFrame;
     
-    [productTitle setFrame:CGRectMake(25, 125, 100, 40)];
+    [productTitle setFrame:CGRectMake(25, 125, 115, 40)];
     productTitle.textColor = [UIColor colorWithRed:0.16 green:0.06 blue:0.39 alpha:1.0];
     productTitle.font = [UIFont fontWithName:@"Bariol-Bold" size:22];
     productTitle.lineBreakMode = NSLineBreakByWordWrapping;
@@ -187,7 +186,7 @@
         productTitle.text = [NSString stringWithFormat:@"%@", [[self.userProducts objectAtIndex: indexPath.row] objectForKey:@"label"]];
         
         if (indexPath.row % 2 != 0) {
-            [productTitle setFrame:CGRectMake(0, 125, 100, 22)];
+            [productTitle setFrame:CGRectMake(0, 125, 115, 22)];
         }
     }
     
@@ -199,7 +198,13 @@
     [productTitle sizeToFit];
     
     if (nbProduct > indexPath.row) {
-        productType.text = @"Eau de toilette";
+        if ([productTitle.text isEqualToString:@"Eau Tropicale"]) {
+            productType.text = @"Eau de toilette";
+        } else {
+            productType.text = @"Phare à paupière";
+        }
+        
+
         if (indexPath.row % 2 != 0) {
             [productType setFrame:CGRectMake(0, 160, 120, 40)];
         }

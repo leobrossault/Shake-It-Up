@@ -56,6 +56,10 @@
     self.btnDiscoverProduct.hidden = true;
     self.icoBtnDiscover.hidden = true;
     
+    // Img end Video
+    NSString *pathImg = [NSString stringWithFormat:@"%@_3", [[defaults objectForKey:@"actualProduct"] objectForKey:@"video"]];
+    [self.imgEndVideo setImage:[UIImage imageNamed: pathImg]];
+    
     // Get video and play
     NSString *path = [NSString stringWithFormat:@"%@_1", [[defaults objectForKey:@"actualProduct"] objectForKey:@"video"]];
     self.pathVideo = [[NSBundle mainBundle] pathForResource: path ofType:@"mp4"];

@@ -323,7 +323,7 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_purple"/>
                                 <connections>
-                                    <segue destination="eO4-Hj-ODf" kind="push" id="lII-Dk-lfv"/>
+                                    <action selector="backAction:" destination="Ogm-oh-TK1" eventType="touchUpInside" id="ugo-b6-7HU"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ton prénom" textAlignment="natural" minimumFontSize="17" id="Flj-hZ-HsE">
@@ -481,7 +481,6 @@ du produit.</string>
         <image name="video_eau_tropicale" width="744" height="1321"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lII-Dk-lfv"/>
         <segue reference="phv-xX-jxG"/>
     </inferredMetricsTieBreakers>
 </document>

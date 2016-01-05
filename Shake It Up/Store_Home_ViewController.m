@@ -28,6 +28,13 @@
     [navigation showMenu];
     [navigation resetColorMenu];
     
+    // Remove previous View Controller
+    NSInteger count = [self.navigationController.viewControllers count];
+    UIViewController *vc = [self.navigationController.viewControllers objectAtIndex: count - 2];
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:@"isRegister"]) {
         UIStoryboard *sb = [UIStoryboard storyboardWithName:@"signUp" bundle:nil];

@@ -224,8 +224,6 @@
     UITouch *touch = [touches anyObject];
     if (dragging) {
         
-        [self.descriptionLabel setAlpha:0.0];
-        
         //if moved out of drop zone
         if (![self.dropZone pointInside:[touch locationInView:self.dropZone] withEvent:nil]) {
             

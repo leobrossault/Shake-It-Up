@@ -56,8 +56,8 @@
 
 - (void) drawDragViews {
     
-    UIColor *color1 = [UIColor colorWithRed:253.0 / 255.0 green:13.0 / 255.0 blue:80.0 / 255.0 alpha:1];
-    UIColor *color2 = [UIColor colorWithRed:122.0 / 255.0 green:224.0 / 255.0 blue:252.0 / 255.0 alpha:1];
+    UIColor *color1 = [UIColor colorWithRed:91.0 / 255.0 green:45.0 / 255.0 blue:148.0 / 255.0 alpha:1.0];
+    UIColor *color2 = [UIColor colorWithRed:253.0 / 255.0 green:13.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
     
     //DragView 1
     self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"femme" andColor:color1];
@@ -221,8 +221,6 @@
 {
     UITouch *touch = [touches anyObject];
     if (dragging) {
-        
-        [self.descriptionLabel setAlpha:0.0];
         
         //if moved out of drop zone
         if (![self.dropZone pointInside:[touch locationInView:self.dropZone] withEvent:nil]) {

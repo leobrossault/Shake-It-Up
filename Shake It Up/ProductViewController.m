@@ -10,6 +10,7 @@
 #import "User.h"
 #import "NavigationController.h"
 #import "Sign_Up_Later_ViewController.h"
+#import "HomeViewController.h"
 
 @interface ProductViewController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *mainImgProduct;
@@ -134,7 +135,7 @@
 }
 
 - (IBAction)actionBack:(id)sender {
-    [self performSegueWithIdentifier:@"backToHome" sender:sender];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

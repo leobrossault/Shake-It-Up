@@ -50,7 +50,7 @@
     //if object is a dragView and if there is only one touch
     if ([self.draggedItem isMemberOfClass:[DragView class]] && [touches count] == 1) {
         dragging = YES;
-        self.descriptionLabel.text = self.draggedItem.value;
+        self.descriptionLabel.text = self.draggedItem.realValue;
         self.descriptionLabel.textColor = self.draggedItem.colorValue;
         [self.descriptionLabel setAlpha:1.0];
         

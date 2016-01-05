@@ -61,10 +61,10 @@
     
     
     // Get Img Elements
-    [MixtureData sharedMixtureData].emotionImageName = [[MixtureData sharedMixtureData].emotionImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
-    [MixtureData sharedMixtureData].textureImageName = [[MixtureData sharedMixtureData].textureImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
-    [MixtureData sharedMixtureData].ingredientImageName = [[MixtureData sharedMixtureData].ingredientImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
-    [MixtureData sharedMixtureData].soundImageName = [[MixtureData sharedMixtureData].soundImageName stringByReplacingOccurrencesOfString:@"%d" withString:@"0"];
+    [MixtureData sharedMixtureData].emotionImageName = [NSString stringWithFormat:@"%@_0", [MixtureData sharedMixtureData].emotionImageName];
+    [MixtureData sharedMixtureData].textureImageName = [NSString stringWithFormat:@"%@_0", [MixtureData sharedMixtureData].textureImageName];
+    [MixtureData sharedMixtureData].ingredientImageName = [NSString stringWithFormat:@"%@_0", [MixtureData sharedMixtureData].ingredientImageName];
+    [MixtureData sharedMixtureData].soundImageName = [NSString stringWithFormat:@"%@_0", [MixtureData sharedMixtureData].soundImageName];
 
     
     [self.colorObject setImage:[UIImage imageNamed: [MixtureData sharedMixtureData].emotionImageName]];
@@ -77,11 +77,11 @@
     
     self.fluid = [[BAFluidView alloc] initWithFrame:CGRectMake(0, 0, screenBound.size.width, self.waterView.frame.size.height) startElevation:@0.5];
     // Set color
-    self.fluid.fillColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
-    self.fluid.strokeColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
+    self.fluid.fillColor = [MixtureData sharedMixtureData].emotionColor;
+    self.fluid.strokeColor = [MixtureData sharedMixtureData].emotionColor;
     [self.waterView addSubview: self.fluid];
     [self.fluid startAnimation];
-    self.bottomWaterView.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
+    self.bottomWaterView.backgroundColor = [MixtureData sharedMixtureData].emotionColor;
     [self.bottomWaterView setFrame:CGRectMake(0, screenBound.size.height - 12, screenBound.size.width, screenBound.size.height)];
 
 #pragma settings
@@ -168,7 +168,7 @@
             
             UIView *dropSquare = [[UIView alloc] initWithFrame: CGRectMake(randomX, randomY
                                                                            , randomRadius, randomRadius)];
-            dropSquare.backgroundColor = [UIColor colorWithRed:0.98 green:0.15 blue:0.35 alpha:1.0];
+            dropSquare.backgroundColor = [MixtureData sharedMixtureData].emotionColor;
             [dropSquare.layer setCornerRadius: randomRadius/2];
 
             [self.view addSubview: dropSquare];

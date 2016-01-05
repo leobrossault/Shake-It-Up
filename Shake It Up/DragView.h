@@ -14,6 +14,7 @@
 @property (nonatomic) NSUInteger nbImages;
 @property (nonatomic) NSString *path;
 @property (nonatomic) NSString *value;
+@property (nonatomic) NSString *realValue;
 @property (nonatomic) UIColor *colorValue;
 @property (nonatomic) NSString *imageValue;
 @property (nonatomic) NSString *soundValue;

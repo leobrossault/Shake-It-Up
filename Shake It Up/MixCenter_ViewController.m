@@ -69,25 +69,32 @@
     //DragView 1
     self.topLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[0] objectForKey:@"path"] andColor:color1];
     self.topLeftItem.tag = 1;
-    self.topLeftItem.value = [self.ingredients[0] objectForKey:@"label"];
+    self.topLeftItem.value = [self.ingredients[0] objectForKey:@"slug"];
+    self.topLeftItem.realValue = [self.ingredients[0] objectForKey:@"label"];
     [self.view addSubview:self.topLeftItem];
     
     //DragView 2
     self.topRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[1] objectForKey:@"path"] andColor:color2];
     self.topRightItem.tag = 2;
-    self.topRightItem.value = [self.ingredients[1] objectForKey:@"label"];
+    self.topRightItem.value = [self.ingredients[1] objectForKey:@"slug"];
+    self.topRightItem.realValue = [self.ingredients[1] objectForKey:@"label"];
+
     [self.view addSubview:self.topRightItem];
     
     //DragView 3
     self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[2] objectForKey:@"path"] andColor:color3];
     self.bottomRightItem.tag = 3;
-    self.bottomRightItem.value = [self.ingredients[2] objectForKey:@"label"];
+    self.bottomRightItem.value = [self.ingredients[2] objectForKey:@"slug"];
+    self.bottomRightItem.realValue = [self.ingredients[2] objectForKey:@"label"];
+
     [self.view addSubview:self.bottomRightItem];
     
     //DragView 4
     self.bottomLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:[self.ingredients[3] objectForKey:@"path"] andColor:color4];
     self.bottomLeftItem.tag = 4;
-    self.bottomLeftItem.value = [self.ingredients[3] objectForKey:@"label"];
+    self.bottomLeftItem.value = [self.ingredients[3] objectForKey:@"slug"];
+    self.bottomLeftItem.realValue = [self.ingredients[3] objectForKey:@"label"];
+
     [self.view addSubview:self.bottomLeftItem];
 }
 - (void) drawDropZone {
@@ -118,7 +125,7 @@
     //if object is a dragView and if there is only one touch
     if ([self.draggedItem isMemberOfClass:[DragView class]] && [touches count] == 1) {
         dragging = YES;
-        self.descriptionLabel.text = self.draggedItem.value;
+        self.descriptionLabel.text = self.draggedItem.realValue;
         self.descriptionLabel.textColor = self.draggedItem.colorValue;
         [self.descriptionLabel setAlpha:1.0];
         

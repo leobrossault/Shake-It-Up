@@ -60,13 +60,13 @@
     UIColor *color2 = [UIColor colorWithRed:122.0 / 255.0 green:224.0 / 255.0 blue:252.0 / 255.0 alpha:1];
     
     //DragView 1
-    self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"round_emotion_01_%d.png" andColor:color1];
+    self.bottomRightItem = [[DragView alloc] initWithFrame:CGRectMake(227.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"femme" andColor:color1];
     self.bottomRightItem.tag = 1;
     self.bottomRightItem.value = @"une Femme";
     [self.view addSubview:self.bottomRightItem];
     
     //DragView 2
-    self.bottomLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"round_emotion_02_%d.png" andColor:color2];
+    self.bottomLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 455.0, 70.0, 70.0) andNbImages:25 andPath:@"homme" andColor:color2];
     self.bottomLeftItem.tag = 2;
     self.bottomLeftItem.value = @"un Homme";
     [self.view addSubview:self.bottomLeftItem];

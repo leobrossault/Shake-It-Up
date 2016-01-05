@@ -50,9 +50,9 @@
 		0F9CE0831C3B0C3D006F7C3C /* round_sound_02.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE07F1C3B0C3D006F7C3C /* round_sound_02.gif */; };
 		0F9CE0841C3B0C3D006F7C3C /* round_sound_03.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0801C3B0C3D006F7C3C /* round_sound_03.gif */; };
 		0F9CE0851C3B0C3D006F7C3C /* round_sound_04.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0811C3B0C3D006F7C3C /* round_sound_04.gif */; };
-		0F9CE08A1C3B122C006F7C3C /* fête.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0861C3B122C006F7C3C /* fête.wav */; };
-		0F9CE08B1C3B122C006F7C3C /* feu de camp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0871C3B122C006F7C3C /* feu de camp.wav */; };
-		0F9CE08C1C3B122C006F7C3C /* forêt tropicale.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0881C3B122C006F7C3C /* forêt tropicale.wav */; };
+		0F9CE08A1C3B122C006F7C3C /* fete.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0861C3B122C006F7C3C /* fete.wav */; };
+		0F9CE08B1C3B122C006F7C3C /* feu_de_camp.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0871C3B122C006F7C3C /* feu_de_camp.wav */; };
+		0F9CE08C1C3B122C006F7C3C /* foret_tropicale.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0881C3B122C006F7C3C /* foret_tropicale.wav */; };
 		0F9CE08D1C3B122C006F7C3C /* mer.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE0891C3B122C006F7C3C /* mer.wav */; };
 		0F9CE0921C3B14B7006F7C3C /* round_ingredient_01.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE08E1C3B14B7006F7C3C /* round_ingredient_01.gif */; };
 		0F9CE0931C3B14B7006F7C3C /* round_ingredient_02.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0F9CE08F1C3B14B7006F7C3C /* round_ingredient_02.gif */; };
@@ -179,9 +179,9 @@
 		0F9CE07F1C3B0C3D006F7C3C /* round_sound_02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_sound_02.gif; sourceTree = "<group>"; };
 		0F9CE0801C3B0C3D006F7C3C /* round_sound_03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_sound_03.gif; sourceTree = "<group>"; };
 		0F9CE0811C3B0C3D006F7C3C /* round_sound_04.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_sound_04.gif; sourceTree = "<group>"; };
-		0F9CE0861C3B122C006F7C3C /* fête.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "fête.wav"; sourceTree = "<group>"; };
-		0F9CE0871C3B122C006F7C3C /* feu de camp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "feu de camp.wav"; sourceTree = "<group>"; };
-		0F9CE0881C3B122C006F7C3C /* forêt tropicale.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "forêt tropicale.wav"; sourceTree = "<group>"; };
+		0F9CE0861C3B122C006F7C3C /* fete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fete.wav; sourceTree = "<group>"; };
+		0F9CE0871C3B122C006F7C3C /* feu_de_camp.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = feu_de_camp.wav; sourceTree = "<group>"; };
+		0F9CE0881C3B122C006F7C3C /* foret_tropicale.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = foret_tropicale.wav; sourceTree = "<group>"; };
 		0F9CE0891C3B122C006F7C3C /* mer.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mer.wav; sourceTree = "<group>"; };
 		0F9CE08E1C3B14B7006F7C3C /* round_ingredient_01.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_ingredient_01.gif; sourceTree = "<group>"; };
 		0F9CE08F1C3B14B7006F7C3C /* round_ingredient_02.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = round_ingredient_02.gif; sourceTree = "<group>"; };
@@ -561,9 +561,9 @@
 		A45CF7F11BE77B22003D793A /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				0F9CE0861C3B122C006F7C3C /* fête.wav */,
-				0F9CE0871C3B122C006F7C3C /* feu de camp.wav */,
-				0F9CE0881C3B122C006F7C3C /* forêt tropicale.wav */,
+				0F9CE0861C3B122C006F7C3C /* fete.wav */,
+				0F9CE0871C3B122C006F7C3C /* feu_de_camp.wav */,
+				0F9CE0881C3B122C006F7C3C /* foret_tropicale.wav */,
 				0F9CE0891C3B122C006F7C3C /* mer.wav */,
 			);
 			name = Sounds;
@@ -762,7 +762,7 @@
 				A45CF8001BE7C1C6003D793A /* Shaker.storyboard in Resources */,
 				0D4DC4AC1C0CB37C00DA1FDD /* intro1.mp4 in Resources */,
 				A45CF8061BE7C51B003D793A /* Discover.storyboard in Resources */,
-				0F9CE08B1C3B122C006F7C3C /* feu de camp.wav in Resources */,
+				0F9CE08B1C3B122C006F7C3C /* feu_de_camp.wav in Resources */,
 				A45CF7A01BE7752A003D793A /* Assets.xcassets in Resources */,
 				0D4DC4AE1C0CB37C00DA1FDD /* intro3.mp4 in Resources */,
 				0D4859331C3BB8F500A26E01 /* tropicale_1.mp4 in Resources */,
@@ -788,11 +788,11 @@
 				0D4DC4D61C18CBEB00DA1FDD /* Store.storyboard in Resources */,
 				0D4DC4C11C108D9700DA1FDD /* Bariol-Bold.otf in Resources */,
 				0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */,
-				0F9CE08C1C3B122C006F7C3C /* forêt tropicale.wav in Resources */,
+				0F9CE08C1C3B122C006F7C3C /* foret_tropicale.wav in Resources */,
 				0D4859311C3BB8DA00A26E01 /* tropicale_2.mp4 in Resources */,
 				0F9CE06A1C3B07A2006F7C3C /* round_emotion_01.gif in Resources */,
 				0F9CE06B1C3B07A2006F7C3C /* round_emotion_02.gif in Resources */,
-				0F9CE08A1C3B122C006F7C3C /* fête.wav in Resources */,
+				0F9CE08A1C3B122C006F7C3C /* fete.wav in Resources */,
 				0FE18C171C286C3600F5E7BB /* BodyPartMixCenter.storyboard in Resources */,
 				0F9CE0821C3B0C3D006F7C3C /* round_sound_01.gif in Resources */,
 				0F9CE0831C3B0C3D006F7C3C /* round_sound_02.gif in Resources */,

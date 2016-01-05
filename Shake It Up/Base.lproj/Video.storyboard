@@ -453,6 +453,7 @@ du produit.</string>
                     <connections>
                         <outlet property="goHomeBtn" destination="kYy-L3-IlZ" id="maE-Mi-rFe"/>
                         <outlet property="icoShare" destination="CS5-wJ-KpH" id="y30-wJ-W4d"/>
+                        <outlet property="imgProduct" destination="2FK-oB-Qf4" id="kOX-6N-Plz"/>
                         <outlet property="labelShare" destination="EjO-S8-yZC" id="j9d-e4-13Y"/>
                         <outlet property="shareBtn" destination="pXa-YR-dW4" id="UcH-ch-WBb"/>
                     </connections>

@@ -41,7 +41,6 @@
     
     // Get actual Product
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSLog(@"%@", [defaults objectForKey:@"actualProduct"]);
     
     // Remove previous View Controller
     NSInteger count = [self.navigationController.viewControllers count];
@@ -58,7 +57,8 @@
     self.icoBtnDiscover.hidden = true;
     
     // Get video and play
-    self.pathVideo = [[NSBundle mainBundle] pathForResource:@"pigeon" ofType:@"mp4"];
+    NSString *path = [NSString stringWithFormat:@"%@_1", [[defaults objectForKey:@"actualProduct"] objectForKey:@"video"]];
+    self.pathVideo = [[NSBundle mainBundle] pathForResource: path ofType:@"mp4"];
     self.urlVideo = [NSURL fileURLWithPath: self.pathVideo];
     self.asset = [AVAsset assetWithURL: self.urlVideo];
     self.playerItem = [[AVPlayerItem alloc] initWithAsset: self.asset];
@@ -102,7 +102,6 @@
 -(void)videoDidFinishPlaying:(NSNotification *) notification {
     if (videoEnded == 0) {
         self.imgEndVideo.hidden = false;
-//        self.indicStart.hidden = false;
         self.icoBtnDiscover.hidden = false;
         self.btnDiscoverProduct.hidden = false;
         videoEnded = 1;
@@ -112,7 +111,9 @@
         }];
     }
     
-    self.pathVideo = [[NSBundle mainBundle] pathForResource:@"tropicale" ofType:@"mp4"];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *path = [NSString stringWithFormat:@"%@_2", [[defaults objectForKey:@"actualProduct"] objectForKey:@"video"]];
+    self.pathVideo = [[NSBundle mainBundle] pathForResource: path ofType:@"mp4"];
     self.urlVideo = [NSURL fileURLWithPath: self.pathVideo];
     self.asset = [AVAsset assetWithURL: self.urlVideo];
     self.playerItem = [[AVPlayerItem alloc] initWithAsset: self.asset];

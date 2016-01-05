@@ -288,4 +288,8 @@
     [self performSegueWithIdentifier:@"validateForm" sender:sender];
 }
 
+- (IBAction)backAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end

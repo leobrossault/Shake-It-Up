@@ -36,6 +36,13 @@
     [self.navigation showMenu];
     [self.navigation resetColorMenu];
     
+    // Remove previous View Controller
+    NSInteger count = [self.navigationController.viewControllers count];
+    UIViewController *vc = [self.navigationController.viewControllers objectAtIndex: count - 2];
+    [vc willMoveToParentViewController:nil];
+    [vc.view removeFromSuperview];
+    [vc removeFromParentViewController];
+    
     productNotLoaded = 0;
     didLoad = 0;
     // Do any additional setup after loading the view.
@@ -132,10 +139,11 @@
             self.labelMixBtn.frame = frameLabelBtn;
 
         } completion:^(BOOL finished) {}];
-    
-        [self.navigation resetColorMenu];
+        
         didLoad = 1;
     }
+    
+    [self.navigation resetColorMenu];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

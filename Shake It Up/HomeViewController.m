@@ -37,6 +37,7 @@
     [self.navigation resetColorMenu];
     
     productNotLoaded = 0;
+    didLoad = 0;
     // Do any additional setup after loading the view.
     
     UITapGestureRecognizer *btnMix = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToMix:)];
@@ -99,39 +100,42 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    POPSpringAnimation *animLine = [POPSpringAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeStart];
-    animLine.springSpeed = 10;
-    animLine.springBounciness = 20.f;
-    animLine.toValue = @(0.0);
-    [self.line pop_addAnimation:animLine forKey:@"widthLine"];
+    if (didLoad == 0) {
+        POPSpringAnimation *animLine = [POPSpringAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeStart];
+        animLine.springSpeed = 10;
+        animLine.springBounciness = 20.f;
+        animLine.toValue = @(0.0);
+        [self.line pop_addAnimation:animLine forKey:@"widthLine"];
     
-    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.2);
-    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
-        self.point.opacity = 1;
-    });
+        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 0.2);
+        dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+            self.point.opacity = 1;
+        });
     
-    POPSpringAnimation *animPoint = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationX];
-    animPoint.beginTime = CACurrentMediaTime() + 0.3;
-    animPoint.springSpeed = 10;
-    animPoint.springBounciness = 20.f;
-    animPoint.fromValue = @(0.0);
-    animPoint.toValue = @(-10.0);
-    [self.point pop_addAnimation:animPoint forKey:@"leftPoint"];
+        POPSpringAnimation *animPoint = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerTranslationX];
+        animPoint.beginTime = CACurrentMediaTime() + 0.3;
+        animPoint.springSpeed = 10;
+        animPoint.springBounciness = 20.f;
+        animPoint.fromValue = @(0.0);
+        animPoint.toValue = @(-10.0);
+        [self.point pop_addAnimation:animPoint forKey:@"leftPoint"];
     
-    [UIView animateWithDuration: 0.3f animations:^{
-        self.icoMixBtn.alpha = 1;
-        CGRect frameIcoBtn = self.icoMixBtn.frame;
-        frameIcoBtn.origin.y = self.icoMixBtn.frame.origin.y - 10;
-        self.icoMixBtn.frame = frameIcoBtn;
+        [UIView animateWithDuration: 0.3f animations:^{
+            self.icoMixBtn.alpha = 1;
+            CGRect frameIcoBtn = self.icoMixBtn.frame;
+            frameIcoBtn.origin.y = self.icoMixBtn.frame.origin.y - 10;
+            self.icoMixBtn.frame = frameIcoBtn;
         
-        self.labelMixBtn.alpha = 1;
-        CGRect frameLabelBtn = self.labelMixBtn.frame;
-        frameLabelBtn.origin.x = self.labelMixBtn.frame.origin.x - 10;
-        self.labelMixBtn.frame = frameLabelBtn;
+            self.labelMixBtn.alpha = 1;
+            CGRect frameLabelBtn = self.labelMixBtn.frame;
+            frameLabelBtn.origin.x = self.labelMixBtn.frame.origin.x - 10;
+            self.labelMixBtn.frame = frameLabelBtn;
 
-    } completion:^(BOOL finished) {}];
+        } completion:^(BOOL finished) {}];
     
-    [self.navigation resetColorMenu];
+        [self.navigation resetColorMenu];
+        didLoad = 1;
+    }
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {

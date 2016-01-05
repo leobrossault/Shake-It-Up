@@ -52,7 +52,8 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Je1-Q6-Vgl">
                                         <rect key="frame" x="0.0" y="121" width="113" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">Boutiques proches</string>
+                                        <string key="text">Boutiques 
+proches</string>
                                         <fontDescription key="fontDescription" name="Bariol-Bold" family="Bariol" pointSize="23"/>
                                         <color key="textColor" red="0.97647058819999999" green="0.0" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -146,7 +147,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_purple"/>
                                 <connections>
-                                    <segue destination="Tkf-5G-Nhm" kind="push" id="9Gt-zo-o6b"/>
+                                    <action selector="backAction:" destination="aT2-OT-Zhx" eventType="touchUpInside" id="ln6-9s-3Df"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -242,7 +243,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="back_purple"/>
                                 <connections>
-                                    <segue destination="aT2-OT-Zhx" kind="push" identifier="returnAllStore" id="q4u-uw-0Bx"/>
+                                    <action selector="backAction:" destination="pbh-E8-ZnR" eventType="touchUpInside" id="5Ok-Sc-IHq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -277,7 +278,4 @@
         <image name="ico_title_store" width="60" height="60"/>
         <image name="search" width="44" height="44"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="q4u-uw-0Bx"/>
-    </inferredMetricsTieBreakers>
 </document>

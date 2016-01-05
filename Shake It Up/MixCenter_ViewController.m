@@ -125,6 +125,18 @@
         self.descriptionLabel.textColor = self.draggedItem.colorValue;
         [self.descriptionLabel setAlpha:1.0];
         
+        POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+        shake.fromValue = @(110);
+        shake.toValue = @(120);
+        shake.springBounciness = 20;
+        shake.velocity = @(10);
+        [self.descriptionLabel.layer pop_addAnimation:shake forKey:@"descriptionLabelAnimation"];
+        
+        POPBasicAnimation *opacityAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity];
+        opacityAnimation.fromValue = @(0.0);
+        opacityAnimation.toValue = @(1.0);
+        [self.descriptionLabel.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
+        
     } else {
         dragging = NO;
     }

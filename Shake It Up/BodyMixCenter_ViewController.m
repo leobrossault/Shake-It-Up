@@ -45,10 +45,10 @@
 
 - (void) drawDragViews {
     
-    UIColor *color1 = [UIColor colorWithRed:253.0 / 255.0 green:13.0 / 255.0 blue:80.0 / 255.0 alpha:1];
-    UIColor *color2 = [UIColor colorWithRed:122.0 / 255.0 green:224.0 / 255.0 blue:252.0 / 255.0 alpha:1];
-    UIColor *color3 = [UIColor colorWithRed:91.0 / 255.0 green:45.0 / 255.0 blue:148.0 / 255.0 alpha:1];
-    UIColor *color4 = [UIColor colorWithRed:255.0 / 255.0 green:241.0 / 255.0 blue:50.0 / 255.0 alpha:1];
+    UIColor *color1 = [UIColor colorWithRed:91.0 / 255.0 green:45.0 / 255.0 blue:80.0 / 165.0 alpha:1];
+    UIColor *color2 = [UIColor colorWithRed:255.0 / 255.0 green:241.0 / 255.0 blue:50.0 / 255.0 alpha:1];
+    UIColor *color3 = [UIColor colorWithRed:122.0 / 255.0 green:224.0 / 255.0 blue:252.0 / 255.0 alpha:1];
+    UIColor *color4 = [UIColor colorWithRed:253.0 / 255.0 green:13.0 / 255.0 blue:80.0 / 255.0 alpha:1.0];
     
     //DragView 1
     self.topLeftItem = [[DragView alloc] initWithFrame:CGRectMake(26.0, 165.0, 70.0, 70.0) andNbImages:25 andPath:@"round_corps_01" andColor:color1];

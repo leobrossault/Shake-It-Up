@@ -105,8 +105,8 @@
         [self.descriptionLabel setAlpha:1.0];
         
         POPSpringAnimation *shake = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-        shake.fromValue = @(110);
-        shake.toValue = @(120);
+        shake.fromValue = @(140);
+        shake.toValue = @(150);
         shake.springBounciness = 20;
         shake.velocity = @(10);
         [self.descriptionLabel.layer pop_addAnimation:shake forKey:@"descriptionLabelAnimation"];

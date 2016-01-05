@@ -21,43 +21,19 @@
         
         self.nbImages = nb;
         self.path = path;
-        self.backgroundColor = color;
         self.colorValue = color;
         self.imageValue = path;
+        //self.backgroundColor = color;
         
-//        NSString *imageName = [self.path stringByReplacingOccurrencesOfString:@".gif" withString:@""];
         NSURL *url = [[NSBundle mainBundle] URLForResource:self.path withExtension:@"gif"];
         FLAnimatedImage *image = [FLAnimatedImage animatedImageWithGIFData:[NSData dataWithContentsOfURL:url]];
         FLAnimatedImageView *imageView = [[FLAnimatedImageView alloc] init];
         imageView.animatedImage = image;
         imageView.frame = CGRectMake(0.0, 0.0, 70.0, 70.0);
         [self addSubview:imageView];
-        
-//        [self buildSprite];
-        
     }
+    
     return self;
-}
-
-- (void) buildSprite {
-    //sprites
-    NSMutableArray* imgArray = [[NSMutableArray alloc] initWithCapacity: self.nbImages];
-    for(int i = 0; i < self.nbImages; i++) {
-        
-        UIImage* image = [UIImage imageNamed:[NSString stringWithFormat: self.path, i]];
-        [imgArray addObject:image];
-    }
-    UIImageView* animatedImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, 70, 70)];
-    animatedImageView.animationImages = imgArray;
-    animatedImageView.animationDuration = 1.0f;
-    animatedImageView.animationRepeatCount = 0;
-    [self addSubview: animatedImageView];
-    [animatedImageView startAnimating];
-}
-
-- (void)dealloc
-{
-    NSLog(@"dragView %zd dealloc", self.tag);
 }
 
 @end

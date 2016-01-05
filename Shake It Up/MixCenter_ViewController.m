@@ -22,13 +22,9 @@
     
     [super viewDidLoad];
     
-//    NSLog(@"%@", self.mixCenterType);
-    
     self.e = [Environment sharedEnvironment];
     self.app = [AppSettings sharedAppSettings];
     self.ingredients = [self.e valueForKey:self.mixCenterType];
-    
-//    NSLog(@"%@", self.ingredients);
     
     [self buildInterface];
 }
@@ -263,7 +259,7 @@
         if ([self.dropZone pointInside:[touch locationInView:self.dropZone] withEvent:nil]) {
             
             dropped = YES;
-            self.progressTimer.circlePathColor = self.droppedItem.backgroundColor;
+            self.progressTimer.circlePathColor = self.droppedItem.colorValue;
             [self startTimer];
             
             //if not in center of drop zone

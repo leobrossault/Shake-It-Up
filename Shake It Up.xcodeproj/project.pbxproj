@@ -10,12 +10,12 @@
 		0D4859281C3963EE00A26E01 /* Sign_Up_Later_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4859271C3963EE00A26E01 /* Sign_Up_Later_ViewController.m */; };
 		0D48592B1C3969A900A26E01 /* Congrats_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D48592A1C3969A900A26E01 /* Congrats_ViewController.m */; };
 		0D48592F1C3AC68200A26E01 /* splashscreen.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D48592E1C3AC68200A26E01 /* splashscreen.mp4 */; };
-		0D4859311C3BB8DA00A26E01 /* tropicale_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859301C3BB8DA00A26E01 /* tropicale_2.mp4 */; };
-		0D4859331C3BB8F500A26E01 /* tropicale_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859321C3BB8F500A26E01 /* tropicale_1.mp4 */; };
 		0D4859361C3BB92E00A26E01 /* yeux_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859341C3BB92E00A26E01 /* yeux_1.mp4 */; };
 		0D4859371C3BB92E00A26E01 /* yeux_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4859351C3BB92E00A26E01 /* yeux_2.mp4 */; };
 		0D48593A1C3BF58F00A26E01 /* ReverseTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D4859391C3BF58F00A26E01 /* ReverseTransition.m */; };
 		0D48593C1C3C683A00A26E01 /* appicons in Resources */ = {isa = PBXBuildFile; fileRef = 0D48593B1C3C683A00A26E01 /* appicons */; };
+		0D4859401C3D0AFB00A26E01 /* tropicale_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D48593E1C3D0AFB00A26E01 /* tropicale_1.mp4 */; };
+		0D4859411C3D0AFB00A26E01 /* tropicale_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D48593F1C3D0AFB00A26E01 /* tropicale_2.mp4 */; };
 		0D4DC4A51C0CB15400DA1FDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */; };
 		0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A71C0CB36B00DA1FDD /* Bariol.ttf */; };
 		0D4DC4AC1C0CB37C00DA1FDD /* intro1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 0D4DC4A91C0CB37C00DA1FDD /* intro1.mp4 */; };
@@ -131,13 +131,13 @@
 		0D4859291C3969A900A26E01 /* Congrats_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Congrats_ViewController.h; sourceTree = "<group>"; };
 		0D48592A1C3969A900A26E01 /* Congrats_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Congrats_ViewController.m; sourceTree = "<group>"; };
 		0D48592E1C3AC68200A26E01 /* splashscreen.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = splashscreen.mp4; sourceTree = "<group>"; };
-		0D4859301C3BB8DA00A26E01 /* tropicale_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tropicale_2.mp4; sourceTree = "<group>"; };
-		0D4859321C3BB8F500A26E01 /* tropicale_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tropicale_1.mp4; sourceTree = "<group>"; };
 		0D4859341C3BB92E00A26E01 /* yeux_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yeux_1.mp4; sourceTree = "<group>"; };
 		0D4859351C3BB92E00A26E01 /* yeux_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = yeux_2.mp4; sourceTree = "<group>"; };
 		0D4859381C3BF58F00A26E01 /* ReverseTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReverseTransition.h; sourceTree = "<group>"; };
 		0D4859391C3BF58F00A26E01 /* ReverseTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReverseTransition.m; sourceTree = "<group>"; };
 		0D48593B1C3C683A00A26E01 /* appicons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = appicons; sourceTree = "<group>"; };
+		0D48593E1C3D0AFB00A26E01 /* tropicale_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tropicale_1.mp4; sourceTree = "<group>"; };
+		0D48593F1C3D0AFB00A26E01 /* tropicale_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = tropicale_2.mp4; sourceTree = "<group>"; };
 		0D4DC4A41C0CB15400DA1FDD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D4DC4A71C0CB36B00DA1FDD /* Bariol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bariol.ttf; sourceTree = "<group>"; };
 		0D4DC4A91C0CB37C00DA1FDD /* intro1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = intro1.mp4; sourceTree = "<group>"; };
@@ -622,9 +622,9 @@
 		A45CF7F21BE77B28003D793A /* Videos */ = {
 			isa = PBXGroup;
 			children = (
+				0D48593E1C3D0AFB00A26E01 /* tropicale_1.mp4 */,
+				0D48593F1C3D0AFB00A26E01 /* tropicale_2.mp4 */,
 				0D48592E1C3AC68200A26E01 /* splashscreen.mp4 */,
-				0D4859321C3BB8F500A26E01 /* tropicale_1.mp4 */,
-				0D4859301C3BB8DA00A26E01 /* tropicale_2.mp4 */,
 				0D4859341C3BB92E00A26E01 /* yeux_1.mp4 */,
 				0D4859351C3BB92E00A26E01 /* yeux_2.mp4 */,
 				0D4DC4A61C0CB26600DA1FDD /* Intro */,
@@ -786,6 +786,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F33609B1C3BD5E000523BD1 /* round_texture_01.gif in Resources */,
+				0D4859401C3D0AFB00A26E01 /* tropicale_1.mp4 in Resources */,
 				0F9CE08D1C3B122C006F7C3C /* feu_de_camp.wav in Resources */,
 				0F33607D1C3BD54900523BD1 /* femme.gif in Resources */,
 				0D4859371C3BB92E00A26E01 /* yeux_2.mp4 in Resources */,
@@ -805,7 +806,6 @@
 				0F9CE08B1C3B122C006F7C3C /* mer.wav in Resources */,
 				A45CF7A01BE7752A003D793A /* Assets.xcassets in Resources */,
 				0D4DC4AE1C0CB37C00DA1FDD /* intro3.mp4 in Resources */,
-				0D4859331C3BB8F500A26E01 /* tropicale_1.mp4 in Resources */,
 				0F3360831C3BD55300523BD1 /* round_corps_04.gif in Resources */,
 				0D4DC4AD1C0CB37C00DA1FDD /* intro2.mp4 in Resources */,
 				0D48592F1C3AC68200A26E01 /* splashscreen.mp4 in Resources */,
@@ -827,8 +827,8 @@
 				0F3360961C3BD58C00523BD1 /* round_ingredient_04.gif in Resources */,
 				0D4DC4C11C108D9700DA1FDD /* Bariol-Bold.otf in Resources */,
 				0D4DC4A81C0CB36B00DA1FDD /* Bariol.ttf in Resources */,
+				0D4859411C3D0AFB00A26E01 /* tropicale_2.mp4 in Resources */,
 				0F9CE08C1C3B122C006F7C3C /* foret_tropicale.wav in Resources */,
-				0D4859311C3BB8DA00A26E01 /* tropicale_2.mp4 in Resources */,
 				0F33609C1C3BD5E000523BD1 /* round_texture_02.gif in Resources */,
 				0F9CE06A1C3B07A2006F7C3C /* round_emotion_01.gif in Resources */,
 				0F3360841C3BD55300523BD1 /* round_corps_01.gif in Resources */,

@@ -46,7 +46,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigation = self.navigationController;
+    self.navigation = (NavigationController *)self.navigationController;
     [self.navigation showMenu];
     [self.navigation whiteMenu];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

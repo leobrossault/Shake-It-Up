@@ -26,7 +26,7 @@
     self.app = [AppSettings sharedAppSettings];
     [self buildInterface];
     
-    NavigationController *navigation = self.navigationController;
+    NavigationController *navigation = (NavigationController *)self.navigationController;
     [navigation hideMenu];
     
     // Remove previous View Controller

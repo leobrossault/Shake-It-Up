@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NavigationController *navigation = self.navigationController;
+    NavigationController *navigation = (NavigationController *)self.navigationController;
     [navigation hideMenu];
     
     // Remove previous View Controller

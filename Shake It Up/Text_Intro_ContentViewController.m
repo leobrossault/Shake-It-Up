@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NavigationController *navigation = self.navigationController;
+    NavigationController *navigation = (NavigationController *)self.navigationController;
     [navigation hideMenu];
     
     prevPage = 0;
@@ -110,8 +110,10 @@
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"GenderMixCenter" bundle:nil];
     GenderMixCenter_ViewController *mixCenter = [sb instantiateInitialViewController];
     [self.navigationController pushViewController:mixCenter animated:YES];
+}
+
+- (void)mixCenterDidFinish {
     
-    NSLog(@"%lu", [self.navigationController.viewControllers count]);
 }
 
 @end

@@ -11,10 +11,6 @@
 #import "MixCenter_ViewController.h"
 #import "SoundMixCenter_ViewController.h"
 
-@protocol MixCenterDelegate <NSObject>
-
-@end
-
 @interface MixCenter_ContentViewController : UIViewController
 
 @property (nonatomic) MixCenter_ViewController *emotionMixCenter;

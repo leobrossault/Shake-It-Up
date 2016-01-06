@@ -43,14 +43,14 @@
 
 @end
 
-@implementation Action_Shaker_ViewController{
+@implementation Action_Shaker_ViewController {
     UIDynamicAnimator *animator;
 }
 
 - (void) viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NavigationController *navigation = self.navigationController;
+    NavigationController *navigation = (NavigationController *)self.navigationController;
     [navigation hideMenu];
     
     // Remove previous View Controller
@@ -474,6 +474,11 @@
             overlayActive = 0;
         }
     }
+}
+
+
+- (void)mixCenterDidFinish {
+    
 }
 
 

@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigation = self.navigationController;
+    self.navigation = (NavigationController *)self.navigationController;
     [self.navigation showMenu];
     [self.navigation resetColorMenu];
 }

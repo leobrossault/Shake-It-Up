@@ -9,7 +9,7 @@
 #import "BodyMixCenter_ViewController.h"
 #import "Interaction_Video_ViewController.h"
 
-@interface BodyMixCenter_ViewController ()<VideoInteractionDelegate>
+@interface BodyMixCenter_ViewController ()
 {
     BOOL dragging;
     BOOL dropZoneFull;

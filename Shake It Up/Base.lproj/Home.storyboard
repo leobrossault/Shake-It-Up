@@ -193,7 +193,9 @@ Son sillage boisé sensuel adouci de graines d'Ambrette, dévoile un Patchouli �
                     <navigationItem key="navigationItem" id="N5m-FW-u3W"/>
                     <connections>
                         <outlet property="backBtn" destination="Mlm-5p-naa" id="Zgr-Tn-aA3"/>
+                        <outlet property="btnSimilarProduct" destination="hHQ-6E-uJc" id="ZQp-vN-OGr"/>
                         <outlet property="descrProduct" destination="52d-2B-itd" id="xSI-A9-tpq"/>
+                        <outlet property="labelSimilarProduct" destination="SDp-Aj-ZWn" id="nNy-ZB-4oi"/>
                         <outlet property="mainImgProduct" destination="ZfO-vz-RLT" id="h5G-Bs-ta4"/>
                         <outlet property="retryExp" destination="3H7-qW-8uF" id="AsU-CC-hUZ"/>
                         <outlet property="scrollView" destination="0Cq-dX-Rep" id="5jD-go-z1D"/>

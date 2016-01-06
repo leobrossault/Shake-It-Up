@@ -36,6 +36,7 @@
         
         self.purple = [UIColor colorWithRed:91.0/255.0 green:45.0/255.0 blue:148.0/255.0 alpha:1.0];
         self.lightGrey = [UIColor colorWithRed:249.0/255.0 green:249.0/255.0 blue:254.0/255.0 alpha:1.0];
+        self.white = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
         
     }
     return self;

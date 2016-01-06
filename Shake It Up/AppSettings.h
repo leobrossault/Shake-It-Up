@@ -24,6 +24,7 @@
 //colors
 @property (nonatomic, strong) UIColor *purple;
 @property (nonatomic, strong) UIColor *lightGrey;
+@property (nonatomic, strong) UIColor *white;
 
 + (instancetype) sharedAppSettings;
 

@@ -12,4 +12,5 @@
 
 @property (assign, nonatomic) AppSettings *app;
 
+@property (nonatomic, strong) UILabel *dropZoneLabel;
 @end

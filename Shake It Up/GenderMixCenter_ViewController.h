@@ -44,6 +44,61 @@
 
 @property (nonatomic, strong) NSString *selectedGender;
 
+@property (nonatomic, strong) UIView *overlay1;
+@property (nonatomic, strong) UIView *overlay2;
+@property (nonatomic, strong) UIView *overlay3;
+
+@property (nonatomic, strong) UILabel *overlay1Line1;
+@property (nonatomic, strong) UILabel *overlay1Line2;
+@property (nonatomic, strong) UILabel *overlay2Line1;
+@property (nonatomic, strong) UILabel *overlay2Line2;
+@property (nonatomic, strong) UILabel *overlay3Line1;
+@property (nonatomic, strong) UILabel *overlay3Line2;
+
+@property (nonatomic, strong) UILabel *dropLabel1;
+@property (nonatomic, strong) UILabel *dropLabel2;
+@property (nonatomic, strong) UILabel *dropLabel3;
+
+@property (nonatomic, strong) UIImageView *bottomRightRoundContainer1;
+@property (nonatomic, strong) UIImage *bottomRightRound1;
+
+@property (nonatomic, strong) UIImageView *bottomLeftRoundContainer1;
+@property (nonatomic, strong) UIImage *bottomLeftRound1;
+
+@property (nonatomic, strong) UIImageView *centerRoundContainer1;
+@property (nonatomic, strong) UIImage *centerRound1;
+
+@property (nonatomic, strong) UIImageView *bottomRightRoundContainer2;
+@property (nonatomic, strong) UIImage *bottomRightRound2;
+
+@property (nonatomic, strong) UIImageView *bottomLeftRoundContainer2;
+@property (nonatomic, strong) UIImage *bottomLeftRound2;
+
+@property (nonatomic, strong) UIImageView *centerRoundContainer2;
+@property (nonatomic, strong) UIImage *centerRound2;
+
+@property (nonatomic, strong) UIImageView *bottomRightRoundContainer3;
+@property (nonatomic, strong) UIImage *bottomRightRound3;
+
+@property (nonatomic, strong) UIImageView *bottomLeftRoundContainer3;
+@property (nonatomic, strong) UIImage *bottomLeftRound3;
+
+@property (nonatomic, strong) UIImageView *centerRoundContainer3;
+@property (nonatomic, strong) UIImage *centerRound3;
+
+@property (nonatomic, strong) UIImageView *centerTimerContainer3;
+@property (nonatomic, strong) UIImage *centerTimer3;
+
+@property (nonatomic, strong) UIImageView *dragIconContainer;
+@property (nonatomic, strong) UIImage *dragIcon;
+
+@property (nonatomic, strong) UIImageView *tapIconContainer;
+@property (nonatomic, strong) UIImage *tapIcon;
+
+
+@property int nbTouches;
+@property int nbDrops;
+
 - (void) buildInterface;
 
 @end

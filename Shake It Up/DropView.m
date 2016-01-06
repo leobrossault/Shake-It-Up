@@ -21,13 +21,13 @@
         self.layer.cornerRadius = 87.5;
         
         //set drop zone label
-        UILabel *dropZoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        dropZoneLabel.backgroundColor = [UIColor clearColor];
-        dropZoneLabel.font = self.app.font12;
-        dropZoneLabel.textColor = self.app.purple;
-        dropZoneLabel.text = [@"Déposer ici" uppercaseString];
-        dropZoneLabel.textAlignment = NSTextAlignmentCenter;
-        [self addSubview:dropZoneLabel];
+        self.dropZoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        self.dropZoneLabel.backgroundColor = [UIColor clearColor];
+        self.dropZoneLabel.font = self.app.font12;
+        self.dropZoneLabel.textColor = self.app.purple;
+        self.dropZoneLabel.text = [@"Déposer ici" uppercaseString];
+        self.dropZoneLabel.textAlignment = NSTextAlignmentCenter;
+        [self addSubview:self.dropZoneLabel];
     }
     return self;
 }

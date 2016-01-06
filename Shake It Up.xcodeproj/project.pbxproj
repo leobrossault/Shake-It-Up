@@ -547,8 +547,8 @@
 				A45CF7DC1BE779E0003D793A /* Interaction_Video_ViewController.m */,
 				0D4DC4CF1C175F4800DA1FDD /* Discover_ViewController.h */,
 				0D4DC4D01C175F4800DA1FDD /* Discover_ViewController.m */,
-				A45CF7E41BE77A56003D793A /* Form_SignUp_ViewController.h */,
 				A45CF7E51BE77A56003D793A /* Form_SignUp_ViewController.m */,
+				A45CF7E41BE77A56003D793A /* Form_SignUp_ViewController.h */,
 				0D4DC4D21C18A51500DA1FDD /* Form_Validate_ViewController.h */,
 				0D4DC4D31C18A51500DA1FDD /* Form_Validate_ViewController.m */,
 			);

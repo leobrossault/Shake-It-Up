@@ -24,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *retryExp;
 @property (weak, nonatomic) IBOutlet UIView *testProduct;
 @property (weak, nonatomic) IBOutlet UIView *similarProduct;
+@property (weak, nonatomic) IBOutlet UILabel *labelSimilarProduct;
+@property (weak, nonatomic) IBOutlet UIButton *btnSimilarProduct;
 
 @property (nonatomic, strong) CAShapeLayer *line;
 @property (nonatomic, strong) CALayer *point;
@@ -127,6 +129,16 @@
     
     UITapGestureRecognizer *testProduct = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(goToStore:)];
     [self.testProduct addGestureRecognizer:testProduct];
+    
+    if ([[[self.userProducts objectAtIndex: (int)self.product] objectForKey:@"label"] isEqualToString:@"Phyto Ombre Glow"]) {
+        self.sloganProduct.textColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1];
+        self.testProduct.backgroundColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1];
+        self.similarProduct.backgroundColor = [UIColor colorWithRed:0.973 green:0.859 blue:0.761 alpha:1];
+        self.labelSimilarProduct.textColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1];
+        [self.btnSimilarProduct setTitleColor: [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1] forState:UIControlStateNormal];
+        self.lineMore.strokeColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1].CGColor;
+        self.pointMore.backgroundColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1].CGColor;
+    }
 }
 
 - (void)didReceiveMemoryWarning {

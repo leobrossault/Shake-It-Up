@@ -13,7 +13,16 @@
     BOOL dragging;
     BOOL dropZoneFull;
     BOOL dropped;
+    SystemSoundID sound;
 }
+
+// Sound Attributes
+@property (strong, nonatomic) NSString *soundFilePath;
+@property (strong, nonatomic) NSURL *soundURL;
+@property (strong, nonatomic) AVAsset *asset;
+@property (strong, nonatomic) AVPlayerItem *playerItem;
+@property (strong, nonatomic) AVPlayer *avPlayer;
+
 @end
 
 @implementation SoundMixCenter_ViewController
@@ -43,6 +52,9 @@
 #pragma mark - Drag & Drop
 
 - (void) touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.avPlayer != NULL) {
+        [self.avPlayer pause];
+    }
     
     UITouch *touch = [touches anyObject];
     self.draggedItem = (DragView *) touch.view;
@@ -67,14 +79,13 @@
         [self.descriptionLabel.layer pop_addAnimation:opacityAnimation forKey:@"opacityAnimation"];
         
         //créer dans view didload
-        SystemSoundID sound;
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"wav"];
-        NSURL *soundURL = [NSURL fileURLWithPath:soundFilePath];
-        AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &sound);
-        AudioServicesPlaySystemSound(sound);
-        //à mettre dans le dealloc
-//        AudioServicesDisposeSystemSoundID (sound);
         
+        self.soundFilePath = [[NSBundle mainBundle] pathForResource:self.draggedItem.value ofType:@"wav"];
+        self.soundURL = [NSURL fileURLWithPath: self.soundFilePath];
+        self.asset = [AVAsset assetWithURL: self.soundURL];
+        self.playerItem = [[AVPlayerItem alloc] initWithAsset: self.asset];
+        self.avPlayer = [AVPlayer playerWithPlayerItem: self.playerItem];
+        [self.avPlayer play];
     } else {
         dragging = NO;
     }

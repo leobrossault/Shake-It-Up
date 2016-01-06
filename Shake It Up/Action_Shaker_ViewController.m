@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *icoOverlay;
 @property (weak, nonatomic) IBOutlet UIImageView *icoTapOverlay;
 
+
 @end
 
 @implementation Action_Shaker_ViewController{

@@ -22,6 +22,8 @@
         self.app = [AppSettings sharedAppSettings];
         
         self.circlePathLayer = [CAShapeLayer layer];
+        self.circlePathLayer.lineCap = kCALineCapRound;
+
         self.progress = 0.0;
         self.backgroundCirclePathLayer = [CAShapeLayer layer];
         self.circleRadius = frame.size.width / 2.0;

@@ -10,6 +10,7 @@
 #import "Text_Intro_PageViewController.h"
 #import "NavigationController.h"
 #import "GenderMixCenter_ViewController.h"
+#import "MixCenter_ContentViewController.h"
 
 @interface Text_Intro_ContentViewController ()<MixCenterDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *btnStart;

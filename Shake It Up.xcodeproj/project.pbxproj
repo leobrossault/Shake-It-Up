@@ -91,7 +91,6 @@
 		A45CF7E61BE77A56003D793A /* Form_SignUp_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45CF7E51BE77A56003D793A /* Form_SignUp_ViewController.m */; };
 		A45CF7F71BE7B78C003D793A /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7F51BE7B78C003D793A /* Intro.storyboard */; };
 		A45CF7FA1BE7BA5C003D793A /* App_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A45CF7F91BE7BA5C003D793A /* App_ViewController.m */; };
-		A45CF7FD1BE7C089003D793A /* m.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7FB1BE7C089003D793A /* m.storyboard */; };
 		A45CF8001BE7C1C6003D793A /* Shaker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF7FE1BE7C1C6003D793A /* Shaker.storyboard */; };
 		A45CF8031BE7C3EC003D793A /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF8011BE7C3EC003D793A /* Video.storyboard */; };
 		A45CF8091BE7C658003D793A /* signUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A45CF8071BE7C658003D793A /* signUp.storyboard */; };
@@ -242,7 +241,6 @@
 		A45CF7F61BE7B78C003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Intro.storyboard; sourceTree = "<group>"; };
 		A45CF7F81BE7BA5C003D793A /* App_ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App_ViewController.h; sourceTree = "<group>"; };
 		A45CF7F91BE7BA5C003D793A /* App_ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App_ViewController.m; sourceTree = "<group>"; };
-		A45CF7FC1BE7C089003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/m.storyboard; sourceTree = "<group>"; };
 		A45CF7FF1BE7C1C6003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Shaker.storyboard; sourceTree = "<group>"; };
 		A45CF8021BE7C3EC003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Video.storyboard; sourceTree = "<group>"; };
 		A45CF8081BE7C658003D793A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/signUp.storyboard; sourceTree = "<group>"; };
@@ -411,7 +409,6 @@
 				0FE18C0B1C28267D00F5E7BB /* MixCenters.storyboard */,
 				0FE18C0E1C2845E700F5E7BB /* GenderMixCenter.storyboard */,
 				0FE18C161C286C3600F5E7BB /* BodyPartMixCenter.storyboard */,
-				A45CF7FB1BE7C089003D793A /* m.storyboard */,
 				A45CF7F51BE7B78C003D793A /* Intro.storyboard */,
 				0D4DC4D51C18CBEB00DA1FDD /* Store.storyboard */,
 				A45CF79F1BE7752A003D793A /* Assets.xcassets */,
@@ -752,7 +749,6 @@
 				A45CF8031BE7C3EC003D793A /* Video.storyboard in Resources */,
 				0D48593C1C3C683A00A26E01 /* appicons in Resources */,
 				0F3360951C3BD58C00523BD1 /* round_ingredient_03.gif in Resources */,
-				A45CF7FD1BE7C089003D793A /* m.storyboard in Resources */,
 				A45CF7F71BE7B78C003D793A /* Intro.storyboard in Resources */,
 				0D4DC4D61C18CBEB00DA1FDD /* Store.storyboard in Resources */,
 				0F3360961C3BD58C00523BD1 /* round_ingredient_04.gif in Resources */,
@@ -941,14 +937,6 @@
 				A45CF7F61BE7B78C003D793A /* Base */,
 			);
 			name = Intro.storyboard;
-			sourceTree = "<group>";
-		};
-		A45CF7FB1BE7C089003D793A /* m.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A45CF7FC1BE7C089003D793A /* Base */,
-			);
-			name = m.storyboard;
 			sourceTree = "<group>";
 		};
 		A45CF7FE1BE7C1C6003D793A /* Shaker.storyboard */ = {

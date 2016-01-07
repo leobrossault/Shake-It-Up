@@ -12,6 +12,7 @@
 #import "NavigationController.h"
 #import "BodyMixCenter_ViewController.h"
 #import "MixtureData.h"
+#import "MixCenter_ContentViewController.h"
 
 @interface Action_Shaker_ViewController () <MixCenterDelegate, UICollisionBehaviorDelegate>
 
@@ -234,6 +235,7 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [self becomeFirstResponder];
 }
 

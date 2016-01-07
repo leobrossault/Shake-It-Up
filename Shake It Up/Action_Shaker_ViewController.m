@@ -425,6 +425,14 @@
         
         isShake = 1;
         loopGravity = 0;
+        
+        if (overlayActive == 1) {
+            [UIView animateWithDuration: 1.0 animations:^(void) {
+                self.overlay.alpha = 0;
+            }];
+            
+            overlayActive = 0;
+        }
     }
 }
 

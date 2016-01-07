@@ -283,7 +283,7 @@
             NSString *cityWords = [[self.stores objectAtIndex: j] objectForKey:@"city"];
             NSString *postalCode = [[self.stores objectAtIndex: j] objectForKey:@"postalCode"];
         
-            int countWords = [titleWords count] + [streetWords count] + 2;
+            NSUInteger countWords = [titleWords count] + [streetWords count] + 2;
             BOOL match = false;
         
             NSMutableArray *mutableWords = [NSMutableArray arrayWithCapacity: countWords];

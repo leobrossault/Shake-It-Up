@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Text_Intro_ContentViewController : UIViewController {
-    int prevPage;
+    NSInteger prevPage;
 }
 
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;

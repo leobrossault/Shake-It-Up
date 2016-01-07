@@ -107,6 +107,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     if (didLoad == 0) {
         POPSpringAnimation *animLine = [POPSpringAnimation animationWithPropertyNamed:kPOPShapeLayerStrokeStart];
         animLine.springSpeed = 10;
@@ -161,7 +163,7 @@
     
     UIView *productView = [[UIView alloc] init];
     UIImageView *productImageView;
-    UIImage *productImage = [[UIImage alloc] init];
+    UIImage *productImage = nil;
     UILabel *productTitle = [[UILabel alloc] init];
     UILabel *productType = [[UILabel alloc] init];
 

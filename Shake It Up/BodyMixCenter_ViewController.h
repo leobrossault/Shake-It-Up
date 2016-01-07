@@ -13,15 +13,7 @@
 #import "DropView.h"
 #import "CircularLoaderView.h"
 
-@protocol MixCenterDelegate <NSObject>
-
--(void) mixCenterDidFinish;
-
-@end
-
 @interface BodyMixCenter_ViewController : UIViewController
-
-@property (nonatomic, weak) id <MixCenterDelegate> delegate;
 
 @property (nonatomic) DragView *topLeftItem;
 @property (nonatomic) DragView *topRightItem;

@@ -285,6 +285,7 @@
                 returnToCenterAnimation.springSpeed = 20.0f;
                 [self.draggedItem pop_addAnimation:returnToCenterAnimation forKey:@"returnToOriginalPosition"];
                 
+                NSLog(@"supposed to bug");
                 
                 //anim scale
                 POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
@@ -297,10 +298,10 @@
                         self.draggedItem.transform = CGAffineTransformScale(CGAffineTransformIdentity, 2.5, 2.5);
                     }
                 };
-                [self.draggedItem pop_addAnimation:scaleAnimation forKey:@"scaleOnDrop"];
+                [self.draggedItem pop_addAnimation:scaleAnimation forKey:@"scaleOnlyOnDrop"];
                 
-            } else {
-                NSLog(@"%@", self.draggedItem);
+            } else if(CGPointEqualToPoint(self.draggedItem.center, self.dropZone.center)) {
+                
                 //anim scale
                 [self.draggedItem pop_removeAllAnimations];
                 POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];

@@ -11,7 +11,7 @@
 
 @interface Store_Search_ViewController : UIViewController <CLLocationManagerDelegate> {
     UICollectionView *collectionView;
-    int nbCell;
+    NSUInteger nbCell;
     CLLocationManager *locationManager;
     BOOL getDist;
 }

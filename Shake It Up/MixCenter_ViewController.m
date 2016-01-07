@@ -285,6 +285,7 @@
                 returnToCenterAnimation.springSpeed = 20.0f;
                 [self.draggedItem pop_addAnimation:returnToCenterAnimation forKey:@"returnToOriginalPosition"];
                 
+                
                 //anim scale
                 POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];
                 scaleAnimation.velocity = [NSValue valueWithCGPoint:CGPointMake(8, 8)];
@@ -299,7 +300,7 @@
                 [self.draggedItem pop_addAnimation:scaleAnimation forKey:@"scaleOnDrop"];
                 
             } else {
-                
+                NSLog(@"%@", self.draggedItem);
                 //anim scale
                 [self.draggedItem pop_removeAllAnimations];
                 POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPViewScaleXY];

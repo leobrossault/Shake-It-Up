@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIView *similarProduct;
 @property (weak, nonatomic) IBOutlet UILabel *labelSimilarProduct;
 @property (weak, nonatomic) IBOutlet UIButton *btnSimilarProduct;
+@property (weak, nonatomic) IBOutlet UIImageView *imgSimilarProduct;
 
 @property (nonatomic, strong) CAShapeLayer *line;
 @property (nonatomic, strong) CALayer *point;
@@ -138,6 +139,7 @@
         [self.btnSimilarProduct setTitleColor: [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1] forState:UIControlStateNormal];
         self.lineMore.strokeColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1].CGColor;
         self.pointMore.backgroundColor = [UIColor colorWithRed:0.965 green:0.612 blue:0.29 alpha:1].CGColor;
+        [self.imgSimilarProduct setImage: [UIImage imageNamed:@"similar_product_2"]];
     }
 }
 

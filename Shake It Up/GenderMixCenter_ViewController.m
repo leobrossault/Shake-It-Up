@@ -99,7 +99,7 @@
     [self.overlay3 addSubview:self.overlay3Line2];
     
     self.dropLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(127, 338, 100.0, 20.0)];
-    self.dropLabel2 = [[UILabel alloc] initWithFrame:self.dropZone.dropZoneLabel.frame];
+    self.dropLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(127, 338, 100.0, 20.0)];
     self.dropLabel1.text = [@"Déposer ici" uppercaseString];
     self.dropLabel2.text = [@"Déposer ici" uppercaseString];
     self.dropLabel1.font = self.app.font12;

@@ -300,7 +300,7 @@
                 };
                 [self.draggedItem pop_addAnimation:scaleAnimation forKey:@"scaleOnlyOnDrop"];
                 
-            } else if(CGPointEqualToPoint(self.draggedItem.center, self.dropZone.center)) {
+            } else {
                 
                 //anim scale
                 [self.draggedItem pop_removeAllAnimations];
